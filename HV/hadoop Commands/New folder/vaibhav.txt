@@ -1,0 +1,934 @@
+23/10/24
+-----------------------------------------------------------------------node2-------------------------------------------------------------
+	pwd
+    2  ip address
+    3  java version
+    4  wget -c -O hadoop.tar.gz https://dlcdn.apache.org/hadoop/common/hadoop-3.2.4.tar.gz
+    5  wget -c -O hadoop.tar.gz https://dlcdn.apache.org/hadoop/common/hadoop-3.2.4/hadoop-3.2.4.tar.gz
+    6  ls
+    7  ping www.google.com
+    8  history
+    9  tar xvzf hadoop.tar.gz
+   10  history
+   11  sudo mkdir /usr/local/hadoop
+   12  sudo mv hadoop-3.2.4/* /usr/local/hadoop/
+   13  ls /usr/local/hadoop
+   14  sudo init 0
+   15  pwd
+   16  nano .bashrc
+   17  sudo chown -R hhduser:hhduser /usr/local/hadoop
+   18  sudo chmod -R 755 /usr/local/hadoop
+   19  ls -ll
+   20  cd /usr/local/hadoop/etc/hadoop
+   21  nano hadoop-env.sh
+   22  sudo apt install pdsh -y
+   23  cd
+   24  sudo init 0
+   25  ip a
+   26  sudo apt intalls ssh -y
+   27  sudo apt intall ssh -y
+   28  sudo apt install ssh -y
+   29  sudo systemctl start ssh
+   30  sudo systemctl enable ssh
+   31  ip a
+   32  sudo hostnamectl hostname dn2
+   33  sudo hostname dn2
+   34  sudo hostnamectl set-hostname dn2
+   35  sudo hostname dn2
+   36  sudo nano /etc/hosts
+   37  cd /usr/local/hadoop/etc/hadoop
+   38  scp dn1:/usr/local/hadoop/etc/hadoop/core-site.xml .
+   39  scp dn1:/usr/local/hadoop/etc/hadoop/hdfs-site.xml .
+   40  scp dn1:/usr/local/hadoop/etc/hadoop/yarn-site.xml .
+   41  scp dn1:/usr/local/hadoop/etc/hadoop/mapred-site.xml .
+   42  cd
+   43  mkdir -p /usr/local/hadoop/hd-data/dn
+   44  mkdir -p /usr/local/hadoop/hd-data/yarn/data
+   45  mkdir -p /usr/local/hadoop/hd-data/yarn/logs
+   46  mkdir /usr/local/hadoop/hd-data/yarn/logs
+   47  ssh dn1
+   48  history
+   49  ssh dn1
+   50  logout
+   51  exit
+   52  history
+   53  exit
+   54  ip a
+   55  sudo hostnamectl set-hostname node2
+   56  sudo hostname node2
+   57  ls
+   58  sudo cp /home//hadoop.tar.gz
+   59  tar xvzf hadoop.tar.gz
+   60  stop-all.sh
+   61  exit
+   62  ip a
+   63  jps
+   64  exit
+   65  scp .bashrc hduser@node3:/home/hduser/
+   66  scp .bashrc hduser@node3:/home/hhduser/
+   67  ssh -t hduser@node3 "sudo mkdir /usr/local/hadoop"
+   68  exit
+   69  ssh -t hduser@node3 "sudo mkdir /usr/local/hadoop"
+   70  nano /etc/hosts
+   71  sudo nano /etc/hosts
+   72  ssh -t hduser@node3 "sudo mkdir /usr/local/hadoop"
+   73  ssh -t hduser@node3 "sudo chown hduser:hduser /usr/local/hadoop"
+   74  ssh -t hduser@node3 "sudo chmod 755 /usr/local/hadoop"
+   75  scp -r /usr/local/hadoop/* hduser@node3:/usr/local/hadoop/
+   76  history
+-----------------------------------------------------------manager------------------------------------------------------------
+1  pwd
+    2  ip address
+    3  java version
+    4  wget -c -O hadoop.tar.gz https://dlcdn.apache.org/hadoop/common/hadoop-3.2.4.tar.gz
+    5  wget -c -O hadoop.tar.gz https://dlcdn.apache.org/hadoop/common/hadoop-3.2.4/hadoop-3.2.4.tar.gz
+    6  ls
+    7  ping www.google.com
+    8  history
+    9  tar xvzf hadoop.tar.gz
+   10  history
+   11  sudo mkdir /usr/local/hadoop
+   12  sudo mv hadoop-3.2.4/* /usr/local/hadoop/
+   13  ls /usr/local/hadoop
+   14  sudo init 0
+   15  pwd
+   16  nano .bashrc
+   17  sudo chown -R hhduser:hhduser /usr/local/hadoop
+   18  sudo chmod -R 755 /usr/local/hadoop
+   19  ls -ll
+   20  cd /usr/local/hadoop/etc/hadoop
+   21  nano hadoop-env.sh
+   22  sudo apt install pdsh -y
+   23  cd
+   24  sudo init 0
+   25  ip a
+   26  sudo apt intalls ssh -y
+   27  sudo apt intall ssh -y
+   28  sudo apt install ssh -y
+   29  sudo systemctl start ssh
+   30  sudo systemctl enable ssh
+   31  ip a
+   32  history
+   33  cd /usr/local/hadoop/etc/hadoop
+   34  history
+   35  cd
+   36  exit
+   37  sudo hostnamectl set-hostname master
+   38  sudo hostname master
+   39  sudo nano /etc/hosts
+   40  cd /usr/local/hadoop
+   41  ls
+   42  cd /etc/hadoop
+   43  nano core-site.xml
+   44  sudo nano core-site.xml
+   45  cd
+   46  cd /usr/local/hadoop/etc/hadoop
+   47  nano core-site.xml
+   48  nano hdfs-site.xml
+   49  nano mapred-site.xml
+   50  cat mapred-site.xml
+   51  nano yarn-site.xml
+   52  nano workers
+   53  mkdir -p /usr/local/hadoop/hd-data/nn
+   54  ls -all /usr/local/hadoop/hd-data/
+   55  echo $HADOOP_HOME /usr/local/hadoop
+   56  echo $PATH
+   57  start-dfs.sh
+   58  jps
+   59  cd
+   60  ssh-keygen -t rsa
+   61  ssh-copy-id -i .ssh/id_rsa.pub
+   62  ssh-copy-id -i .ssh/id_rsa.pub hhduser@master
+   63  ssh hhduser_master
+   64  ssh hhduser@master
+   65  logout
+   66  pwd
+   67  ssh-copy-id -i .ssh/id_rsa.pub hhduser@dn1
+   68  sudo nano /etc/hosts
+   69  ssh-copy-id -i .ssh/id_rsa.pub hhduser@dn1
+   70  ssh hhduser@dn1
+   71  ssh hhduser@dn2
+   72  history
+   73  start-dfs.sh
+   74  jps
+   75  ssh hhduser@dn1
+   76  ssh hhduser@dn2
+   77  stop-dfs.sh
+   78  jps
+   79  hadoop NameNode -format
+   80  start-dfs.sh
+   81  jps
+   82  hadoop namenode -format
+   83  jps
+   84  stop-dfs.sh
+   85  jps
+   86  hadoop namenode -format
+   87  start-dfs.sh
+   88  jps
+   89  history
+   90  jps
+   91  ssh hhduser@dn2
+   92  jps
+   93  start-yarn.sh
+   94  ssh hhduser@dn1
+   95  ssh hhduser@dn2
+   96  cd
+   97  ssh-copy-id -i .ssh/id_rsa.pub hhduser@dn2
+   98  jps
+   99  stop-all.sh
+  100  start-all.sh
+  101  jps
+  102  cd /usr/local/hadoop/logs
+  103  tail -30 hadoop-hhduser -namenode
+  104  tail -30 hadoop-hhduser-namenode
+  105  tail -30 hadoop-hhduser-namenode.log
+  106  tail -30 hadoop-hhduser-namenode-maste.log
+  107  cd
+  108  sudo su- dn1
+  109  sudo su - dn1
+  110  sudo su dn1
+  111  sudo su- dn1
+  112  sudo su -dn1
+  113  history
+  114  nano .bashrc
+  115  cd /usr/local/hadoop/logs
+  116  jps
+  117  cd ..
+  118  cd sbin
+  119  jps
+  120  cd ..
+  121  cd logs
+  122  start-yarn.sh
+  123  jps
+  124  cd
+  125  sudo nano /etc/hosts
+  126  jps
+  127  cd /usr/local/hadoop/logs
+  128  cd
+  129  nano multi-node.txt
+  130  hdfs dfs -ls/
+  131  hdfs dfs -ls /
+  132  hdfs dfs -mkdir /hpcsa
+  133  hdfs dfs -put multi-node.txt /hpcsa
+  134  hdfs dfs -ls /hpcsa
+  135  hdfs dfs -put multi-node.txt /hpcsa
+  136  hdfs dfs -h
+  137  stop-all
+  138  stop-all.sh
+  139  history
+  140  fs -ls/
+  141  stop -all.sh
+  142  stop-all.sh
+  143  jps
+  144  exit
+  145  clear
+  146  whoami
+  147  sudo nano /etc/hosts
+  148  nano hadoop-env.sh
+  149  cd /usr/local/hadoop
+  150  ls
+  151  cd etc
+  152  ls
+  153  cd hadoop
+  154  ls
+  155  nano hadoop-env.sh
+  156  nano hdfs-site.xml
+  157  nano core-site.xml
+  158  nano yarn-site.xml
+  159  nano worker
+  160  nano workers
+  161  cd
+  162  rm -rf /user/local/hadoop
+  163  sudo cp /home/osboxes/hadoopturgz
+  164  cd home
+  165  ls
+  166  rm hadoop-3.2.4/
+  167  sudo rm hadoop-3.2.4/
+  168  sudo rm -r hadoop-3.2.4/
+  169  ls
+  170  stop-all.sh
+  171  exit
+  172  ls
+  173  ip a
+  174  jps
+  175  clear
+  176  cd usr
+  177  clear
+  178  ls
+  179  ifconfig
+  180  sudo apt install net-tools
+  181  ifconfig
+  182  ssh 192.168.56.104
+  183  exit
+  184  start-all.sh
+  185  ssh node1
+  186  ssh node2
+  187  jps
+  188  hdfs dfs -ls /
+  189  hdfs dfs -mkdir /
+  190  hdfs dfs -ls /
+  191  hdfs dfs -ls /nano hdfs-demo.sh
+  192  hdfs dfs -ls /nano hdfs-demo.txt
+  193  hdfs dfs -ls /nano hdfs-hpcsa.txt
+  194  hdfs dfs -ls / nano hdfs-demo.txt
+  195  nano hdfs-demo.txt
+  196  ls
+  197  hdfs dfs -copyFromLocal hdfs-demo.txt /acts/
+  198  mkdir test
+  199  cd test
+  200  hdfs dfs -copyToLocal /acts/hdfs-demo.txt .
+  201  ls
+  202  rm -rf hdfs-demo.txt
+  203  ls
+  204  hdfs dfs -get /acts/hdfs-demo.txt .
+  205  ls
+  206  hdfs dfs -ls /
+  207  hdfs dfs -rm /hpcsa/multi-node.txt
+  208  hdfs dfs -rm /hpcsa/demo.txt
+  209  hdfs dfs -ls /hpcsa
+  210  hdfs dfs -ls /acts
+  211  hdfs dfs -ls /hpcsa
+  212  hdfs dfs -cp /acts/hdfs-demo.txt /hpcsa/
+  213  hdfs dfs -ls /hpcsa
+  214  hdfs dfs -rm /hpcsa
+  215  hdfs dfs -rm -r -f /hpcsa
+  216  sudo adduser user2
+  217  su - user2
+  218  hdfs dfs -mkdir /user2-data
+  219  hdfs dfs -ls
+  220  hdfs dfs -ls /
+  221  hdfs dfs -chown user2 /user2-data'
+  222  hdfs dfs -chown user2 /user2-data
+  223  hdfs dfs -ls /
+  224  su -user2
+  225  user2
+  226  su - user2
+  227  sudo groupadd hpcsa
+  228  sudo adduser hpc1
+  229  man adduser
+  230  sudo adduser --ingroup hpcsa hpc2
+  231  sudo usermod -G hpcsa hpc1
+  232  hdfs dfs -mkdir /hpc-project
+  233  hdfs dfs -ls /
+  234  hdfs dfs -chgrp hpcsa /hpc-project
+  235  hdfs dfs -ls /
+  236  hdfs dfs -chmod 775 /hpc-project
+  237  hdfs dfs -ls /
+  238  su - hpc1
+  239  su - hpc2
+  240  su -hpc1
+  241  su - hpc1
+  242  hdfs dfs -h
+  243  hdfs dfs -ls /
+  244  hdfs dfs -ls /hpc-project
+  245  su - hpc1
+  246  sudo nano /etc/bashrc *
+  247  sudo nano /etc/bashrc
+  248  su - hpc1
+  249  sudo nano /etc/bash.bashrc
+  250  su - hpc1
+  251  su - hpc2
+  252  history
+  253  clear
+  254  sudo adduser ds1
+  255  su - ds1
+  256  hdfs dfs -mkdir /ds1-data
+  257  hdfs dfs -ls /
+  258  hdfs dfs -chown ds1 /ds1-data
+  259  hdfs dfs -ls /
+  260  su - ds1
+  261  hdfs dfs -chmod 775 ds1 /ds1-data
+  262  ls
+  263  su - ds1
+  264  sudo groupadd client
+  265  sudo adduser Tom
+  266  sudo adduser --ingroup hpcsa jerry
+  267  sudo usermod -G hpcsa tom
+  268  hdfs dfs -mkdir /ds1-data
+  269  hdfs dfs -mkdir /hpc-data
+  270  hdfs dfs -ls /
+  271  hdfs dfs -chmod 775 /hpc-project
+  272  hdfs dfs -ls /
+  273  su - tom
+  274  su - jerry
+  275  hdfs dfs -ls /hpc-project
+  276  su tom
+  277  hdfs dfs -ls /hpc-project
+  278  su tom
+  279  hdfs dfs -chmod +t /hpc-project
+  280  su jerry
+  281  hdfs dfs -ls /hpc-project
+  282  su - jerry.txt
+  283  su - jerry
+  284  ls -all
+  285  su - tom
+  286  cd test
+  287  nano block.txt
+  288  hdfs dfs -mkdir /blocks
+  289  hdfs dfs -put block.txt /blokes
+  290  hdfs dfs -stat %o /blockes/blok.txt
+  291  hdfs dfs -put block.txt /blocks
+  292  hdfs dfs -stat %o /blockes/block.txt
+  293  hdfs dfs -stat %o /blocks/block.txt
+  294  nano block2.txt
+  295  hdfs dfs -D dfs.block.size=6400000 -put block2.txt /blocks
+  296  hdfs dfs -start %o /blocks/block2.txt
+  297  hdfs dfs -D dfs.block.size=6400000 -put block2.txt /blocks/
+  298  hdfs dfs -start %o /blocks/block2.txt
+  299  hdfs dfs -stat %o /blocks/block2.txt
+  300  hdfs fsck / -files -blocks
+  301  ssh node1
+  302  ssh node 2
+  303  ssh node2
+  304  nano /etc/hosts
+  305  cd test
+  306  nano /etc/hosts
+  307  sudo nano /etc/hosts
+  308  cd
+  309  ssh-copy-id -i ~/.ssh/id_rsa.pub hduser@node3
+  310  exit
+  311  clear
+  312  hdfs dfs -mkdir /acl-demo
+  313  sudo nanao acl.txt
+  314  sudo nano acl.txt
+  315  hdfs dfs -put acl.txt /acl-demo/
+  316  hdfs dfs -getfacl /acl-demo/acl.txt
+  317  hdfs dfs -setfacl -m user:s1:rwx /acl-demo/acl.txt
+  318  cd /usr/local/hadoop/etc/hadoop/
+  319  ls
+  320  nano hdfs-site.xml
+  321  hdfs dfs -setfacl -m user:s1:rwx /acl-demo/acl.txt
+  322  hdfs dfsadmin -refreshNodes
+  323  hdfs dfs -setfacl -m user:s1:rwx /acl-demo/acl.txt
+  324  jps
+  325  hadoop-daemon.sh
+  326*
+  327  hadoop-daemon.sh start namenode
+  328  jps
+  329  hdfs dfs -setfacl -m user:s1:rwx /acl-demo/acl.txt
+  330  hdfs dfs -getfacl /acl-demo/acl.txt
+  331  hdfs dfs -setfacl -m user:tom:rwx /acl-demo/acl.txt
+  332  hdfs dfs -setfacl -m user:s2:rwx /acl-demo/acl.txt
+  333  jps
+  334  hdfs dfs -getfacl /acl-demo/acl.txt
+  335  nano hdfs-site.xml
+  336  cd
+  337  hdfs dfsadmin -report
+  338  cat /etc/hostos
+  339  cat /etc/hosts
+  340  ssh node1
+  341  ssh node2
+  342  ssh node1
+  343  ssh node3
+  344  ssh datanode3
+  345  ssh node3
+  346  cat /etc/hosts
+  347  ssh node2
+  348  ssh node3
+  349  ssh hduser@node3
+  350  ssh node2
+  351  history
+-----------------------------------------------------------------------node3 cahnages-----------------------------------------------------------------
+login as: hhduser
+hhduser@192.168.56.104's password:
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+250 updates can be applied immediately.
+1 of these updates is a standard security update.
+To see these additional updates run: apt list --upgradable
+
+New release '24.04.1 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+*** System restart required ***
+Last login: Tue Oct 22 04:26:56 2024 from 192.168.56.1
+hhduser@manager:~$ ssh node3
+hhduser@node3's password:
+Permission denied, please try again.
+hhduser@node3's password:
+Permission denied, please try again.
+hhduser@node3's password:
+
+hhduser@manager:~$ ssh hduser@node3
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+611 updates can be applied immediately.
+411 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+New release '24.04.1 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Tue Oct 22 05:57:53 2024 from 192.168.56.106
+hduser@node3:~$ sudo cp hosts /etc/hosts
+cp: cannot stat 'hosts': No such file or directory
+hduser@node3:~$ cd /usr/local/hadoop/
+hduser@node3:/usr/local/hadoop$ sudo cp hosts /etc/hosts
+cp: cannot stat 'hosts': No such file or directory
+hduser@node3:/usr/local/hadoop$ cd
+hduser@node3:~$ ping manager
+ping: manager: Temporary failure in name resolution
+hduser@node3:~$ sudo cp hosts/etc/hosts
+cp: missing destination file operand after 'hosts/etc/hosts'
+Try 'cp --help' for more information.
+hduser@node3:~$ sudo cp hosts /etc/hosts
+cp: cannot stat 'hosts': No such file or directory
+hduser@node3:~$ cat hosts
+cat: hosts: No such file or directory
+hduser@node3:~$ cat /etc/hosts
+127.0.0.1       localhost
+127.0.1.1       osboxes
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+hduser@node3:~$ sudo nano /etc/hosts
+hduser@node3:~$ sudo cp hosts /etc/hosts
+cp: cannot stat 'hosts': No such file or directory
+hduser@node3:~$ ping manager
+PING manager (192.168.56.104) 56(84) bytes of data.
+64 bytes from manager (192.168.56.104): icmp_seq=1 ttl=64 time=0.718 ms
+64 bytes from manager (192.168.56.104): icmp_seq=2 ttl=64 time=0.496 ms
+64 bytes from manager (192.168.56.104): icmp_seq=3 ttl=64 time=0.464 ms
+64 bytes from manager (192.168.56.104): icmp_seq=4 ttl=64 time=0.626 ms
+64 bytes from manager (192.168.56.104): icmp_seq=5 ttl=64 time=0.522 ms
+64 bytes from manager (192.168.56.104): icmp_seq=6 ttl=64 time=0.569 ms
+64 bytes from manager (192.168.56.104): icmp_seq=7 ttl=64 time=0.501 ms
+64 bytes from manager (192.168.56.104): icmp_seq=8 ttl=64 time=0.478 ms
+64 bytes from manager (192.168.56.104): icmp_seq=9 ttl=64 time=0.561 ms
+64 bytes from manager (192.168.56.104): icmp_seq=10 ttl=64 time=0.458 ms
+64 bytes from manager (192.168.56.104): icmp_seq=11 ttl=64 time=0.515 ms
+64 bytes from manager (192.168.56.104): icmp_seq=12 ttl=64 time=0.518 ms
+^C
+--- manager ping statistics ---
+12 packets transmitted, 12 received, 0% packet loss, time 11267ms
+rtt min/avg/max/mdev = 0.458/0.535/0.718/0.071 ms
+hduser@node3:~$ echo $HADOOP_HOME
+/usr/local/hadoop
+hduser@node3:~$ echo $JAVA_HOME
+/usr/lib/jvm/java-8-openjdk-amd64/
+hduser@node3:~$ jps
+9151 Jps
+hduser@node3:~$ hadoop -daemon.sh start datanode
+/usr/local/hadoop/libexec/hadoop-functions.sh: line 2366: HADOOP_-DAEMON.SH_USER: invalid variable name
+/usr/local/hadoop/libexec/hadoop-functions.sh: line 2461: HADOOP_-DAEMON.SH_OPTS: invalid variable name
+Unrecognized option: -daemon.sh
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+hduser@node3:~$ hadoop-daemon.sh start datanode
+WARNING: Use of this script to start HDFS daemons is deprecated.
+WARNING: Attempting to execute replacement "hdfs --daemon start" instead.
+ERROR: datanode can only be executed by hhduser.
+hduser@node3:~$ yarn-daemon.sh start nodemanager
+WARNING: Use of this script to start YARN daemons is deprecated.
+WARNING: Attempting to execute replacement "yarn --daemon start" instead.
+ERROR: nodemanager can only be executed by hhduser.
+hduser@node3:~$ jps
+9247 Jps
+hduser@node3:~$ hadoop namenode -format
+WARNING: Use of this script to execute namenode is deprecated.
+WARNING: Attempting to execute replacement "hdfs namenode" instead.
+
+ERROR: namenode can only be executed by hhduser.
+hduser@node3:~$ start-dfs.sh
+Starting namenodes on [master]
+ERROR: namenode can only be executed by hhduser.
+Starting datanodes
+ERROR: datanode can only be executed by hhduser.
+Starting secondary namenodes [node3]
+ERROR: secondarynamenode can only be executed by hhduser.
+hduser@node3:~$ stop-all.sh
+WARNING: Stopping all Apache Hadoop daemons as hduser in 10 seconds.
+WARNING: Use CTRL-C to abort.
+Stopping namenodes on [master]
+ERROR: namenode can only be executed by hhduser.
+Stopping datanodes
+ERROR: datanode can only be executed by hhduser.
+Stopping secondary namenodes [node3]
+ERROR: secondarynamenode can only be executed by hhduser.
+Stopping nodemanagers
+ERROR: nodemanager can only be executed by hhduser.
+Stopping resourcemanager
+ERROR: resourcemanager can only be executed by hhduser.
+hduser@node3:~$ start-all.sh
+WARNING: Attempting to start all Apache Hadoop daemons as hduser in 10 seconds.
+WARNING: This is not a recommended production deployment configuration.
+WARNING: Use CTRL-C to abort.
+Starting namenodes on [master]
+ERROR: namenode can only be executed by hhduser.
+Starting datanodes
+ERROR: datanode can only be executed by hhduser.
+Starting secondary namenodes [node3]
+ERROR: secondarynamenode can only be executed by hhduser.
+Starting resourcemanager
+ERROR: resourcemanager can only be executed by hhduser.
+Starting nodemanagers
+ERROR: nodemanager can only be executed by hhduser.
+hduser@node3:~$ jps
+10151 Jps
+hduser@node3:~$ nano /usr/local/hadoop/etc/hadoop/hadoop-env.sh
+hduser@node3:~$ rm -rf /usr/local/hadoop/hd-data/dn
+hduser@node3:~$ mkdir /usr/local/hadoop/hd-data/dn
+hduser@node3:~$ hadoop-daemon.sh start datanode
+WARNING: Use of this script to start HDFS daemons is deprecated.
+WARNING: Attempting to execute replacement "hdfs --daemon start" instead.
+hduser@node3:~$ jps
+10228 DataNode
+10278 Jps
+hduser@node3:~$ yarn-daemon.sh start datanode
+WARNING: Use of this script to start YARN daemons is deprecated.
+WARNING: Attempting to execute replacement "yarn --daemon start" instead.
+ERROR: datanode is not COMMAND nor fully qualified CLASSNAME.
+Usage: yarn [OPTIONS] SUBCOMMAND [SUBCOMMAND OPTIONS]
+ or    yarn [OPTIONS] CLASSNAME [CLASSNAME OPTIONS]
+  where CLASSNAME is a user-provided Java class
+
+  OPTIONS is none or any of:
+
+--buildpaths                       attempt to add class files from build tree
+--config dir                       Hadoop config directory
+--daemon (start|status|stop)       operate on a daemon
+--debug                            turn on shell script debug mode
+--help                             usage information
+--hostnames list[,of,host,names]   hosts to use in worker mode
+--hosts filename                   list of hosts to use in worker mode
+--loglevel level                   set the log4j level for this command
+--workers                          turn on worker mode
+
+  SUBCOMMAND is one of:
+
+
+    Admin Commands:
+
+daemonlog            get/set the log level for each daemon
+node                 prints node report(s)
+rmadmin              admin tools
+scmadmin             SharedCacheManager admin tools
+
+    Client Commands:
+
+app|application      prints application(s) report/kill application/manage long running application
+applicationattempt   prints applicationattempt(s) report
+classpath            prints the class path needed to get the hadoop jar and the required libraries
+cluster              prints cluster information
+container            prints container(s) report
+envvars              display computed Hadoop environment variables
+jar <jar>            run a jar file
+logs                 dump container logs
+nodeattributes       node attributes cli client
+queue                prints queue information
+schedulerconf        Updates scheduler configuration
+timelinereader       run the timeline reader server
+top                  view cluster information
+version              print the version
+
+    Daemon Commands:
+
+nodemanager          run a nodemanager on each worker
+proxyserver          run the web app proxy server
+registrydns          run the registry DNS server
+resourcemanager      run the ResourceManager
+router               run the Router daemon
+sharedcachemanager   run the SharedCacheManager daemon
+timelineserver       run the timeline server
+
+SUBCOMMAND may print help when invoked w/o parameters or with -h.
+hduser@node3:~$ yarn-daemon.sh start nodemanager
+WARNING: Use of this script to start YARN daemons is deprecated.
+WARNING: Attempting to execute replacement "yarn --daemon start" instead.
+hduser@node3:~$ jps
+10594 Jps
+10482 NodeManager
+10228 DataNode
+hduser@node3:~$ exit
+logout
+Connection to node3 closed.
+hhduser@manager:~$ hdfs dfsadmin -report
+Configured Capacity: 232015802368 (216.08 GB)
+Present Capacity: 208871469056 (194.53 GB)
+DFS Remaining: 208871350272 (194.53 GB)
+DFS Used: 118784 (116 KB)
+DFS Used%: 0.00%
+Replicated Blocks:
+        Under replicated blocks: 10
+        Blocks with corrupt replicas: 0
+        Missing blocks: 0
+        Missing blocks (with replication factor 1): 0
+        Low redundancy blocks with highest priority to recover: 10
+        Pending deletion blocks: 0
+Erasure Coded Block Groups:
+        Low redundancy block groups: 0
+        Block groups with corrupt internal blocks: 0
+        Missing block groups: 0
+        Low redundancy blocks with highest priority to recover: 0
+        Pending deletion blocks: 0
+
+-------------------------------------------------
+Live datanodes (1):
+
+Name: 192.168.56.105:9866 (node1)
+Hostname: node1
+Decommission Status : Normal
+Configured Capacity: 232015802368 (216.08 GB)
+DFS Used: 118784 (116 KB)
+Non DFS Used: 11284049920 (10.51 GB)
+DFS Remaining: 208871350272 (194.53 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 90.02%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Tue Oct 22 06:02:46 EDT 2024
+Last Block Report: Tue Oct 22 04:42:01 EDT 2024
+Num of Blocks: 10
+
+
+hhduser@manager:~$ cat /usr/local/hadoop/etc/hosts
+cat: /usr/local/hadoop/etc/hosts: No such file or directory
+hhduser@manager:~$ cat /etc/hosts
+127.0.0.1       localhost
+127.0.1.1       osboxes
+192.168.56.104  manager
+192.168.56.105  node1
+192.168.56.106  node2
+192.168.56.110  node3
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+hhduser@manager:~$ ssh hduser@node3
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+611 updates can be applied immediately.
+411 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+New release '24.04.1 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Tue Oct 22 06:10:54 2024 from 192.168.56.104
+hduser@node3:~$ cat /etc/hosts
+127.0.0.1       localhost
+127.0.1.1       osboxes
+192.168.56.104 manager
+192.168.56.105 node1
+192.168.56.106 node2
+192.168.56.110 node3
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+hduser@node3:~$ exit
+logout
+Connection to node3 closed.
+hhduser@manager:~$ ssh node2
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 6.8.0-47-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+250 updates can be applied immediately.
+1 of these updates is a standard security update.
+To see these additional updates run: apt list --upgradable
+
+New release '24.04.1 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Tue Oct 22 21:40:03 2024 from 192.168.56.104
+hhduser@node2:~$ cat /etc/hosts
+127.0.0.1       localhost
+127.0.1.1       osboxes
+192.168.56.104  master
+192.168.56.105  dn1
+192.168.56.106  dn2
+192.168.56.110 node3
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+hhduser@node2:~$ sudo nano /etc/hosts
+hhduser@node2:~$ exit
+logout
+Connection to node2 closed.
+hhduser@manager:~$ hdfs dfsadmin -report
+Configured Capacity: 232015802368 (216.08 GB)
+Present Capacity: 208871469056 (194.53 GB)
+DFS Remaining: 208871350272 (194.53 GB)
+DFS Used: 118784 (116 KB)
+DFS Used%: 0.00%
+Replicated Blocks:
+        Under replicated blocks: 10
+        Blocks with corrupt replicas: 0
+        Missing blocks: 0
+        Missing blocks (with replication factor 1): 0
+        Low redundancy blocks with highest priority to recover: 10
+        Pending deletion blocks: 0
+Erasure Coded Block Groups:
+        Low redundancy block groups: 0
+        Block groups with corrupt internal blocks: 0
+        Missing block groups: 0
+        Low redundancy blocks with highest priority to recover: 0
+        Pending deletion blocks: 0
+
+-------------------------------------------------
+Live datanodes (1):
+
+Name: 192.168.56.105:9866 (node1)
+Hostname: node1
+Decommission Status : Normal
+Configured Capacity: 232015802368 (216.08 GB)
+DFS Used: 118784 (116 KB)
+Non DFS Used: 11284049920 (10.51 GB)
+DFS Remaining: 208871350272 (194.53 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 90.02%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Tue Oct 22 06:05:41 EDT 2024
+Last Block Report: Tue Oct 22 04:42:01 EDT 2024
+Num of Blocks: 10
+
+
+hhduser@manager:~$ ssh hduser@node3
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+611 updates can be applied immediately.
+411 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+New release '24.04.1 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Tue Oct 22 06:27:52 2024 from 192.168.56.104
+hduser@node3:~$ ping manager
+PING manager (192.168.56.104) 56(84) bytes of data.
+64 bytes from manager (192.168.56.104): icmp_seq=1 ttl=64 time=0.395 ms
+64 bytes from manager (192.168.56.104): icmp_seq=2 ttl=64 time=0.510 ms
+64 bytes from manager (192.168.56.104): icmp_seq=3 ttl=64 time=2.76 ms
+^C
+--- manager ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2030ms
+rtt min/avg/max/mdev = 0.395/1.222/2.762/1.089 ms
+hduser@node3:~$ echo $HADOOP_HOME
+/usr/local/hadoop
+hduser@node3:~$ echo $JAVA_HOME
+/usr/lib/jvm/java-8-openjdk-amd64/
+hduser@node3:~$ jps
+10482 NodeManager
+10707 Jps
+10228 DataNode
+hduser@node3:~$ hadoop-daemon.sh start datanode
+WARNING: Use of this script to start HDFS daemons is deprecated.
+WARNING: Attempting to execute replacement "hdfs --daemon start" instead.
+datanode is running as process 10228.  Stop it first and ensure /tmp/hadoop-hduser-datanode.pid file is empty before retry.
+hduser@node3:~$ yarn-daemon.sh start nodemanager
+WARNING: Use of this script to start YARN daemons is deprecated.
+WARNING: Attempting to execute replacement "yarn --daemon start" instead.
+nodemanager is running as process 10482.  Stop it first and ensure /tmp/hadoop-hduser-nodemanager.pid file is empty before retry.
+hduser@node3:~$ hdfs dfsadmin -report
+report: java.net.UnknownHostException: master
+Usage: hdfs dfsadmin [-report] [-live] [-dead] [-decommissioning] [-enteringmaintenance] [-inmaintenance]
+hduser@node3:~$
+-----------HISTORY---------
+1  sudo apt install openjdk-8-jdk
+    2  java -version
+    3  ~/.bashrc file
+    4  ~/.bashrc
+    5  nano .bashrc
+    6  source ~/.bashrc
+    7  sudo apt install pdsh -y
+    8  ssh-keygen -t rsa
+    9  sudo hostnamectl set-hostname node3
+   10  sudo hostname node3
+   11  exit
+   12  ssh-copy-id -i ~/.ssh/id_rsa.pub hduser@node3
+   13  sudo systemctl start ssh
+   14  sudo systemctl enable ssh
+   15  ssh-keygen -t rsa
+   16  ssh-copy-id -i ~/.ssh/id_rsa.pub hduser@node
+   17  su manager
+   18  exit
+   19  init 0
+   20  exit
+   21  jps
+   22  cd
+   23  jps
+   24  ls
+   25  exit
+   26  sudo cp hosts /etc/hosts
+   27  cd /usr/local/hadoop/
+   28  sudo cp hosts /etc/hosts
+   29  cd
+   30  ping manager
+   31  sudo cp hosts/etc/hosts
+   32  sudo cp hosts /etc/hosts
+   33  cat hosts
+   34  cat /etc/hosts
+   35  sudo nano /etc/hosts
+   36  sudo cp hosts /etc/hosts
+   37  ping manager
+   38  echo $HADOOP_HOME
+   39  echo $JAVA_HOME
+   40  jps
+   41  hadoop -daemon.sh start datanode
+   42  hadoop-daemon.sh start datanode
+   43  yarn-daemon.sh start nodemanager
+   44  hadoop namenode -format
+   45  start-dfs.sh
+   46  stop-all.sh
+   47  start-all.sh
+   48  jps
+   49  nano /usr/local/hadoop/etc/hadoop/hadoop-env.sh
+   50  rm -rf /usr/local/hadoop/hd-data/dn
+   51  mkdir /usr/local/hadoop/hd-data/dn
+   52  hadoop-daemon.sh start datanode
+   53  jps
+   54  yarn-daemon.sh start datanode
+   55  yarn-daemon.sh start nodemanager
+   56  jps
+   57  exit
+   58  cat /etc/hosts
+   59  exit
+   60  ping manager
+   61  echo $HADOOP_HOME
+   62  echo $JAVA_HOME
+   63  jps
+   64  hadoop-daemon.sh start datanode
+   65  yarn-daemon.sh start nodemanager
+   66  hdfs dfsadmin -report
+   67  history
+

@@ -1,0 +1,1085 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 login as: hduser\par
+hduser@192.168.56.115's password:\par
+Last login: Wed Oct 23 22:25:55 2024 from 192.168.56.1\par
+[hduser@manager ~]$ sudo nano .bashrc\par
+[hduser@manager ~]$ hdfs dfs namenode -format\par
+ERROR: JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/ does not exist.\par
+[hduser@manager ~]$ cd usr\par
+-bash: cd: usr: No such file or directory\par
+[hduser@manager ~]$ cd /usr\par
+[hduser@manager usr]$ cd /lib/jvm\par
+[hduser@manager jvm]$ ls\par
+java\par
+java-1.8.0\par
+java-1.8.0-openjdk\par
+java-1.8.0-openjdk-1.8.0.362.b09-4.el9.x86_64\par
+java-openjdk\par
+jre\par
+jre-1.8.0\par
+jre-1.8.0-openjdk\par
+jre-1.8.0-openjdk-1.8.0.362.b09-4.el9.x86_64\par
+jre-openjdk\par
+[hduser@manager jvm]$ pwd\par
+/lib/jvm\par
+[hduser@manager jvm]$ cd\par
+[hduser@manager ~]$ sudo find / -name java\par
+find: \lquote /run/user/1001/doc\rquote : Permission denied\par
+find: \lquote /run/user/1001/gvfs\rquote : Permission denied\par
+/etc/pki/ca-trust/extracted/java\par
+/etc/pki/java\par
+/etc/alternatives/java\par
+/etc/java\par
+/var/lib/alternatives/java\par
+/usr/bin/java\par
+/usr/lib/java\par
+/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.362.b09-4.el9.x86_64/jre/bin/java\par
+/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.362.b09-4.el9.x86_64/bin/java\par
+/usr/lib/jvm/java\par
+/usr/share/bash-completion/completions/java\par
+/usr/share/java\par
+[hduser@manager ~]$\par
+[hduser@manager ~]$ sudo nano .bashrc\par
+[hduser@manager ~]$ hdfs dfs namenode -format\par
+ERROR: JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/ does not exist.\par
+[hduser@manager ~]$ sudo nano .bashrc\par
+[hduser@manager ~]$ source .bashrc\par
+[hduser@manager ~]$ hdfs dfs namenode -format\par
+namenode: Unknown command\par
+Usage: hadoop fs [generic options]\par
+        [-appendToFile <localsrc> ... <dst>]\par
+        [-cat [-ignoreCrc] <src> ...]\par
+        [-checksum <src> ...]\par
+        [-chgrp [-R] GROUP PATH...]\par
+        [-chmod [-R] <MODE[,MODE]... | OCTALMODE> PATH...]\par
+        [-chown [-R] [OWNER][:[GROUP]] PATH...]\par
+        [-copyFromLocal [-f] [-p] [-l] [-d] [-t <thread count>] [-q <thread pool queue size>] <localsrc> ... <dst>]\par
+        [-copyToLocal [-f] [-p] [-crc] [-ignoreCrc] [-t <thread count>] [-q <thread pool queue size>] <src> ... <localdst>]\par
+        [-count [-q] [-h] [-v] [-t [<storage type>]] [-u] [-x] [-e] <path> ...]\par
+        [-cp [-f] [-p | -p[topax]] [-d] [-t <thread count>] [-q <thread pool queue size>] <src> ... <dst>]\par
+        [-createSnapshot <snapshotDir> [<snapshotName>]]\par
+        [-deleteSnapshot <snapshotDir> <snapshotName>]\par
+        [-df [-h] [<path> ...]]\par
+        [-du [-s] [-h] [-v] [-x] <path> ...]\par
+        [-expunge [-immediate]]\par
+        [-find <path> ... <expression> ...]\par
+        [-get [-f] [-p] [-crc] [-ignoreCrc] [-t <thread count>] [-q <thread pool queue size>] <src> ... <localdst>]\par
+        [-getfacl [-R] <path>]\par
+        [-getfattr [-R] \{-n name | -d\} [-e en] <path>]\par
+        [-getmerge [-nl] [-skip-empty-file] <src> <localdst>]\par
+        [-head <file>]\par
+        [-help [cmd ...]]\par
+        [-ls [-C] [-d] [-h] [-q] [-R] [-t] [-S] [-r] [-u] [-e] [<path> ...]]\par
+        [-mkdir [-p] <path> ...]\par
+        [-moveFromLocal [-f] [-p] [-l] [-d] <localsrc> ... <dst>]\par
+        [-moveToLocal <src> <localdst>]\par
+        [-mv <src> ... <dst>]\par
+        [-put [-f] [-p] [-l] [-d] [-t <thread count>] [-q <thread pool queue size>] <localsrc> ... <dst>]\par
+        [-renameSnapshot <snapshotDir> <oldName> <newName>]\par
+        [-rm [-f] [-r|-R] [-skipTrash] [-safely] <src> ...]\par
+        [-rmdir [--ignore-fail-on-non-empty] <dir> ...]\par
+        [-setfacl [-R] [\{-b|-k\} \{-m|-x <acl_spec>\} <path>]|[--set <acl_spec> <path>]]\par
+        [-setfattr \{-n name [-v value] | -x name\} <path>]\par
+        [-setrep [-R] [-w] <rep> <path> ...]\par
+        [-stat [format] <path> ...]\par
+        [-tail [-f] [-s <sleep interval>] <file>]\par
+        [-test -[defswrz] <path>]\par
+        [-text [-ignoreCrc] <src> ...]\par
+        [-touch [-a] [-m] [-t TIMESTAMP (yyyyMMdd:HHmmss) ] [-c] <path> ...]\par
+        [-touchz <path> ...]\par
+        [-truncate [-w] <length> <path> ...]\par
+        [-usage [cmd ...]]\par
+\par
+Generic options supported are:\par
+-conf <configuration file>        specify an application configuration file\par
+-D <property=value>               define a value for a given property\par
+-fs <{{\field{\*\fldinst{HYPERLINK "file:///|hdfs://namenode:port"}}{\fldrslt{file:///|hdfs://namenode:port\ul0\cf0}}}}\f0\fs22 > specify default filesystem URL to use, overrides 'fs.defaultFS' property from configurations.\par
+-jt <local|resourcemanager:port>  specify a ResourceManager\par
+-files <file1,...>                specify a comma-separated list of files to be copied to the map reduce cluster\par
+-libjars <jar1,...>               specify a comma-separated list of jar files to be included in the classpath\par
+-archives <archive1,...>          specify a comma-separated list of archives to be unarchived on the compute machines\par
+\par
+The general command line syntax is:\par
+command [genericOptions] [commandOptions]\par
+\par
+[hduser@manager ~]$ hdfs namenode -format\par
+WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+2024-10-24 00:24:05,040 INFO namenode.NameNode: STARTUP_MSG:\par
+/************************************************************\par
+STARTUP_MSG: Starting NameNode\par
+STARTUP_MSG:   host = manager/192.168.56.115\par
+STARTUP_MSG:   args = [-format]\par
+STARTUP_MSG:   version = 3.2.4\par
+STARTUP_MSG:   classpath = /usr/local/hadoop/etc/hadoop:/usr/local/hadoop/share/hadoop/common/lib/kerb-client-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/hadoop-annotations-3.2.4.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-configuration2-2.1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-common-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-crypto-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-3.2.4.jar:/usr/local/hadoop/share/hadoop/common/lib/jersey-core-1.19.jar:/usr/local/hadoop/share/hadoop/common/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-xml-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/jcip-annotations-1.0-1.jar:/usr/local/hadoop/share/hadoop/common/lib/woodstox-core-5.3.0.jar:/usr/local/hadoop/share/hadoop/common/lib/gson-2.9.0.jar:/usr/local/hadoop/share/hadoop/common/lib/htrace-core4-4.1.0-incubating.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-collections-3.2.2.jar:/usr/local/hadoop/share/hadoop/common/lib/netty-3.10.6.Final.jar:/usr/local/hadoop/share/hadoop/common/lib/zookeeper-3.4.14.jar:/usr/local/hadoop/share/hadoop/common/lib/jersey-server-1.19.jar:/usr/local/hadoop/share/hadoop/common/lib/slf4j-reload4j-1.7.35.jar:/usr/local/hadoop/share/hadoop/common/lib/paranamer-2.3.jar:/usr/local/hadoop/share/hadoop/common/lib/javax.servlet-api-3.1.0.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-core-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/common/lib/javax.activation-api-1.2.0.jar:/usr/local/hadoop/share/hadoop/common/lib/guava-27.0-jre.jar:/usr/local/hadoop/share/hadoop/common/lib/asm-5.0.4.jar:/usr/local/hadoop/share/hadoop/common/lib/j2objc-annotations-1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/curator-framework-2.13.0.jar:/usr/local/hadoop/share/hadoop/common/lib/accessors-smart-2.4.7.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-server-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/re2j-1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/kerby-config-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-servlet-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-databind-2.10.5.1.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-beanutils-1.9.4.jar:/usr/local/hadoop/share/hadoop/common/lib/failureaccess-1.0.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-cli-1.2.jar:/usr/local/hadoop/share/hadoop/common/lib/jersey-json-1.19.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-mapper-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/common/lib/dnsjava-2.1.7.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-xc-1.9.13.jar:/usr/local/hadoop/share/hadoop/common/lib/jsp-api-2.1.jar:/usr/local/hadoop/share/hadoop/common/lib/jaxb-api-2.2.11.jar:/usr/local/hadoop/share/hadoop/common/lib/reload4j-1.2.18.3.jar:/usr/local/hadoop/share/hadoop/common/lib/kerby-util-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-core-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/httpclient-4.5.13.jar:/usr/local/hadoop/share/hadoop/common/lib/nimbus-jose-jwt-9.8.1.jar:/usr/local/hadoop/share/hadoop/common/lib/curator-client-2.13.0.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-text-1.4.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-annotations-2.10.5.jar:/usr/local/hadoop/share/hadoop/common/lib/jaxb-impl-2.2.3-1.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-util-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/jersey-servlet-1.19.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-http-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-identity-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/spotbugs-annotations-3.1.9.jar:/usr/local/hadoop/share/hadoop/common/lib/checker-qual-2.5.2.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-webapp-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/metrics-core-3.2.4.jar:/usr/local/hadoop/share/hadoop/common/lib/token-provider-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/snappy-java-1.0.5.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-net-3.6.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-server-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/kerby-pkix-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-compress-1.21.jar:/usr/local/hadoop/share/hadoop/common/lib/httpcore-4.4.13.jar:/usr/local/hadoop/share/hadoop/common/lib/jul-to-slf4j-1.7.35.jar:/usr/local/hadoop/share/hadoop/common/lib/jsr305-3.0.2.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-math3-3.1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-admin-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/curator-recipes-2.13.0.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-util-ajax-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-codec-1.11.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-io-2.8.0.jar:/usr/local/hadoop/share/hadoop/common/lib/avro-1.7.7.jar:/usr/local/hadoop/share/hadoop/common/lib/kerby-asn1-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-lang3-3.7.jar:/usr/local/hadoop/share/hadoop/common/lib/json-smart-2.4.7.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-util-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/jsr311-api-1.1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-simplekdc-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-jaxrs-1.9.13.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-core-2.10.5.jar:/usr/local/hadoop/share/hadoop/common/lib/kerby-xdr-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/jsch-0.1.55.jar:/usr/local/hadoop/share/hadoop/common/lib/jettison-1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/protobuf-java-2.5.0.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-logging-1.1.3.jar:/usr/local/hadoop/share/hadoop/common/lib/animal-sniffer-annotations-1.17.jar:/usr/local/hadoop/share/hadoop/common/lib/error_prone_annotations-2.2.0.jar:/usr/local/hadoop/share/hadoop/common/lib/slf4j-api-1.7.35.jar:/usr/local/hadoop/share/hadoop/common/lib/audience-annotations-0.5.0.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-security-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-io-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/stax2-api-4.2.1.jar:/usr/local/hadoop/share/hadoop/common/hadoop-common-3.2.4-tests.jar:/usr/local/hadoop/share/hadoop/common/hadoop-common-3.2.4.jar:/usr/local/hadoop/share/hadoop/common/hadoop-kms-3.2.4.jar:/usr/local/hadoop/share/hadoop/common/hadoop-nfs-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-client-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/hadoop-annotations-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-configuration2-2.1.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-common-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-crypto-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/hadoop-auth-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jersey-core-1.19.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-xml-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jcip-annotations-1.0-1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/woodstox-core-5.3.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/gson-2.9.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/htrace-core4-4.1.0-incubating.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-collections-3.2.2.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/netty-3.10.6.Final.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/zookeeper-3.4.14.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jersey-server-1.19.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/paranamer-2.3.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/leveldbjni-all-1.8.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/javax.servlet-api-3.1.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-core-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/json-simple-1.1.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/javax.activation-api-1.2.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/guava-27.0-jre.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/asm-5.0.4.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/j2objc-annotations-1.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/curator-framework-2.13.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/accessors-smart-2.4.7.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-server-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/re2j-1.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerby-config-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-servlet-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-databind-2.10.5.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-beanutils-1.9.4.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/failureaccess-1.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-cli-1.2.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jersey-json-1.19.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-mapper-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/dnsjava-2.1.7.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-xc-1.9.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jaxb-api-2.2.11.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/reload4j-1.2.18.3.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerby-util-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-core-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/httpclient-4.5.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/nimbus-jose-jwt-9.8.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/curator-client-2.13.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-text-1.4.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/netty-all-4.1.68.Final.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-annotations-2.10.5.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jaxb-impl-2.2.3-1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-util-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jersey-servlet-1.19.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-http-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-identity-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/spotbugs-annotations-3.1.9.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/checker-qual-2.5.2.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-webapp-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/token-provider-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/snappy-java-1.0.5.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-net-3.6.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-server-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerby-pkix-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-compress-1.21.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/httpcore-4.4.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jsr305-3.0.2.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-math3-3.1.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-admin-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-daemon-1.0.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/curator-recipes-2.13.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-util-ajax-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-codec-1.11.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-io-2.8.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/avro-1.7.7.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerby-asn1-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-lang3-3.7.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/json-smart-2.4.7.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-util-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jsr311-api-1.1.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-simplekdc-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-jaxrs-1.9.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/okio-1.6.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-core-2.10.5.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerby-xdr-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jsch-0.1.55.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jettison-1.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/protobuf-java-2.5.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-logging-1.1.3.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/animal-sniffer-annotations-1.17.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/error_prone_annotations-2.2.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/audience-annotations-0.5.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-security-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/okhttp-2.7.5.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-io-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/stax2-api-4.2.1.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-3.2.4-tests.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.2.4-tests.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-rbf-3.2.4-tests.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-native-client-3.2.4-tests.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-native-client-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-httpfs-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-rbf-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-nfs-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/junit-4.13.2.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/hamcrest-core-1.3.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-core-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-app-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-uploader-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-common-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-nativetask-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.2.4-tests.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn:/usr/local/hadoop/share/hadoop/yarn/lib/jersey-guice-1.19.jar:/usr/local/hadoop/share/hadoop/yarn/lib/swagger-annotations-1.5.4.jar:/usr/local/hadoop/share/hadoop/yarn/lib/json-io-2.5.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/HikariCP-java7-2.4.12.jar:/usr/local/hadoop/share/hadoop/yarn/lib/ehcache-3.3.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/bcpkix-jdk15on-1.60.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jackson-jaxrs-json-provider-2.10.5.jar:/usr/local/hadoop/share/hadoop/yarn/lib/javax.inject-1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/aopalliance-1.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jakarta.xml.bind-api-2.3.2.jar:/usr/local/hadoop/share/hadoop/yarn/lib/metrics-core-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/lib/objenesis-1.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/snakeyaml-1.26.jar:/usr/local/hadoop/share/hadoop/yarn/lib/bcprov-jdk15on-1.60.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jackson-module-jaxb-annotations-2.10.5.jar:/usr/local/hadoop/share/hadoop/yarn/lib/geronimo-jcache_1.0_spec-1.0-alpha-1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jackson-jaxrs-base-2.10.5.jar:/usr/local/hadoop/share/hadoop/yarn/lib/fst-2.50.jar:/usr/local/hadoop/share/hadoop/yarn/lib/mssql-jdbc-6.2.1.jre7.jar:/usr/local/hadoop/share/hadoop/yarn/lib/guice-4.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/java-util-1.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jersey-client-1.19.jar:/usr/local/hadoop/share/hadoop/yarn/lib/guice-servlet-4.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jakarta.activation-api-1.2.1.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-applications-unmanaged-am-launcher-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-tests-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-services-core-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-services-api-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-api-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-nodemanager-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-router-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-sharedcachemanager-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-client-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-submarine-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-timeline-pluginstorage-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-common-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-resourcemanager-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-applicationhistoryservice-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-registry-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-common-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-web-proxy-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-3.2.4.jar\par
+STARTUP_MSG:   build = Unknown -r 7e5d9983b388e372fe640f21f048f2f2ae6e9eba; compiled by 'ubuntu' on 2022-07-12T11:58Z\par
+STARTUP_MSG:   java = 1.8.0_362\par
+************************************************************/\par
+2024-10-24 00:24:05,102 INFO namenode.NameNode: registered UNIX signal handlers for [TERM, HUP, INT]\par
+2024-10-24 00:24:05,194 INFO namenode.NameNode: createNameNode [-format]\par
+2024-10-24 00:24:06,056 INFO common.Util: Assuming 'file' scheme for path /usr/local/hadoop/hd-data/nn in configuration.\par
+2024-10-24 00:24:06,058 INFO common.Util: Assuming 'file' scheme for path /usr/local/hadoop/hd-data/nn in configuration.\par
+Formatting using clusterid: CID-33b45fbb-a75e-4b98-b032-c679bc48b54b\par
+2024-10-24 00:24:06,218 INFO namenode.FSEditLog: Edit logging is async:true\par
+2024-10-24 00:24:06,310 INFO namenode.FSNamesystem: KeyProvider: null\par
+2024-10-24 00:24:06,314 INFO namenode.FSNamesystem: fsLock is fair: true\par
+2024-10-24 00:24:06,318 INFO namenode.FSNamesystem: Detailed lock hold time metrics enabled: false\par
+2024-10-24 00:24:06,373 INFO namenode.FSNamesystem: fsOwner             = hduser (auth:SIMPLE)\par
+2024-10-24 00:24:06,374 INFO namenode.FSNamesystem: supergroup          = supergroup\par
+2024-10-24 00:24:06,374 INFO namenode.FSNamesystem: isPermissionEnabled = true\par
+2024-10-24 00:24:06,374 INFO namenode.FSNamesystem: HA Enabled: false\par
+2024-10-24 00:24:06,479 INFO common.Util: dfs.datanode.fileio.profiling.sampling.percentage set to 0. Disabling file IO profiling\par
+2024-10-24 00:24:06,504 INFO blockmanagement.DatanodeManager: dfs.block.invalidate.limit: configured=1000, counted=60, effected=1000\par
+2024-10-24 00:24:06,504 INFO blockmanagement.DatanodeManager: dfs.namenode.datanode.registration.ip-hostname-check=true\par
+2024-10-24 00:24:06,509 INFO blockmanagement.BlockManager: dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000\par
+2024-10-24 00:24:06,510 INFO blockmanagement.BlockManager: The block deletion will start around 2024 Oct 24 00:24:06\par
+2024-10-24 00:24:06,513 INFO util.GSet: Computing capacity for map BlocksMap\par
+2024-10-24 00:24:06,513 INFO util.GSet: VM type       = 64-bit\par
+2024-10-24 00:24:06,519 INFO util.GSet: 2.0% max memory 814.5 MB = 16.3 MB\par
+2024-10-24 00:24:06,519 INFO util.GSet: capacity      = 2^21 = 2097152 entries\par
+2024-10-24 00:24:06,530 INFO blockmanagement.BlockManager: Storage policy satisfier is disabled\par
+2024-10-24 00:24:06,531 INFO blockmanagement.BlockManager: dfs.block.access.token.enable = false\par
+2024-10-24 00:24:06,535 INFO blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.threshold-pct = 0.9990000128746033\par
+2024-10-24 00:24:06,536 INFO blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.min.datanodes = 0\par
+2024-10-24 00:24:06,536 INFO blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.extension = 30000\par
+2024-10-24 00:24:06,537 INFO blockmanagement.BlockManager: defaultReplication         = 3\par
+2024-10-24 00:24:06,537 INFO blockmanagement.BlockManager: maxReplication             = 512\par
+2024-10-24 00:24:06,537 INFO blockmanagement.BlockManager: minReplication             = 1\par
+2024-10-24 00:24:06,538 INFO blockmanagement.BlockManager: maxReplicationStreams      = 2\par
+2024-10-24 00:24:06,538 INFO blockmanagement.BlockManager: redundancyRecheckInterval  = 3000ms\par
+2024-10-24 00:24:06,539 INFO blockmanagement.BlockManager: encryptDataTransfer        = false\par
+2024-10-24 00:24:06,539 INFO blockmanagement.BlockManager: maxNumBlocksToLog          = 1000\par
+2024-10-24 00:24:06,601 INFO namenode.FSDirectory: GLOBAL serial map: bits=29 maxEntries=536870911\par
+2024-10-24 00:24:06,601 INFO namenode.FSDirectory: USER serial map: bits=24 maxEntries=16777215\par
+2024-10-24 00:24:06,601 INFO namenode.FSDirectory: GROUP serial map: bits=24 maxEntries=16777215\par
+2024-10-24 00:24:06,601 INFO namenode.FSDirectory: XATTR serial map: bits=24 maxEntries=16777215\par
+2024-10-24 00:24:06,617 INFO util.GSet: Computing capacity for map INodeMap\par
+2024-10-24 00:24:06,617 INFO util.GSet: VM type       = 64-bit\par
+2024-10-24 00:24:06,617 INFO util.GSet: 1.0% max memory 814.5 MB = 8.1 MB\par
+2024-10-24 00:24:06,618 INFO util.GSet: capacity      = 2^20 = 1048576 entries\par
+2024-10-24 00:24:06,620 INFO namenode.FSDirectory: ACLs enabled? false\par
+2024-10-24 00:24:06,620 INFO namenode.FSDirectory: POSIX ACL inheritance enabled? true\par
+2024-10-24 00:24:06,620 INFO namenode.FSDirectory: XAttrs enabled? true\par
+2024-10-24 00:24:06,621 INFO namenode.NameNode: Caching file names occurring more than 10 times\par
+2024-10-24 00:24:06,624 INFO snapshot.SnapshotManager: Loaded config captureOpenFiles: false, skipCaptureAccessTimeOnlyChange: false, snapshotDiffAllowSnapRootDescendant: true, maxSnapshotLimit: 65536\par
+2024-10-24 00:24:06,658 INFO snapshot.SnapshotManager: SkipList is disabled\par
+2024-10-24 00:24:06,676 INFO util.GSet: Computing capacity for map cachedBlocks\par
+2024-10-24 00:24:06,677 INFO util.GSet: VM type       = 64-bit\par
+2024-10-24 00:24:06,678 INFO util.GSet: 0.25% max memory 814.5 MB = 2.0 MB\par
+2024-10-24 00:24:06,679 INFO util.GSet: capacity      = 2^18 = 262144 entries\par
+2024-10-24 00:24:06,737 INFO metrics.TopMetrics: NNTop conf: dfs.namenode.top.window.num.buckets = 10\par
+2024-10-24 00:24:06,738 INFO metrics.TopMetrics: NNTop conf: dfs.namenode.top.num.users = 10\par
+2024-10-24 00:24:06,738 INFO metrics.TopMetrics: NNTop conf: dfs.namenode.top.windows.minutes = 1,5,25\par
+2024-10-24 00:24:06,741 INFO namenode.FSNamesystem: Retry cache on namenode is enabled\par
+2024-10-24 00:24:06,741 INFO namenode.FSNamesystem: Retry cache will use 0.03 of total heap and retry cache entry expiry time is 600000 millis\par
+2024-10-24 00:24:06,747 INFO util.GSet: Computing capacity for map NameNodeRetryCache\par
+2024-10-24 00:24:06,747 INFO util.GSet: VM type       = 64-bit\par
+2024-10-24 00:24:06,748 INFO util.GSet: 0.029999999329447746% max memory 814.5 MB = 250.2 KB\par
+2024-10-24 00:24:06,748 INFO util.GSet: capacity      = 2^15 = 32768 entries\par
+2024-10-24 00:24:06,822 INFO namenode.FSImage: Allocated new BlockPoolId: BP-652153305-192.168.56.115-1729743846800\par
+2024-10-24 00:24:06,880 INFO common.Storage: Storage directory /usr/local/hadoop/hd-data/nn has been successfully formatted.\par
+2024-10-24 00:24:06,943 INFO namenode.FSImageFormatProtobuf: Saving image file /usr/local/hadoop/hd-data/nn/current/fsimage.ckpt_0000000000000000000 using no compression\par
+2024-10-24 00:24:07,076 INFO namenode.FSImageFormatProtobuf: Image file /usr/local/hadoop/hd-data/nn/current/fsimage.ckpt_0000000000000000000 of size 401 bytes saved in 0 seconds .\par
+2024-10-24 00:24:07,113 INFO namenode.NNStorageRetentionManager: Going to retain 1 images with txid >= 0\par
+2024-10-24 00:24:07,170 INFO namenode.FSNamesystem: Stopping services started for active state\par
+2024-10-24 00:24:07,171 INFO namenode.FSNamesystem: Stopping services started for standby state\par
+2024-10-24 00:24:07,177 INFO namenode.FSImage: FSImageSaver clean checkpoint: txid=0 when meet shutdown.\par
+2024-10-24 00:24:07,178 INFO namenode.NameNode: SHUTDOWN_MSG:\par
+/************************************************************\par
+SHUTDOWN_MSG: Shutting down NameNode at manager/192.168.56.115\par
+************************************************************/\par
+[hduser@manager ~]$ jps\par
+3957 Jps\par
+[hduser@manager ~]$ start-all.sh\par
+WARNING: Attempting to start all Apache Hadoop daemons as hduser in 10 seconds.\par
+WARNING: This is not a recommended production deployment configuration.\par
+WARNING: Use CTRL-C to abort.\par
+Starting namenodes on [manager]\par
+manager: Warning: Permanently added 'manager' (ED25519) to the list of known hosts.\par
+Starting datanodes\par
+node2: ERROR: JAVA_HOME is not set and could not be found.\par
+node1: ERROR: JAVA_HOME is not set and could not be found.\par
+node3: ERROR: JAVA_HOME is not set and could not be found.\par
+Starting secondary namenodes [manager]\par
+manager: ERROR: Cannot set priority of secondarynamenode process 4376\par
+Starting resourcemanager\par
+Starting nodemanagers\par
+node3: ERROR: JAVA_HOME is not set and could not be found.\par
+node2: ERROR: JAVA_HOME is not set and could not be found.\par
+node1: ERROR: JAVA_HOME is not set and could not be found.\par
+[hduser@manager ~]$ cat .bashrc\par
+# .bashrc\par
+\par
+# Source global definitions\par
+if [ -f /etc/bashrc ]; then\par
+        . /etc/bashrc\par
+fi\par
+\par
+# User specific environment\par
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]\par
+then\par
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"\par
+fi\par
+export PATH\par
+\par
+# Uncomment the following line if you don't like systemctl's auto-paging feature:\par
+# export SYSTEMD_PAGER=\par
+\par
+# User specific aliases and functions\par
+if [ -d ~/.bashrc.d ]; then\par
+        for rc in ~/.bashrc.d/*; do\par
+                if [ -f "$rc" ]; then\par
+                        . "$rc"\par
+                fi\par
+        done\par
+fi\par
+\par
+unset rc\par
+#JAVA\par
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.362.b09-4.el9.x86_64\par
+export JRE_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.362.b09-4.el9.x86_64/jre\par
+#Hadoop Environment Variables\par
+export HADOOP_HOME=/usr/local/hadoop\par
+export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop\par
+export HADOOP_LOG_DIR=$HADOOP_HOME/logs\par
+export HADOOP_MAPRED_HOME=$HADOOP_HOME\par
+# Add Hadoop bin/ directory to PATH\par
+export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin\par
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native\par
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"\par
+export PDSH_RCMD_TYPE=ssh\par
+[hduser@manager ~]$ ssh node1\par
+Last login: Thu Oct 24 00:04:29 2024 from 192.168.56.115\par
+[hduser@node1 ~]$ sudo nano .bashrc\par
+[hduser@node1 ~]$ exit\par
+logout\par
+Connection to node1 closed.\par
+[hduser@manager ~]$ ssh node2\par
+Last login: Thu Oct 24 00:05:47 2024 from 192.168.56.115\par
+[hduser@node2 ~]$ sudo nano .bashrc\par
+[hduser@node2 ~]$ exit\par
+logout\par
+Connection to node2 closed.\par
+[hduser@manager ~]$ ssh node3\par
+Last login: Thu Oct 24 00:03:16 2024 from 192.168.56.115\par
+[hduser@node3 ~]$ sudo nano .bashrc\par
+[hduser@node3 ~]$ exit\par
+logout\par
+Connection to node3 closed.\par
+[hduser@manager ~]$ stop-all.sh\par
+WARNING: Stopping all Apache Hadoop daemons as hduser in 10 seconds.\par
+WARNING: Use CTRL-C to abort.\par
+Stopping namenodes on [manager]\par
+Stopping datanodes\par
+Stopping secondary namenodes [manager]\par
+Stopping nodemanagers\par
+Stopping resourcemanager\par
+[hduser@manager ~]$ jps\par
+5599 Jps\par
+[hduser@manager ~]$ ssh node1\par
+Last login: Thu Oct 24 00:26:16 2024 from 192.168.56.115\par
+[hduser@node1 ~]$ source .bashrc\par
+[hduser@node1 ~]$ exit\par
+logout\par
+Connection to node1 closed.\par
+[hduser@manager ~]$ ssh node2\par
+Last login: Thu Oct 24 00:26:41 2024 from 192.168.56.115\par
+[hduser@node2 ~]$ source .bashrc\par
+[hduser@node2 ~]$ exit\par
+logout\par
+Connection to node2 closed.\par
+[hduser@manager ~]$ ssh node3\par
+Last login: Thu Oct 24 00:27:11 2024 from 192.168.56.115\par
+[hduser@node3 ~]$ source .bashrc\par
+[hduser@node3 ~]$ exit\par
+logout\par
+Connection to node3 closed.\par
+[hduser@manager ~]$ hdfs namenode -format\par
+2024-10-24 00:29:17,287 INFO namenode.NameNode: STARTUP_MSG:\par
+/************************************************************\par
+STARTUP_MSG: Starting NameNode\par
+STARTUP_MSG:   host = manager/192.168.56.115\par
+STARTUP_MSG:   args = [-format]\par
+STARTUP_MSG:   version = 3.2.4\par
+STARTUP_MSG:   classpath = /usr/local/hadoop/etc/hadoop:/usr/local/hadoop/share/hadoop/common/lib/kerb-client-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/hadoop-annotations-3.2.4.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-configuration2-2.1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-common-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-crypto-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-3.2.4.jar:/usr/local/hadoop/share/hadoop/common/lib/jersey-core-1.19.jar:/usr/local/hadoop/share/hadoop/common/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-xml-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/jcip-annotations-1.0-1.jar:/usr/local/hadoop/share/hadoop/common/lib/woodstox-core-5.3.0.jar:/usr/local/hadoop/share/hadoop/common/lib/gson-2.9.0.jar:/usr/local/hadoop/share/hadoop/common/lib/htrace-core4-4.1.0-incubating.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-collections-3.2.2.jar:/usr/local/hadoop/share/hadoop/common/lib/netty-3.10.6.Final.jar:/usr/local/hadoop/share/hadoop/common/lib/zookeeper-3.4.14.jar:/usr/local/hadoop/share/hadoop/common/lib/jersey-server-1.19.jar:/usr/local/hadoop/share/hadoop/common/lib/slf4j-reload4j-1.7.35.jar:/usr/local/hadoop/share/hadoop/common/lib/paranamer-2.3.jar:/usr/local/hadoop/share/hadoop/common/lib/javax.servlet-api-3.1.0.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-core-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/common/lib/javax.activation-api-1.2.0.jar:/usr/local/hadoop/share/hadoop/common/lib/guava-27.0-jre.jar:/usr/local/hadoop/share/hadoop/common/lib/asm-5.0.4.jar:/usr/local/hadoop/share/hadoop/common/lib/j2objc-annotations-1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/curator-framework-2.13.0.jar:/usr/local/hadoop/share/hadoop/common/lib/accessors-smart-2.4.7.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-server-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/re2j-1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/kerby-config-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-servlet-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-databind-2.10.5.1.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-beanutils-1.9.4.jar:/usr/local/hadoop/share/hadoop/common/lib/failureaccess-1.0.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-cli-1.2.jar:/usr/local/hadoop/share/hadoop/common/lib/jersey-json-1.19.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-mapper-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/common/lib/dnsjava-2.1.7.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-xc-1.9.13.jar:/usr/local/hadoop/share/hadoop/common/lib/jsp-api-2.1.jar:/usr/local/hadoop/share/hadoop/common/lib/jaxb-api-2.2.11.jar:/usr/local/hadoop/share/hadoop/common/lib/reload4j-1.2.18.3.jar:/usr/local/hadoop/share/hadoop/common/lib/kerby-util-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-core-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/httpclient-4.5.13.jar:/usr/local/hadoop/share/hadoop/common/lib/nimbus-jose-jwt-9.8.1.jar:/usr/local/hadoop/share/hadoop/common/lib/curator-client-2.13.0.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-text-1.4.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-annotations-2.10.5.jar:/usr/local/hadoop/share/hadoop/common/lib/jaxb-impl-2.2.3-1.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-util-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/jersey-servlet-1.19.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-http-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-identity-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/spotbugs-annotations-3.1.9.jar:/usr/local/hadoop/share/hadoop/common/lib/checker-qual-2.5.2.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-webapp-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/metrics-core-3.2.4.jar:/usr/local/hadoop/share/hadoop/common/lib/token-provider-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/snappy-java-1.0.5.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-net-3.6.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-server-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/kerby-pkix-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-compress-1.21.jar:/usr/local/hadoop/share/hadoop/common/lib/httpcore-4.4.13.jar:/usr/local/hadoop/share/hadoop/common/lib/jul-to-slf4j-1.7.35.jar:/usr/local/hadoop/share/hadoop/common/lib/jsr305-3.0.2.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-math3-3.1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-admin-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/curator-recipes-2.13.0.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-util-ajax-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-codec-1.11.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-io-2.8.0.jar:/usr/local/hadoop/share/hadoop/common/lib/avro-1.7.7.jar:/usr/local/hadoop/share/hadoop/common/lib/kerby-asn1-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-lang3-3.7.jar:/usr/local/hadoop/share/hadoop/common/lib/json-smart-2.4.7.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-util-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/jsr311-api-1.1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/kerb-simplekdc-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-jaxrs-1.9.13.jar:/usr/local/hadoop/share/hadoop/common/lib/jackson-core-2.10.5.jar:/usr/local/hadoop/share/hadoop/common/lib/kerby-xdr-1.0.1.jar:/usr/local/hadoop/share/hadoop/common/lib/jsch-0.1.55.jar:/usr/local/hadoop/share/hadoop/common/lib/jettison-1.1.jar:/usr/local/hadoop/share/hadoop/common/lib/protobuf-java-2.5.0.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-logging-1.1.3.jar:/usr/local/hadoop/share/hadoop/common/lib/animal-sniffer-annotations-1.17.jar:/usr/local/hadoop/share/hadoop/common/lib/error_prone_annotations-2.2.0.jar:/usr/local/hadoop/share/hadoop/common/lib/slf4j-api-1.7.35.jar:/usr/local/hadoop/share/hadoop/common/lib/audience-annotations-0.5.0.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-security-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/jetty-io-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/common/lib/stax2-api-4.2.1.jar:/usr/local/hadoop/share/hadoop/common/hadoop-common-3.2.4-tests.jar:/usr/local/hadoop/share/hadoop/common/hadoop-common-3.2.4.jar:/usr/local/hadoop/share/hadoop/common/hadoop-kms-3.2.4.jar:/usr/local/hadoop/share/hadoop/common/hadoop-nfs-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-client-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/hadoop-annotations-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-configuration2-2.1.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-common-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-crypto-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/hadoop-auth-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jersey-core-1.19.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-xml-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jcip-annotations-1.0-1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/woodstox-core-5.3.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/gson-2.9.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/htrace-core4-4.1.0-incubating.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-collections-3.2.2.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/netty-3.10.6.Final.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/zookeeper-3.4.14.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jersey-server-1.19.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/paranamer-2.3.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/leveldbjni-all-1.8.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/javax.servlet-api-3.1.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-core-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/json-simple-1.1.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/javax.activation-api-1.2.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/guava-27.0-jre.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/asm-5.0.4.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/j2objc-annotations-1.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/curator-framework-2.13.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/accessors-smart-2.4.7.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-server-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/re2j-1.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerby-config-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-servlet-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-databind-2.10.5.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-beanutils-1.9.4.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/failureaccess-1.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-cli-1.2.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jersey-json-1.19.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-mapper-asl-1.9.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/dnsjava-2.1.7.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-xc-1.9.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jaxb-api-2.2.11.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/reload4j-1.2.18.3.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerby-util-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-core-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/httpclient-4.5.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/nimbus-jose-jwt-9.8.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/curator-client-2.13.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-text-1.4.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/netty-all-4.1.68.Final.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-annotations-2.10.5.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jaxb-impl-2.2.3-1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-util-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jersey-servlet-1.19.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-http-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-identity-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/spotbugs-annotations-3.1.9.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/checker-qual-2.5.2.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-webapp-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/token-provider-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/snappy-java-1.0.5.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-net-3.6.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-server-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerby-pkix-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-compress-1.21.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/httpcore-4.4.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jsr305-3.0.2.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-math3-3.1.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-admin-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-daemon-1.0.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/curator-recipes-2.13.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-util-ajax-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-codec-1.11.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-io-2.8.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/avro-1.7.7.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerby-asn1-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-lang3-3.7.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/json-smart-2.4.7.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-util-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jsr311-api-1.1.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerb-simplekdc-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-jaxrs-1.9.13.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/okio-1.6.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jackson-core-2.10.5.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/kerby-xdr-1.0.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jsch-0.1.55.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jettison-1.1.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/protobuf-java-2.5.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/commons-logging-1.1.3.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/animal-sniffer-annotations-1.17.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/error_prone_annotations-2.2.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/audience-annotations-0.5.0.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-security-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/okhttp-2.7.5.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/jetty-io-9.4.43.v20210629.jar:/usr/local/hadoop/share/hadoop/hdfs/lib/stax2-api-4.2.1.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-3.2.4-tests.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.2.4-tests.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-rbf-3.2.4-tests.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-native-client-3.2.4-tests.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-native-client-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-httpfs-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-rbf-3.2.4.jar:/usr/local/hadoop/share/hadoop/hdfs/hadoop-hdfs-nfs-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/junit-4.13.2.jar:/usr/local/hadoop/share/hadoop/mapreduce/lib/hamcrest-core-1.3.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-core-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-app-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-uploader-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-common-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-nativetask-3.2.4.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.2.4-tests.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn:/usr/local/hadoop/share/hadoop/yarn/lib/jersey-guice-1.19.jar:/usr/local/hadoop/share/hadoop/yarn/lib/swagger-annotations-1.5.4.jar:/usr/local/hadoop/share/hadoop/yarn/lib/json-io-2.5.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/HikariCP-java7-2.4.12.jar:/usr/local/hadoop/share/hadoop/yarn/lib/ehcache-3.3.1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/bcpkix-jdk15on-1.60.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jackson-jaxrs-json-provider-2.10.5.jar:/usr/local/hadoop/share/hadoop/yarn/lib/javax.inject-1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/aopalliance-1.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jakarta.xml.bind-api-2.3.2.jar:/usr/local/hadoop/share/hadoop/yarn/lib/metrics-core-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/lib/objenesis-1.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/snakeyaml-1.26.jar:/usr/local/hadoop/share/hadoop/yarn/lib/bcprov-jdk15on-1.60.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jackson-module-jaxb-annotations-2.10.5.jar:/usr/local/hadoop/share/hadoop/yarn/lib/geronimo-jcache_1.0_spec-1.0-alpha-1.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jackson-jaxrs-base-2.10.5.jar:/usr/local/hadoop/share/hadoop/yarn/lib/fst-2.50.jar:/usr/local/hadoop/share/hadoop/yarn/lib/mssql-jdbc-6.2.1.jre7.jar:/usr/local/hadoop/share/hadoop/yarn/lib/guice-4.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/java-util-1.9.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jersey-client-1.19.jar:/usr/local/hadoop/share/hadoop/yarn/lib/guice-servlet-4.0.jar:/usr/local/hadoop/share/hadoop/yarn/lib/jakarta.activation-api-1.2.1.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-applications-unmanaged-am-launcher-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-tests-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-services-core-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-services-api-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-api-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-nodemanager-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-router-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-sharedcachemanager-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-client-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-submarine-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-timeline-pluginstorage-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-common-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-resourcemanager-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-applicationhistoryservice-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-registry-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-common-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-server-web-proxy-3.2.4.jar:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-3.2.4.jar\par
+STARTUP_MSG:   build = Unknown -r 7e5d9983b388e372fe640f21f048f2f2ae6e9eba; compiled by 'ubuntu' on 2022-07-12T11:58Z\par
+STARTUP_MSG:   java = 1.8.0_362\par
+************************************************************/\par
+2024-10-24 00:29:17,300 INFO namenode.NameNode: registered UNIX signal handlers for [TERM, HUP, INT]\par
+2024-10-24 00:29:17,370 INFO namenode.NameNode: createNameNode [-format]\par
+2024-10-24 00:29:17,662 INFO common.Util: Assuming 'file' scheme for path /usr/local/hadoop/hd-data/nn in configuration.\par
+2024-10-24 00:29:17,663 INFO common.Util: Assuming 'file' scheme for path /usr/local/hadoop/hd-data/nn in configuration.\par
+Formatting using clusterid: CID-1564608a-b0b1-4f7a-a809-b7d094635409\par
+2024-10-24 00:29:17,728 INFO namenode.FSEditLog: Edit logging is async:true\par
+2024-10-24 00:29:17,748 INFO namenode.FSNamesystem: KeyProvider: null\par
+2024-10-24 00:29:17,750 INFO namenode.FSNamesystem: fsLock is fair: true\par
+2024-10-24 00:29:17,751 INFO namenode.FSNamesystem: Detailed lock hold time metrics enabled: false\par
+2024-10-24 00:29:17,756 INFO namenode.FSNamesystem: fsOwner             = hduser (auth:SIMPLE)\par
+2024-10-24 00:29:17,757 INFO namenode.FSNamesystem: supergroup          = supergroup\par
+2024-10-24 00:29:17,758 INFO namenode.FSNamesystem: isPermissionEnabled = true\par
+2024-10-24 00:29:17,759 INFO namenode.FSNamesystem: HA Enabled: false\par
+2024-10-24 00:29:17,799 INFO common.Util: dfs.datanode.fileio.profiling.sampling.percentage set to 0. Disabling file IO profiling\par
+2024-10-24 00:29:17,806 INFO blockmanagement.DatanodeManager: dfs.block.invalidate.limit: configured=1000, counted=60, effected=1000\par
+2024-10-24 00:29:17,808 INFO blockmanagement.DatanodeManager: dfs.namenode.datanode.registration.ip-hostname-check=true\par
+2024-10-24 00:29:17,812 INFO blockmanagement.BlockManager: dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000\par
+2024-10-24 00:29:17,814 INFO blockmanagement.BlockManager: The block deletion will start around 2024 Oct 24 00:29:17\par
+2024-10-24 00:29:17,815 INFO util.GSet: Computing capacity for map BlocksMap\par
+2024-10-24 00:29:17,815 INFO util.GSet: VM type       = 64-bit\par
+2024-10-24 00:29:17,816 INFO util.GSet: 2.0% max memory 814.5 MB = 16.3 MB\par
+2024-10-24 00:29:17,816 INFO util.GSet: capacity      = 2^21 = 2097152 entries\par
+2024-10-24 00:29:17,822 INFO blockmanagement.BlockManager: Storage policy satisfier is disabled\par
+2024-10-24 00:29:17,823 INFO blockmanagement.BlockManager: dfs.block.access.token.enable = false\par
+2024-10-24 00:29:17,827 INFO blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.threshold-pct = 0.9990000128746033\par
+2024-10-24 00:29:17,828 INFO blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.min.datanodes = 0\par
+2024-10-24 00:29:17,828 INFO blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.extension = 30000\par
+2024-10-24 00:29:17,828 INFO blockmanagement.BlockManager: defaultReplication         = 3\par
+2024-10-24 00:29:17,828 INFO blockmanagement.BlockManager: maxReplication             = 512\par
+2024-10-24 00:29:17,828 INFO blockmanagement.BlockManager: minReplication             = 1\par
+2024-10-24 00:29:17,828 INFO blockmanagement.BlockManager: maxReplicationStreams      = 2\par
+2024-10-24 00:29:17,828 INFO blockmanagement.BlockManager: redundancyRecheckInterval  = 3000ms\par
+2024-10-24 00:29:17,828 INFO blockmanagement.BlockManager: encryptDataTransfer        = false\par
+2024-10-24 00:29:17,828 INFO blockmanagement.BlockManager: maxNumBlocksToLog          = 1000\par
+2024-10-24 00:29:17,846 INFO namenode.FSDirectory: GLOBAL serial map: bits=29 maxEntries=536870911\par
+2024-10-24 00:29:17,846 INFO namenode.FSDirectory: USER serial map: bits=24 maxEntries=16777215\par
+2024-10-24 00:29:17,846 INFO namenode.FSDirectory: GROUP serial map: bits=24 maxEntries=16777215\par
+2024-10-24 00:29:17,846 INFO namenode.FSDirectory: XATTR serial map: bits=24 maxEntries=16777215\par
+2024-10-24 00:29:17,861 INFO util.GSet: Computing capacity for map INodeMap\par
+2024-10-24 00:29:17,862 INFO util.GSet: VM type       = 64-bit\par
+2024-10-24 00:29:17,862 INFO util.GSet: 1.0% max memory 814.5 MB = 8.1 MB\par
+2024-10-24 00:29:17,862 INFO util.GSet: capacity      = 2^20 = 1048576 entries\par
+2024-10-24 00:29:17,862 INFO namenode.FSDirectory: ACLs enabled? false\par
+2024-10-24 00:29:17,862 INFO namenode.FSDirectory: POSIX ACL inheritance enabled? true\par
+2024-10-24 00:29:17,863 INFO namenode.FSDirectory: XAttrs enabled? true\par
+2024-10-24 00:29:17,863 INFO namenode.NameNode: Caching file names occurring more than 10 times\par
+2024-10-24 00:29:17,866 INFO snapshot.SnapshotManager: Loaded config captureOpenFiles: false, skipCaptureAccessTimeOnlyChange: false, snapshotDiffAllowSnapRootDescendant: true, maxSnapshotLimit: 65536\par
+2024-10-24 00:29:17,873 INFO snapshot.SnapshotManager: SkipList is disabled\par
+2024-10-24 00:29:17,876 INFO util.GSet: Computing capacity for map cachedBlocks\par
+2024-10-24 00:29:17,876 INFO util.GSet: VM type       = 64-bit\par
+2024-10-24 00:29:17,876 INFO util.GSet: 0.25% max memory 814.5 MB = 2.0 MB\par
+2024-10-24 00:29:17,876 INFO util.GSet: capacity      = 2^18 = 262144 entries\par
+2024-10-24 00:29:17,890 INFO metrics.TopMetrics: NNTop conf: dfs.namenode.top.window.num.buckets = 10\par
+2024-10-24 00:29:17,890 INFO metrics.TopMetrics: NNTop conf: dfs.namenode.top.num.users = 10\par
+2024-10-24 00:29:17,890 INFO metrics.TopMetrics: NNTop conf: dfs.namenode.top.windows.minutes = 1,5,25\par
+2024-10-24 00:29:17,895 INFO namenode.FSNamesystem: Retry cache on namenode is enabled\par
+2024-10-24 00:29:17,896 INFO namenode.FSNamesystem: Retry cache will use 0.03 of total heap and retry cache entry expiry time is 600000 millis\par
+2024-10-24 00:29:17,897 INFO util.GSet: Computing capacity for map NameNodeRetryCache\par
+2024-10-24 00:29:17,897 INFO util.GSet: VM type       = 64-bit\par
+2024-10-24 00:29:17,897 INFO util.GSet: 0.029999999329447746% max memory 814.5 MB = 250.2 KB\par
+2024-10-24 00:29:17,897 INFO util.GSet: capacity      = 2^15 = 32768 entries\par
+Re-format filesystem in Storage Directory root= /usr/local/hadoop/hd-data/nn; location= null ? (Y or N) y\par
+2024-10-24 00:29:20,599 INFO namenode.FSImage: Allocated new BlockPoolId: BP-308926523-192.168.56.115-1729744160592\par
+2024-10-24 00:29:20,599 INFO common.Storage: Will remove files: [/usr/local/hadoop/hd-data/nn/current/VERSION, /usr/local/hadoop/hd-data/nn/current/seen_txid, /usr/local/hadoop/hd-data/nn/current/fsimage_0000000000000000000.md5, /usr/local/hadoop/hd-data/nn/current/fsimage_0000000000000000000]\par
+2024-10-24 00:29:20,616 INFO common.Storage: Storage directory /usr/local/hadoop/hd-data/nn has been successfully formatted.\par
+2024-10-24 00:29:20,637 INFO namenode.FSImageFormatProtobuf: Saving image file /usr/local/hadoop/hd-data/nn/current/fsimage.ckpt_0000000000000000000 using no compression\par
+2024-10-24 00:29:20,695 INFO namenode.FSImageFormatProtobuf: Image file /usr/local/hadoop/hd-data/nn/current/fsimage.ckpt_0000000000000000000 of size 401 bytes saved in 0 seconds .\par
+2024-10-24 00:29:20,707 INFO namenode.NNStorageRetentionManager: Going to retain 1 images with txid >= 0\par
+2024-10-24 00:29:20,725 INFO namenode.FSNamesystem: Stopping services started for active state\par
+2024-10-24 00:29:20,727 INFO namenode.FSNamesystem: Stopping services started for standby state\par
+2024-10-24 00:29:20,731 INFO namenode.FSImage: FSImageSaver clean checkpoint: txid=0 when meet shutdown.\par
+2024-10-24 00:29:20,732 INFO namenode.NameNode: SHUTDOWN_MSG:\par
+/************************************************************\par
+SHUTDOWN_MSG: Shutting down NameNode at manager/192.168.56.115\par
+************************************************************/\par
+[hduser@manager ~]$ start-all.sh\par
+WARNING: Attempting to start all Apache Hadoop daemons as hduser in 10 seconds.\par
+WARNING: This is not a recommended production deployment configuration.\par
+WARNING: Use CTRL-C to abort.\par
+Starting namenodes on [manager]\par
+manager: ERROR: Cannot set priority of namenode process 5795\par
+Starting datanodes\par
+node2: WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+node2: mkdir: cannot create directory \lquote /usr/local/hadoop/logs\rquote : Permission denied\par
+node2: ERROR: Unable to create /usr/local/hadoop/logs. Aborting.\par
+node1: WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+node1: mkdir: cannot create directory \lquote /usr/local/hadoop/logs\rquote : Permission denied\par
+node1: ERROR: Unable to create /usr/local/hadoop/logs. Aborting.\par
+node3: WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+node3: mkdir: cannot create directory \lquote /usr/local/hadoop/logs\rquote : Permission denied\par
+node3: ERROR: Unable to create /usr/local/hadoop/logs. Aborting.\par
+Starting secondary namenodes [manager]\par
+manager: ERROR: Cannot set priority of secondarynamenode process 6073\par
+Starting resourcemanager\par
+Starting nodemanagers\par
+jpnode2: WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+node2: mkdir: cannot create directory \lquote /usr/local/hadoop/logs\rquote : Permission denied\par
+node2: ERROR: Unable to create /usr/local/hadoop/logs. Aborting.\par
+node3: WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+node3: mkdir: cannot create directory \lquote /usr/local/hadoop/logs\rquote : Permission denied\par
+node3: ERROR: Unable to create /usr/local/hadoop/logs. Aborting.\par
+node1: WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+node1: mkdir: cannot create directory \lquote /usr/local/hadoop/logs\rquote : Permission denied\par
+node1: ERROR: Unable to create /usr/local/hadoop/logs. Aborting.\par
+[hduser@manager ~]$ jps\par
+6385 NodeManager\par
+6729 Jps\par
+6251 ResourceManager\par
+[hduser@manager ~]$ cd /usr/local/hadoop/logs/\par
+[hduser@manager logs]$ ls\par
+hadoop-hduser-datanode-manager.log    hadoop-hduser-nodemanager-manager.log        hadoop-hduser-secondarynamenode-manager.log\par
+hadoop-hduser-datanode-manager.out    hadoop-hduser-nodemanager-manager.out        hadoop-hduser-secondarynamenode-manager.out\par
+hadoop-hduser-datanode-manager.out.1  hadoop-hduser-nodemanager-manager.out.1      hadoop-hduser-secondarynamenode-manager.out.1\par
+hadoop-hduser-namenode-manager.log    hadoop-hduser-resourcemanager-manager.log    SecurityAuth-hduser.audit\par
+hadoop-hduser-namenode-manager.out    hadoop-hduser-resourcemanager-manager.out    userlogs\par
+hadoop-hduser-namenode-manager.out.1  hadoop-hduser-resourcemanager-manager.out.1\par
+[hduser@manager logs]$ sudo hadoop-hduser-datanode-manager.log\par
+sudo: hadoop-hduser-datanode-manager.log: command not found\par
+[hduser@manager logs]$ sudo nano hadoop-hduser-datanode-manager.log\par
+[hduser@manager logs]$ cd\par
+[hduser@manager ~]$ ssh node1\par
+Last login: Thu Oct 24 00:28:04 2024 from 192.168.56.115\par
+[hduser@node1 ~]$ jps\par
+4195 Jps\par
+[hduser@node1 ~]$ hdfs --dameon start namenode\par
+/usr/local/hadoop/libexec/hadoop-functions.sh: line 2366: HDFS_--DAMEON_USER: invalid variable name\par
+ERROR: --dameon is not COMMAND nor fully qualified CLASSNAME.\par
+Usage: hdfs [OPTIONS] SUBCOMMAND [SUBCOMMAND OPTIONS]\par
+\par
+  OPTIONS is none or any of:\par
+\par
+--buildpaths                       attempt to add class files from build tree\par
+--config dir                       Hadoop config directory\par
+--daemon (start|status|stop)       operate on a daemon\par
+--debug                            turn on shell script debug mode\par
+--help                             usage information\par
+--hostnames list[,of,host,names]   hosts to use in worker mode\par
+--hosts filename                   list of hosts to use in worker mode\par
+--loglevel level                   set the log4j level for this command\par
+--workers                          turn on worker mode\par
+\par
+  SUBCOMMAND is one of:\par
+\par
+\par
+    Admin Commands:\par
+\par
+cacheadmin           configure the HDFS cache\par
+crypto               configure HDFS encryption zones\par
+debug                run a Debug Admin to execute HDFS debug commands\par
+dfsadmin             run a DFS admin client\par
+dfsrouteradmin       manage Router-based federation\par
+ec                   run a HDFS ErasureCoding CLI\par
+fsck                 run a DFS filesystem checking utility\par
+haadmin              run a DFS HA admin client\par
+jmxget               get JMX exported values from NameNode or DataNode.\par
+oev                  apply the offline edits viewer to an edits file\par
+oiv                  apply the offline fsimage viewer to an fsimage\par
+oiv_legacy           apply the offline fsimage viewer to a legacy fsimage\par
+storagepolicies      list/get/set/satisfyStoragePolicy block storage policies\par
+\par
+    Client Commands:\par
+\par
+classpath            prints the class path needed to get the hadoop jar and the required libraries\par
+dfs                  run a filesystem command on the file system\par
+envvars              display computed Hadoop environment variables\par
+fetchdt              fetch a delegation token from the NameNode\par
+getconf              get config values from configuration\par
+groups               get the groups which users belong to\par
+lsSnapshottableDir   list all snapshottable dirs owned by the current user\par
+snapshotDiff         diff two snapshots of a directory or diff the current directory contents with a snapshot\par
+version              print the version\par
+\par
+    Daemon Commands:\par
+\par
+balancer             run a cluster balancing utility\par
+datanode             run a DFS datanode\par
+dfsrouter            run the DFS router\par
+diskbalancer         Distributes data evenly among disks on a given node\par
+httpfs               run HttpFS server, the HDFS HTTP Gateway\par
+journalnode          run the DFS journalnode\par
+mover                run a utility to move block replicas across storage types\par
+namenode             run the DFS namenode\par
+nfs3                 run an NFS version 3 gateway\par
+portmap              run a portmap service\par
+secondarynamenode    run the DFS secondary namenode\par
+sps                  run external storagepolicysatisfier\par
+zkfc                 run the ZK Failover Controller daemon\par
+\par
+SUBCOMMAND may print help when invoked w/o parameters or with -h.\par
+[hduser@node1 ~]$ hdfs --dameon start datanode\par
+/usr/local/hadoop/libexec/hadoop-functions.sh: line 2366: HDFS_--DAMEON_USER: invalid variable name\par
+ERROR: --dameon is not COMMAND nor fully qualified CLASSNAME.\par
+Usage: hdfs [OPTIONS] SUBCOMMAND [SUBCOMMAND OPTIONS]\par
+\par
+  OPTIONS is none or any of:\par
+\par
+--buildpaths                       attempt to add class files from build tree\par
+--config dir                       Hadoop config directory\par
+--daemon (start|status|stop)       operate on a daemon\par
+--debug                            turn on shell script debug mode\par
+--help                             usage information\par
+--hostnames list[,of,host,names]   hosts to use in worker mode\par
+--hosts filename                   list of hosts to use in worker mode\par
+--loglevel level                   set the log4j level for this command\par
+--workers                          turn on worker mode\par
+\par
+  SUBCOMMAND is one of:\par
+\par
+\par
+    Admin Commands:\par
+\par
+cacheadmin           configure the HDFS cache\par
+crypto               configure HDFS encryption zones\par
+debug                run a Debug Admin to execute HDFS debug commands\par
+dfsadmin             run a DFS admin client\par
+dfsrouteradmin       manage Router-based federation\par
+ec                   run a HDFS ErasureCoding CLI\par
+fsck                 run a DFS filesystem checking utility\par
+haadmin              run a DFS HA admin client\par
+jmxget               get JMX exported values from NameNode or DataNode.\par
+oev                  apply the offline edits viewer to an edits file\par
+oiv                  apply the offline fsimage viewer to an fsimage\par
+oiv_legacy           apply the offline fsimage viewer to a legacy fsimage\par
+storagepolicies      list/get/set/satisfyStoragePolicy block storage policies\par
+\par
+    Client Commands:\par
+\par
+classpath            prints the class path needed to get the hadoop jar and the required libraries\par
+dfs                  run a filesystem command on the file system\par
+envvars              display computed Hadoop environment variables\par
+fetchdt              fetch a delegation token from the NameNode\par
+getconf              get config values from configuration\par
+groups               get the groups which users belong to\par
+lsSnapshottableDir   list all snapshottable dirs owned by the current user\par
+snapshotDiff         diff two snapshots of a directory or diff the current directory contents with a snapshot\par
+version              print the version\par
+\par
+    Daemon Commands:\par
+\par
+balancer             run a cluster balancing utility\par
+datanode             run a DFS datanode\par
+dfsrouter            run the DFS router\par
+diskbalancer         Distributes data evenly among disks on a given node\par
+httpfs               run HttpFS server, the HDFS HTTP Gateway\par
+journalnode          run the DFS journalnode\par
+mover                run a utility to move block replicas across storage types\par
+namenode             run the DFS namenode\par
+nfs3                 run an NFS version 3 gateway\par
+portmap              run a portmap service\par
+secondarynamenode    run the DFS secondary namenode\par
+sps                  run external storagepolicysatisfier\par
+zkfc                 run the ZK Failover Controller daemon\par
+\par
+SUBCOMMAND may print help when invoked w/o parameters or with -h.\par
+[hduser@node1 ~]$ hdfs --daemon start datanode\par
+WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+mkdir: cannot create directory \lquote /usr/local/hadoop/logs\rquote : Permission denied\par
+ERROR: Unable to create /usr/local/hadoop/logs. Aborting.\par
+[hduser@node1 ~]$ ls\par
+Desktop  Documents  Downloads  hadoop-3.2.4  hadoop.tar.gz  Music  Pictures  Public  Templates  Videos\par
+[hduser@node1 ~]$ sudo chown -R hduser:hduser /usr/local/hadoop\par
+sudo chmod 755 -R /usr/local/hadoop\par
+[hduser@node1 ~]$ hdfs --daemon start datanode\par
+WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+[hduser@node1 ~]$ cd /usr\par
+[hduser@node1 usr]$ ls\par
+bin  games  include  lib  lib64  libexec  local  sbin  share  src  tmp\par
+[hduser@node1 usr]$ cd local\par
+[hduser@node1 local]$ ls\par
+bin  etc  games  hadoop  include  lib  lib64  libexec  sbin  share  src\par
+[hduser@node1 local]$ cd hadoop\par
+[hduser@node1 hadoop]$ ls\par
+bin  etc  include  lib  libexec  LICENSE.txt  logs  NOTICE.txt  README.txt  sbin  share\par
+[hduser@node1 hadoop]$ cd etc\par
+[hduser@node1 etc]$ cd hadoop/\par
+[hduser@node1 hadoop]$ ls\par
+capacity-scheduler.xml      hadoop-policy.xml                 kms-acls.xml          mapred-queues.xml.template     yarn-env.cmd\par
+configuration.xsl           hadoop-user-functions.sh.example  kms-env.sh            mapred-site.xml                yarn-env.sh\par
+container-executor.cfg      hdfs-site.xml                     kms-log4j.properties  shellprofile.d                 yarnservice-log4j.properties\par
+core-site.xml               httpfs-env.sh                     kms-site.xml          ssl-client.xml.example         yarn-site.xml\par
+hadoop-env.cmd              httpfs-log4j.properties           log4j.properties      ssl-server.xml.example\par
+hadoop-env.sh               httpfs-signature.secret           mapred-env.cmd        user_ec_policies.xml.template\par
+hadoop-metrics2.properties  httpfs-site.xml                   mapred-env.sh         workers\par
+[hduser@node1 hadoop]$ cd\par
+[hduser@node1 ~]$ start-all.sh\par
+WARNING: Attempting to start all Apache Hadoop daemons as hduser in 10 seconds.\par
+WARNING: This is not a recommended production deployment configuration.\par
+WARNING: Use CTRL-C to abort.\par
+Starting namenodes on [node1]\par
+node1: Warning: Permanently added 'node1' (ED25519) to the list of known hosts.\par
+node1: ERROR: Cannot set priority of namenode process 4794\par
+Starting datanodes\par
+Starting secondary namenodes [node1]\par
+node1: ERROR: Cannot set priority of secondarynamenode process 5065\par
+Starting resourcemanager\par
+Starting nodemanagers\par
+[hduser@node1 ~]$ jps\par
+5495 Jps\par
+5343 NodeManager\par
+[hduser@node1 ~]$ hdfs --daemon start datanode\par
+[hduser@node1 ~]$ jps\par
+5580 Jps\par
+5343 NodeManager\par
+[hduser@node1 ~]$ yarn --daemon start namenode\par
+ERROR: namenode is not COMMAND nor fully qualified CLASSNAME.\par
+Usage: yarn [OPTIONS] SUBCOMMAND [SUBCOMMAND OPTIONS]\par
+ or    yarn [OPTIONS] CLASSNAME [CLASSNAME OPTIONS]\par
+  where CLASSNAME is a user-provided Java class\par
+\par
+  OPTIONS is none or any of:\par
+\par
+--buildpaths                       attempt to add class files from build tree\par
+--config dir                       Hadoop config directory\par
+--daemon (start|status|stop)       operate on a daemon\par
+--debug                            turn on shell script debug mode\par
+--help                             usage information\par
+--hostnames list[,of,host,names]   hosts to use in worker mode\par
+--hosts filename                   list of hosts to use in worker mode\par
+--loglevel level                   set the log4j level for this command\par
+--workers                          turn on worker mode\par
+\par
+  SUBCOMMAND is one of:\par
+\par
+\par
+    Admin Commands:\par
+\par
+daemonlog            get/set the log level for each daemon\par
+node                 prints node report(s)\par
+rmadmin              admin tools\par
+scmadmin             SharedCacheManager admin tools\par
+\par
+    Client Commands:\par
+\par
+app|application      prints application(s) report/kill application/manage long running application\par
+applicationattempt   prints applicationattempt(s) report\par
+classpath            prints the class path needed to get the hadoop jar and the required libraries\par
+cluster              prints cluster information\par
+container            prints container(s) report\par
+envvars              display computed Hadoop environment variables\par
+jar <jar>            run a jar file\par
+logs                 dump container logs\par
+nodeattributes       node attributes cli client\par
+queue                prints queue information\par
+schedulerconf        Updates scheduler configuration\par
+timelinereader       run the timeline reader server\par
+top                  view cluster information\par
+version              print the version\par
+\par
+    Daemon Commands:\par
+\par
+nodemanager          run a nodemanager on each worker\par
+proxyserver          run the web app proxy server\par
+registrydns          run the registry DNS server\par
+resourcemanager      run the ResourceManager\par
+router               run the Router daemon\par
+sharedcachemanager   run the SharedCacheManager daemon\par
+timelineserver       run the timeline server\par
+\par
+SUBCOMMAND may print help when invoked w/o parameters or with -h.\par
+[hduser@node1 ~]$ yarn --daemon start namenode\par
+ERROR: namenode is not COMMAND nor fully qualified CLASSNAME.\par
+Usage: yarn [OPTIONS] SUBCOMMAND [SUBCOMMAND OPTIONS]\par
+ or    yarn [OPTIONS] CLASSNAME [CLASSNAME OPTIONS]\par
+  where CLASSNAME is a user-provided Java class\par
+\par
+  OPTIONS is none or any of:\par
+\par
+--buildpaths                       attempt to add class files from build tree\par
+--config dir                       Hadoop config directory\par
+--daemon (start|status|stop)       operate on a daemon\par
+--debug                            turn on shell script debug mode\par
+--help                             usage information\par
+--hostnames list[,of,host,names]   hosts to use in worker mode\par
+--hosts filename                   list of hosts to use in worker mode\par
+--loglevel level                   set the log4j level for this command\par
+--workers                          turn on worker mode\par
+\par
+  SUBCOMMAND is one of:\par
+\par
+\par
+    Admin Commands:\par
+\par
+daemonlog            get/set the log level for each daemon\par
+node                 prints node report(s)\par
+rmadmin              admin tools\par
+scmadmin             SharedCacheManager admin tools\par
+\par
+    Client Commands:\par
+\par
+app|application      prints application(s) report/kill application/manage long running application\par
+applicationattempt   prints applicationattempt(s) report\par
+classpath            prints the class path needed to get the hadoop jar and the required libraries\par
+cluster              prints cluster information\par
+container            prints container(s) report\par
+envvars              display computed Hadoop environment variables\par
+jar <jar>            run a jar file\par
+logs                 dump container logs\par
+nodeattributes       node attributes cli client\par
+queue                prints queue information\par
+schedulerconf        Updates scheduler configuration\par
+timelinereader       run the timeline reader server\par
+top                  view cluster information\par
+version              print the version\par
+\par
+    Daemon Commands:\par
+\par
+nodemanager          run a nodemanager on each worker\par
+proxyserver          run the web app proxy server\par
+registrydns          run the registry DNS server\par
+resourcemanager      run the ResourceManager\par
+router               run the Router daemon\par
+sharedcachemanager   run the SharedCacheManager daemon\par
+timelineserver       run the timeline server\par
+\par
+SUBCOMMAND may print help when invoked w/o parameters or with -h.\par
+[hduser@node1 ~]$ jps\par
+5894 Jps\par
+5343 NodeManager\par
+[hduser@node1 ~]$ exit\par
+logout\par
+Connection to node1 closed.\par
+[hduser@manager ~]$ start-all.sh\par
+WARNING: Attempting to start all Apache Hadoop daemons as hduser in 10 seconds.\par
+WARNING: This is not a recommended production deployment configuration.\par
+WARNING: Use CTRL-C to abort.\par
+Starting namenodes on [manager]\par
+manager: ERROR: Cannot set priority of namenode process 6919\par
+Starting datanodes\par
+node2: WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+node2: mkdir: cannot create directory \lquote /usr/local/hadoop/logs\rquote : Permission denied\par
+node2: ERROR: Unable to create /usr/local/hadoop/logs. Aborting.\par
+node3: WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+node3: mkdir: cannot create directory \lquote /usr/local/hadoop/logs\rquote : Permission denied\par
+node3: ERROR: Unable to create /usr/local/hadoop/logs. Aborting.\par
+Starting secondary namenodes [manager]\par
+manager: ERROR: Cannot set priority of secondarynamenode process 7205\par
+Starting resourcemanager\par
+resourcemanager is running as process 6251.  Stop it first and ensure /tmp/hadoop-hduser-resourcemanager.pid file is empty before retry.\par
+Starting nodemanagers\par
+node3: WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+node3: mkdir: cannot create directory \lquote /usr/local/hadoop/logs\rquote : Permission denied\par
+node3: ERROR: Unable to create /usr/local/hadoop/logs. Aborting.\par
+node2: WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+node2: mkdir: cannot create directory \lquote /usr/local/hadoop/logs\rquote : Permission denied\par
+node2: ERROR: Unable to create /usr/local/hadoop/logs. Aborting.\par
+localhost: nodemanager is running as process 6385.  Stop it first and ensure /tmp/hadoop-hduser-nodemanager.pid file is empty before retry.\par
+node1: nodemanager is running as process 5343.  Stop it first and ensure /tmp/hadoop-hduser-nodemanager.pid file is empty before retry.\par
+[hduser@manager ~]$ jps\par
+7504 Jps\par
+6385 NodeManager\par
+6251 ResourceManager\par
+[hduser@manager ~]$\par
+[hduser@manager ~]$ jps\par
+6385 NodeManager\par
+7530 Jps\par
+6251 ResourceManager\par
+[hduser@manager ~]$ jps\par
+6385 NodeManager\par
+7542 Jps\par
+6251 ResourceManager\par
+[hduser@manager ~]$ stop-all.sh\par
+WARNING: Stopping all Apache Hadoop daemons as hduser in 10 seconds.\par
+WARNING: Use CTRL-C to abort.\par
+Stopping namenodes on [manager]\par
+Stopping datanodes\par
+Stopping secondary namenodes [manager]\par
+Stopping nodemanagers\par
+node1: WARNING: nodemanager did not stop gracefully after 5 seconds: Trying to kill with kill -9\par
+Stopping resourcemanager\par
+[hduser@manager ~]$ start-all.sh\par
+WARNING: Attempting to start all Apache Hadoop daemons as hduser in 10 seconds.\par
+WARNING: This is not a recommended production deployment configuration.\par
+WARNING: Use CTRL-C to abort.\par
+Starting namenodes on [manager]\par
+manager: ERROR: Cannot set priority of namenode process 8268\par
+Starting datanodes\par
+node2: WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+node2: mkdir: cannot create directory \lquote /usr/local/hadoop/logs\rquote : Permission denied\par
+node2: ERROR: Unable to create /usr/local/hadoop/logs. Aborting.\par
+node3: WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+node3: mkdir: cannot create directory \lquote /usr/local/hadoop/logs\rquote : Permission denied\par
+node3: ERROR: Unable to create /usr/local/hadoop/logs. Aborting.\par
+Starting secondary namenodes [manager]\par
+manager: ERROR: Cannot set priority of secondarynamenode process 8550\par
+Starting resourcemanager\par
+Starting nodemanagers\par
+node3: WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+node3: mkdir: cannot create directory \lquote /usr/local/hadoop/logs\rquote : Permission denied\par
+node3: ERROR: Unable to create /usr/local/hadoop/logs. Aborting.\par
+node2: WARNING: /usr/local/hadoop/logs does not exist. Creating.\par
+node2: mkdir: cannot create directory \lquote /usr/local/hadoop/logs\rquote : Permission denied\par
+node2: ERROR: Unable to create /usr/local/hadoop/logs. Aborting.\par
+[hduser@manager ~]$ jps\par
+8882 NodeManager\par
+9210 Jps\par
+8731 ResourceManager\par
+[hduser@manager ~]$ ls -all\par
+total 480868\par
+drwx------. 16 hduser hduser      4096 Oct 23 22:12 .\par
+drwxr-xr-x.  5 root   root          50 Oct 23 21:40 ..\par
+-rw-------.  1 hduser hduser      1656 Oct 24 00:17 .bash_history\par
+-rw-r--r--.  1 hduser hduser        18 Feb 15  2024 .bash_logout\par
+-rw-r--r--.  1 hduser hduser       141 Feb 15  2024 .bash_profile\par
+-rw-r--r--.  1 hduser hduser      1091 Oct 24 00:22 .bashrc\par
+drwx------.  8 hduser hduser      4096 Oct 23 22:06 .cache\par
+drwx------.  8 hduser hduser      4096 Oct 23 22:06 .config\par
+drwxr-xr-x.  2 hduser hduser         6 Oct 23 22:05 Desktop\par
+drwxr-xr-x.  2 hduser hduser         6 Oct 23 22:05 Documents\par
+drwxr-xr-x.  2 hduser hduser         6 Oct 23 22:05 Downloads\par
+drwxr-xr-x.  2 hduser hduser         6 Oct 23 21:57 hadoop-3.2.4\par
+-rw-r--r--.  1 hduser hduser 492368219 Jul 21  2022 hadoop.tar.gz\par
+drwx------.  4 hduser hduser        32 Oct 23 22:05 .local\par
+drwxr-xr-x.  4 hduser hduser        39 Apr 25  2022 .mozilla\par
+drwxr-xr-x.  2 hduser hduser         6 Oct 23 22:05 Music\par
+drwxr-xr-x.  2 hduser hduser         6 Oct 23 22:05 Pictures\par
+drwxr-xr-x.  2 hduser hduser         6 Oct 23 22:05 Public\par
+drwx------.  2 hduser hduser       103 Oct 23 21:54 .ssh\par
+drwxr-xr-x.  2 hduser hduser         6 Oct 23 22:05 Templates\par
+drwxr-xr-x.  2 hduser hduser         6 Oct 23 22:05 Videos\par
+-rw-------.  1 hduser hduser        65 Oct 23 22:12 .xauthlxh47X\par
+-rw-------.  1 hduser hduser       130 Oct 23 21:42 .xauthpYRDmR\par
+[hduser@manager ~]$ jps\par
+8882 NodeManager\par
+9224 Jps\par
+8731 ResourceManager\par
+[hduser@manager ~]$ jps\par
+8882 NodeManager\par
+9236 Jps\par
+8731 ResourceManager\par
+[hduser@manager ~]$\par
+[hduser@manager ~]$\par
+[hduser@manager ~]$ jps\par
+9248 Jps\par
+8882 NodeManager\par
+8731 ResourceManager\par
+[hduser@manager ~]$ history\par
+    1  sudo hostnamectl set-hostname manager\par
+    2  sudo hostname manager\par
+    3  sudo nano /etc/hosts\par
+    4  ifconfig\par
+    5  sudo nano /etc/hosts\par
+    6  sudo hostname manager\par
+    7  exit\par
+    8  clear\par
+    9  ssh node1\par
+   10  ssh node3\par
+   11  clear\par
+   12  cd /usr/local/hadoop/\par
+   13  ls\par
+   14  cd etc\par
+   15  cd hadoop/\par
+   16  ls\par
+   17  sudo nano hadoop-env.sh\par
+   18  mv hadoop-env.sh etc/hadoop\par
+   19  lsit\par
+   20  list\par
+   21  ls\par
+   22  sudo nano core-site.xml\par
+   23  scp core-site.xml node1:/usr/local/hadoop/etc/hadoop/\par
+   24  scp core-site.xml node2:/usr/local/hadoop/etc/hadoop/\par
+   25  scp core-site.xml node3:/usr/local/hadoop/etc/hadoop/\par
+   26  sudo nano hdfs-site.xml\par
+   27  ssh node1\par
+   28  sudo nano hdfs-site.xml\par
+   29  sudo nano yarn-site.xml\par
+   30  sudo workers\par
+   31  sudo nano workers\par
+   32  sudo nano core-site.xml\par
+   33  sudo nano yarn-site.xml\par
+   34  ssh node1\par
+   35  scp core-site.xml node1:/usr/local/hadoop/etc/hadoop/\par
+   36  scp core-site.xml node2:/usr/local/hadoop/etc/hadoop/\par
+   37  scp core-site.xml node3:/usr/local/hadoop/etc/hadoop/\par
+   38  scp yarn-site.xml node3:/usr/local/hadoop/etc/hadoop/\par
+   39  scp yarn-site.xml node2:/usr/local/hadoop/etc/hadoop/\par
+   40  scp yarn-site.xml node1:/usr/local/hadoop/etc/hadoop/\par
+   41  sudo nano mapred-site.xml\par
+   42  scp mapred-site.xml node1:/usr/local/hadoop/etc/hadoop/\par
+   43  scp mapred-site.xml node2:/usr/local/hadoop/etc/hadoop/\par
+   44  scp mapred-site.xml node3:/usr/local/hadoop/etc/hadoop/\par
+   45  sudo workers\par
+   46  sudo nano workers\par
+   47  sudo nano hdfs-site.xml\par
+   48  node1\par
+   49  ssh node1\par
+   50  ssh node2\par
+   51  ssh node3\par
+   52  ssh node1\par
+   53  ssh node2\par
+   54  jps\par
+   55  sudo namenode -format\par
+   56  start-all.sh\par
+   57  cd\par
+   58  sudo namenode -format\par
+   59  jps\par
+   60  hdfs namenode -format\par
+   61  hdfs dfs namenode -format\par
+   62  sudo chown -R hduser:hduser /usr/local/hadoop\par
+   63  sudo chmod 755 -R /usr/local/hadoop\par
+   64  hdfs dfs namenode -format\par
+   65  hdfs namenode -format\par
+   66  jps\par
+   67  sudo nano .bashrc\par
+   68  source .bashrc\par
+   69  hdfs namenode -format\par
+   70  sudo nano .bashrc\par
+   71  hdfs namenode -format\par
+   72  cd /usr/\par
+   73  ls\par
+   74  cd lib\par
+   75  cd jvm\par
+   76  ls\par
+   77  exit\par
+   78  sudo nano .bashrc\par
+   79  hdfs dfs namenode -format\par
+   80  cd usr\par
+   81  cd /usr\par
+   82  cd /lib/jvm\par
+   83  ls\par
+   84  pwd\par
+   85  cd\par
+   86  sudo find / -name java\par
+   87  sudo nano .bashrc\par
+   88  hdfs dfs namenode -format\par
+   89  sudo nano .bashrc\par
+   90  source .bashrc\par
+   91  hdfs dfs namenode -format\par
+   92  hdfs namenode -format\par
+   93  jps\par
+   94  start-all.sh\par
+   95  cat .bashrc\par
+   96  ssh node1\par
+   97  ssh node2\par
+   98  ssh node3\par
+   99  stop-all.sh\par
+  100  jps\par
+  101  ssh node1\par
+  102  ssh node2\par
+  103  ssh node3\par
+  104  hdfs namenode -format\par
+  105  start-all.sh\par
+  106  jps\par
+  107  cd /usr/local/hadoop/logs/\par
+  108  ls\par
+  109  sudo hadoop-hduser-datanode-manager.log\par
+  110  sudo nano hadoop-hduser-datanode-manager.log\par
+  111  cd\par
+  112  ssh node1\par
+  113  start-all.sh\par
+  114  jps\par
+  115  stop-all.sh\par
+  116  start-all.sh\par
+  117  jps\par
+  118  ls -all\par
+  119  jps\par
+  120  history\par
+ 121  cd /usr/local/hadoop/logs\par
+  122  ls\par
+  123  tail -30 hadoop-hduser-namenode-manager.log\par
+  124  clear\par
+  125  cd ..\par
+  126  cd etc/hadoop\par
+  127  nano core-site.xml\par
+  128  start-all.sh\par
+  129  stop-all.sh\par
+  130  start-all.sh\par
+  131  jsp\par
+  132  jps\par
+  133  cd\par
+  134  ssh node1\par
+  135  ssh node2\par
+  136  ssh node3\par
+  137  history\par
+[hduser@manager ~]$\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+-------------------------------------\par
+node1\par
+\par
+  exit\par
+    2  ls\par
+    3  cd /usr/local/hadoop/etc/hadoop/\par
+    4  sudo nano hdfs-site.xml\par
+    5  cat nano hdfs-site.xml\par
+    6  sudo nano core-site.xml\par
+    7  sudo nano hdfs-site.xml\par
+    8  exit\par
+    9  cd /usr/local/hadoop/etc/hadoop/\par
+   10  sudo nano core-site.xml\par
+   11  scp core-site.xml node2:/usr/local/hadoop/etc/hadoop/   -----copy file manager tonode2\par
+   12  cat core-site.xml\par
+   13  exit\par
+   14  sudo nano /usr/local/hadoop/etc/hadoop/\par
+   15  cd /usr/local/hadoop/etc/hadoop/\par
+   16  sudo nano hdfs-site.xml\par
+   17  ssh node2\par
+   18  exit\par
+   19  cd /usr/local/hadoop/etc/hadoop/\par
+   20  sudo nano hdfs-site.xml\par
+   21  exit\par
+   22  sudo nano .bashrc\par
+   23  exit\par
+   24  source .bashrc\par
+   25  exit\par
+   26  jps\par
+   27  hdfs --dameon start namenode\par
+   28  hdfs --dameon start datanode\par
+   29  hdfs --daemon start datanode\par
+   30  ls\par
+   31  sudo chown -R hduser:hduser /usr/local/hadoop\par
+   32  sudo chmod 755 -R /usr/local/hadoop\par
+   33  hdfs --daemon start datanode\par
+   34  cd /usr\par
+   35  ls\par
+   36  cd local\par
+   37  ls\par
+   38  cd hadoop\par
+   39  ls\par
+   40  cd etc\par
+   41  cd hadoop/\par
+   42  ls\par
+   43  cd\par
+   44  start-all.sh\par
+   45  jps\par
+   46  hdfs --daemon start datanode\par
+   47  jps\par
+   48  yarn --daemon start namenode\par
+   49  jps\par
+   50  exit\par
+   51  history\par
+\par
+\par
+------------------------------------------\par
+node2\par
+1  exit\par
+    2  cd /usr/local/hadoop/etc/hadoop/\par
+    3  sudo nano hdfs-site.xml\par
+    4  exit\par
+    5  cd /usr/local/hadoop/etc/hadoop/\par
+    6  sudo nano hdfs-site.xml\par
+    7  exit\par
+    8  sudo nano .bashrc\par
+    9  exit\par
+   10  source .bashrc\par
+   11  exit\par
+   12  history\par
+\par
+-------------------------------------------------\par
+node3\par
+[hduser@node3 ~]$ history\par
+    1  exit\par
+    2  cd /usr/local/hadoop/etc/hadoop/\par
+    3  sudo nano hdfs-site.xml\par
+    4  exit\par
+    5  sudo nano .bashrc\par
+    6  exit\par
+    7  source .bashrc\par
+    8  exit\par
+    9  history\par
+\par
+\par
+\par
+\par
+\par
+--\par
+}
+ 

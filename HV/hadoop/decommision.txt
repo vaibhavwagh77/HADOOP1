@@ -1,0 +1,57 @@
+sudo hostnamectl set-hostname pune3 
+
+namenode and datanodes->
+sduo nano /etc/hosts 
+add pune3->datanode3
+nano workers
+datanode3->pune3
+
+namenode->
+hdfs dfsadmin -refreshNodes
+hdfs dfsadmin -report
+
+decommision->>
+
+nano hdfs-site.xml
+<property>
+<name>dfs.hosts.exclude</name>
+<value>/usr/local/hadoop/etc/hadoop/dfs.hosts.exclude</value>
+</property>
+
+nano dfs.hosts.exclude
+pune3
+
+nano workers
+remove pune3
+
+hdfs --daemon stop namenode
+hdfs --daemon start namenode
+hdfs dfsadmin -refreshNodes
+hdfs dfsadnin -report
+
+
+recommision->>
+add pune3 -->workers
+rm dfs.hosts.exclude
+rm property hdfs-site.xml
+
+hdfs --daemon stop namenode
+hdfs --daemon start namenode
+hdfs dfsadmin -refreshNodes
+hdfs dfsadmin -report
+
+
+start-all.sh
+stop-all.sh
+
+
+	
+
+
+
+
+
+
+
+
+

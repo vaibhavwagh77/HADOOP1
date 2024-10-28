@@ -1,0 +1,242 @@
+sudo adduser hduser 
+sudo viduso 
+hduser ALL=(ALL:ALL) NOPASSWD:ALL
+
+namenode
+datanode_1
+datanode_2
+datanode_3
+
+
+step---->1
+sudo aptg-get update
+sudo apt-get install ssh -y
+sudo systemctl status ssh
+sudo systemctl enable ssh
+sudo systemctl restart ssh
+
+
+sudo apt-get install openjdk-8-jdk
+wget -c -O hadoop.tar.gz https://dlcdn.apache.org/hadoop/common/hadoop-3.2.4/hadoop-3.2.4.tar.gz
+sudo mkdir /usr/local/hadoop
+tar xvzf hadoop.tar.gz
+sudo mv hadoop-3.2.4/* /usr/local/hadoop
+
+
+sudo chown -R hduser:hduser /usr/local/hadoop
+sudo chmod -R 755 /usr/local/hadoop
+
+
+
+step 2--->
+sudo nano ~/.bashrc
+
+
+#JAVA
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+export JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+#Hadoop Environment Variables
+export HADOOP_HOME=/usr/local/hadoop
+export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop
+export HADOOP_LOG_DIR=$HADOOP_HOME/logs
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+# Add Hadoop bin/ direcsource ~/.bashrctory to PATH
+export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/nativeexport HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
+export PDSH_RCMD_TYPE=ssh
+
+source ~/.bashrc
+
+
+
+sudo apt install ssh -y
+sudo apt install pdsh -y
+sudo systemctl start ssh
+sudo systemctl enable ssh
+
+
+step ---->3
+clone datanodes form namenode
+
+
+
+step ---->4
+connect putty and change hostnames
+add ip with hostname in /etc/hosts
+
+192.168.82.120  namenode
+192.168.82.121 datanode1
+192.168.82.122 datanode2
+192.168.82.124 datanode3
+
+sudo hostnamectl set-hostname namenode
+sudo hostname namenode
+
+sudo hostnamectl set-hostname datanode1
+sudo hostname datanode1
+
+sudo hostnamectl set-hostname datanode2
+sudo hostname datanode2
+
+sudo hostnamectl set-hostname datanode3
+sudo hostname datanode3
+
+
+step 5--->
+ssh-keygen -t rsa
+ssh-copy-id -i ~/.ssh/id_rsa.pub hduser@namenode
+ssh hduser@namenode
+
+ssh-copy-id -i ~/.ssh/id_rsa.pub hduser@datanode1
+ssh-copy-id -i ~/.ssh/id_rsa.pub hduser@datanode2
+ssh-copy-id -i ~/.ssh/id_rsa.pub hduser@datanode3
+
+
+step 6--->
+namenode and datanodes->
+cd /usr/local/hadoop/etc/hadoop
+
+
+nano hadoop-env.sh
+
+#JAVA
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+export JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+#Hadoop Environment Variables
+export HADOOP_HOME=/usr/local/hadoop
+export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop
+export HADOOP_LOG_DIR=$HADOOP_HOME/logs
+export HDFS_NAMENODE_USER=hduser
+export HDFS_DATANODE_USER=hduser
+export HDFS_SECONDARYNAMENODE_USER=hduser
+export YARN_RESOURCEMANAGER_USER=hduser
+export YARN_NODEMANAGER_USER=hduser
+export YARN_NODEMANAGER_USER=hduser
+# Add Hadoop bin/ directory to PATH
+export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
+
+datanode->
+scp hadoop-env.sh datanode1:/usr/local/hadoop/etc/hadoop
+scp hadoop-env.sh datanode2:/usr/local/hadoop/etc/hadoop
+
+namenode->
+nano core-site.xml
+
+<property>
+<name>fs.defaultFS</name>
+<value>hdfs://master:9000</value>
+</property>
+
+datanode->
+scp core-site.xml node1:/usr/local/hadoop/etc/hadoop
+scp core-site.xml node2:/usr/local/hadoop/etc/hadoop
+
+namenode->
+nano hdfs-site.xml
+
+<property>
+<name>dfs.name.dir</name>
+<value>/usr/local/hadoop/hd-data/nn</value>
+</property>
+<property>
+<name>dfs.replication</name>
+<value>2</value>
+</property>
+
+datanode->
+ssh node1
+cd /usr/local/hadoop/etc/hadoop
+
+nano hdfs-site.xml
+<property>
+<name>dfs.data.dir</name>
+<value>/usr/local/hadoop/hd-data/dn</value>
+</property>
+<property>
+<name>dfs.replication</name>
+<value>2</value>
+</property>
+
+
+namenode->
+nano mapred-site.xml
+
+<property>
+<name>mapreduce.framework.name</name>
+<value>yarn</value>
+</property>
+<property>
+<name>mapreduce.application.classpath</name>
+<value>$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*:$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*</value>
+</property>
+
+
+datanode->
+scp mapred-site.xml node1:/usr/local/hadoop/etc/hadoop
+scp mapred-site.xml node2:/usr/local/hadoop/etc/hadoop
+
+
+namenode->
+
+nano yarn-site.xml
+<property>
+<name>yarn.resourcemanager.hostname</name>
+<value>manager</value>
+</property>
+
+datanode->
+nano yarn-site.xml
+
+<property>
+<name>yarn.resourcemanager.hostname</name>
+<value>manager</value>
+</property>
+<property>
+<name>yarn.nodemanager.aux-services</name>
+<value>mapreduce_shuffle</value>
+</property>
+<property>
+<name>yarn.nodemanager.local-dirs</name>
+<value>/usr/local/hadoop/hd-data/yarn/data</value>
+</property>
+<property>
+<name>yarn.nodemanager.logs-dirs</name>
+<value>/usr/local/hadoop/hd-data/yarn/logs</value>
+</property>
+<property>
+<name>yarn.nodemanager.disk-health-checker.max-disk-utilization-perdisk-percentage</name>
+<value>99.9</value>
+</property>
+<property>
+<name>yarn.nodemanager.vmem-check-enabled</name>
+<value>false</value>
+</property>
+<property>
+<name>yarn.nodemanager.env-whitelist</name>
+<value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME</value>
+</property>
+
+
+
+
+step -7
+namenode->
+nano workers
+datanode1
+datanode2
+datanode3 
+
+
+hadoop namenode -format
+start-dfs.sh
+start-yarn.sh
+start-all.sh
+
+
+
+
+
+
+

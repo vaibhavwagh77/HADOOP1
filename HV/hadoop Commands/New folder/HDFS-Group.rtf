@@ -1,0 +1,669 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red255\green0\blue0;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\cf1\f0\fs40\lang9 GROUP CREATE COMMANDS\cf0\fs22\par
+\par
+login as: hhduser\par
+hhduser@192.168.56.104's password:\par
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-25-generic x86_64)\par
+\par
+ * Documentation:  {{\field{\*\fldinst{HYPERLINK https://help.ubuntu.com }}{\fldrslt{https://help.ubuntu.com\ul0\cf0}}}}\f0\fs22\par
+ * Management:     {{\field{\*\fldinst{HYPERLINK https://landscape.canonical.com }}{\fldrslt{https://landscape.canonical.com\ul0\cf0}}}}\f0\fs22\par
+ * Support:        {{\field{\*\fldinst{HYPERLINK https://ubuntu.com/advantage }}{\fldrslt{https://ubuntu.com/advantage\ul0\cf0}}}}\f0\fs22\par
+\par
+611 updates can be applied immediately.\par
+411 of these updates are standard security updates.\par
+To see these additional updates run: apt list --upgradable\par
+\par
+Last login: Sat Oct 19 05:30:33 2024 from 192.168.56.104\par
+hhduser@manager:~$ start-all.sh\par
+WARNING: Attempting to start all Apache Hadoop daemons as hhduser in 10 seconds.\par
+WARNING: This is not a recommended production deployment configuration.\par
+WARNING: Use CTRL-C to abort.\par
+Starting namenodes on [manager]\par
+Starting datanodes\par
+Starting secondary namenodes [manager]\par
+Starting resourcemanager\par
+Starting nodemanagers\par
+hhduser@manager:~$ ssh node1\par
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 6.8.0-47-generic x86_64)\par
+\par
+ * Documentation:  {{\field{\*\fldinst{HYPERLINK https://help.ubuntu.com }}{\fldrslt{https://help.ubuntu.com\ul0\cf0}}}}\f0\fs22\par
+ * Management:     {{\field{\*\fldinst{HYPERLINK https://landscape.canonical.com }}{\fldrslt{https://landscape.canonical.com\ul0\cf0}}}}\f0\fs22\par
+ * Support:        {{\field{\*\fldinst{HYPERLINK https://ubuntu.com/advantage }}{\fldrslt{https://ubuntu.com/advantage\ul0\cf0}}}}\f0\fs22\par
+\par
+264 updates can be applied immediately.\par
+16 of these updates are standard security updates.\par
+To see these additional updates run: apt list --upgradable\par
+\par
+New release '24.04.1 LTS' available.\par
+Run 'do-release-upgrade' to upgrade to it.\par
+\par
+Last login: Mon Oct 21 00:30:33 2024 from 192.168.56.104\par
+hhduser@node1:~$ exit\par
+logout\par
+Connection to node1 closed.\par
+hhduser@manager:~$ ssh node2\par
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-25-generic x86_64)\par
+\par
+ * Documentation:  {{\field{\*\fldinst{HYPERLINK https://help.ubuntu.com }}{\fldrslt{https://help.ubuntu.com\ul0\cf0}}}}\f0\fs22\par
+ * Management:     {{\field{\*\fldinst{HYPERLINK https://landscape.canonical.com }}{\fldrslt{https://landscape.canonical.com\ul0\cf0}}}}\f0\fs22\par
+ * Support:        {{\field{\*\fldinst{HYPERLINK https://ubuntu.com/advantage }}{\fldrslt{https://ubuntu.com/advantage\ul0\cf0}}}}\f0\fs22\par
+\par
+463 updates can be applied immediately.\par
+239 of these updates are standard security updates.\par
+To see these additional updates run: apt list --upgradable\par
+\par
+New release '24.04.1 LTS' available.\par
+Run 'do-release-upgrade' to upgrade to it.\par
+\par
+Last login: Mon Oct 21 00:30:50 2024 from 192.168.56.104\par
+hhduser@node2:~$ exit\par
+logout\par
+Connection to node2 closed.\par
+hhduser@manager:~$ jps\par
+2805 ResourceManager\par
+3160 Jps\par
+2426 NameNode\par
+2636 SecondaryNameNode\par
+hhduser@manager:~$ hdfs dfs -ls /\par
+Found 1 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-19 03:12 /hpcsa\par
+hhduser@manager:~$ hdfs dfs -mkdir /acts\par
+hhduser@manager:~$ hdfs dfs -ls /\par
+Found 2 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:27 /acts\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-19 03:12 /hpcsa\par
+hhduser@manager:~$ hdfs dfs -ls /nano hdfs-demo.sh\par
+ls: `/nano': No such file or directory\par
+ls: `hdfs-demo.sh': No such file or directory\par
+hhduser@manager:~$ hdfs dfs -ls /nano hdfs-demo.txt\par
+ls: `/nano': No such file or directory\par
+ls: `hdfs-demo.txt': No such file or directory\par
+hhduser@manager:~$ hdfs dfs -ls /nano hdfs-hpcsa.txt\par
+ls: `/nano': No such file or directory\par
+ls: `hdfs-hpcsa.txt': No such file or directory\par
+hhduser@manager:~$ hdfs dfs -ls / nano hdfs-demo.txt\par
+Found 2 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:27 /acts\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-19 03:12 /hpcsa\par
+ls: `nano': No such file or directory\par
+ls: `hdfs-demo.txt': No such file or directory\par
+hhduser@manager:~$ nano hdfs-demo.txt\par
+hhduser@manager:~$ ls\par
+ Desktop     hadoop.tar.gz    Music      snap                   Videos\par
+ Documents   hdfs-demo.txt    Pictures   Templates\par
+ Downloads   multi-node.txt   Public    'Untitled Document 1'\par
+hhduser@manager:~$ hdfs dfs -copyFromLocal hdfs-demo.txt /acts/\par
+hhduser@manager:~$ mkdir test\par
+hhduser@manager:~$ cd test\par
+hhduser@manager:~/test$ hdfs dfs -copyToLocal /acts/hdfs-demo.txt .\par
+hhduser@manager:~/test$ ls\par
+hdfs-demo.txt\par
+hhduser@manager:~/test$ rm -rf hdfs-demo.txt\par
+hhduser@manager:~/test$ ls\par
+hhduser@manager:~/test$ hdfs dfs -get /acts/hdfs-demo.txt .\par
+hhduser@manager:~/test$ ls\par
+hdfs-demo.txt\par
+hhduser@manager:~/test$ hdfs dfs -ls /\par
+Found 2 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:30 /acts\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-19 03:12 /hpcsa\par
+hhduser@manager:~/test$ hdfs dfs -rm /hpcsa/multi-node.txt\par
+rm: `/hpcsa/multi-node.txt': No such file or directory\par
+hhduser@manager:~/test$ hdfs dfs -rm /hpcsa/demo.txt\par
+rm: `/hpcsa/demo.txt': No such file or directory\par
+hhduser@manager:~/test$ hdfs dfs -ls /hpcsa\par
+hhduser@manager:~/test$ hdfs dfs -ls /acts\par
+Found 1 items\par
+-rw-r--r--   2 hhduser supergroup          0 2024-10-21 20:30 /acts/hdfs-demo.tx                                                       t\par
+hhduser@manager:~/test$ hdfs dfs -ls /hpcsa\par
+hhduser@manager:~/test$ hdfs dfs -cp /acts/hdfs-demo.txt /hpcsa/\par
+hhduser@manager:~/test$ hdfs dfs -ls /hpcsa\par
+Found 1 items\par
+-rw-r--r--   2 hhduser supergroup          0 2024-10-21 20:39 /hpcsa/hdfs-demo.t                                                       xt\par
+hhduser@manager:~/test$ hdfs dfs -rm /hpcsa\par
+rm: `/hpcsa': Is a directory\par
+hhduser@manager:~/test$ hdfs dfs -rm -r -f /hpcsa\par
+Deleted /hpcsa\par
+hhduser@manager:~/test$ login as: hhduser\par
+hhduser@192.168.56.104's password:\par
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-25-generic x86_64)\par
+\par
+ * Documentation:  {{\field{\*\fldinst{HYPERLINK https://help.ubuntu.com }}{\fldrslt{https://help.ubuntu.com\ul0\cf0}}}}\f0\fs22\par
+ * Management:     {{\field{\*\fldinst{HYPERLINK https://landscape.canonical.com }}{\fldrslt{https://landscape.canonical.com\ul0\cf0}}}}\f0\fs22\par
+ * Support:        {{\field{\*\fldinst{HYPERLINK https://ubuntu.com/advantage }}{\fldrslt{https://ubuntu.com/advantage\ul0\cf0}}}}\f0\fs22\par
+\par
+611 updates can be applied immediately.\par
+411 of these updates are standard security updates.\par
+To see these additional updates run: apt list --upgradable\par
+\par
+Last login: Sat Oct 19 05:30:33 2024 from 192.168.56.104\par
+hhduser@manager:~$ start-all.sh\par
+WARNING: Attempting to start all Apache Hadoop daemons as hhduser in 10 seconds.                                                       \par
+WARNING: This is not a recommended production deployment configuration.\par
+WARNING: Use CTRL-C to abort.\par
+Starting namenodes on [manager]\par
+Starting datanodes\par
+Starting secondary namenodes [manager]\par
+Starting resourcemanager\par
+Starting nodemanagers\par
+hhduser@manager:~$ ssh node1\par
+^Cduser@manager:~/test$ hdfs dfs -rm -r -f /hpcsa-10-21 20:39 /hpcsa/hdfs-demo.t\par
+hhduser@manager:~/test$ sudo adduser user2\par
+Adding user `user2' ...\par
+Adding new group `user2' (1002) ...\par
+Adding new user `user2' (1002) with group `user2' ...\par
+Creating home directory `/home/user2' ...\par
+Copying files from `/etc/skel' ...\par
+New password:\par
+BAD PASSWORD: The password is shorter than 8 characters\par
+Retype new password:\par
+passwd: password updated successfully\par
+Changing the user information for user2\par
+Enter the new value, or press ENTER for the default\par
+        Full Name []:\par
+        Room Number []:\par
+        Work Phone []:\par
+        Home Phone []:\par
+        Other []:\par
+Is the information correct? [Y/n] y\par
+hhduser@manager:~/test$ su - user2\par
+Password:\par
+user2@manager:~$ nano user2.txt\par
+user2@manager:~$ nano user2.txt\par
+user2@manager:~$ pwd\par
+/home/user2\par
+user2@manager:~$ hdfs dfs -ls /\par
+Command 'hdfs' not found, did you mean:\par
+  command 'hfs' from deb hfsutils-tcltk (3.2.6-15build2)\par
+  command 'hdfls' from deb hdf4-tools (4.2.15-4)\par
+Try: apt install <deb name>\par
+user2@manager:~$ cd /usr/local/hadoop/bin\par
+user2@manager:/usr/local/hadoop/bin$ ls\par
+container-executor  hadoop  hadoop.cmd  hdfs  hdfs.cmd  mapred  mapred.cmd  oom-listener  test-container-executor  yarn  yarn.cmd\par
+user2@manager:/usr/local/hadoop/bin$ ./hdfs dfs -ls /\par
+Found 1 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:30 /acts\par
+user2@manager:/usr/local/hadoop/bin$ ./hdfs dfs -mkdir /user2\par
+mkdir: Permission denied: user=user2, access=WRITE, inode="/":hhduser:supergroup:drwxr-xr-x\par
+user2@manager:/usr/local/hadoop/bin$ sudo ./hdfs dfs -mkdir /user2\par
+[sudo] password for user2:\par
+user2 is not in the sudoers file.  This incident will be reported.\par
+user2@manager:/usr/local/hadoop/bin$ exit\par
+logout\par
+hhduser@manager:~/test$ hdfs dfs -mkdir /user2-data\par
+hhduser@manager:~/test$ hdfs dfs -ls\par
+ls: `.': No such file or directory\par
+hhduser@manager:~/test$ hdfs dfs -ls /\par
+Found 2 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:30 /acts\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:50 /user2-data\par
+hhduser@manager:~/test$ hdfs dfs -chown user2 /user2-data'\par
+> ^C\par
+hhduser@manager:~/test$ hdfs dfs -chown user2 /user2-data\par
+hhduser@manager:~/test$ hdfs dfs -ls /\par
+Found 2 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:30 /acts\par
+drwxr-xr-x   - user2   supergroup          0 2024-10-21 20:50 /user2-data\par
+hhduser@manager:~/test$ su -user2\par
+Try 'su --help' for more information.\par
+hhduser@manager:~/test$ user2\par
+Command 'user2' not found, did you mean:\par
+  command 'users' from deb coreutils (8.32-4.1ubuntu1.2)\par
+  command 'userv' from deb userv (1.2.1~beta4)\par
+Try: apt install <deb name>\par
+hhduser@manager:~/test$ su - user2\par
+Password:\par
+user2@manager:~$ cd /usr/local/hadoop/bin\par
+user2@manager:/usr/local/hadoop/bin$ cd\par
+user2@manager:~$ export PATH=$PATH:/usr/local/hadoop/bin\par
+user2@manager:~$ hdfs dfs -ls /\par
+Found 2 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:30 /acts\par
+drwxr-xr-x   - user2   supergroup          0 2024-10-21 20:50 /user2-data\par
+user2@manager:~$\par
+user2@manager:~$\par
+user2@manager:~$\par
+user2@manager:~$\par
+user2@manager:~$\par
+user2@manager:~$ #path variable\par
+user2@manager:~$ nano user2.txt\par
+user2@manager:~$ hdfs dfs -put user2.txt /user2/-data\par
+put: `/user2/-data': No such file or directory: `hdfs://manager:9000/user2/-data'\par
+user2@manager:~$ hdfs dfs -put user2.txt /user2-data\par
+user2@manager:~$ hdfs dfs -ls /user2-data\par
+Found 1 items\par
+-rw-r--r--   2 user2 supergroup         44 2024-10-21 20:56 /user2-data/user2.txt\par
+user2@manager:~$ exit\par
+logout\par
+hhduser@manager:~/test$ sudo groupadd hpcsa\par
+hhduser@manager:~/test$ sudo adduser hpc1\par
+Adding user `hpc1' ...\par
+Adding new group `hpc1' (1004) ...\par
+Adding new user `hpc1' (1003) with group `hpc1' ...\par
+Creating home directory `/home/hpc1' ...\par
+Copying files from `/etc/skel' ...\par
+New password:\par
+BAD PASSWORD: The password is shorter than 8 characters\par
+Retype new password:\par
+passwd: password updated successfully\par
+Changing the user information for hpc1\par
+Enter the new value, or press ENTER for the default\par
+        Full Name []:\par
+        Room Number []:\par
+        Work Phone []:\par
+        Home Phone []:\par
+        Other []:\par
+Is the information correct? [Y/n] y\par
+hhduser@manager:~/test$ man adduser\par
+hhduser@manager:~/test$ sudo adduser --ingroup hpcsa hpc2\par
+Adding user `hpc2' ...\par
+Adding new user `hpc2' (1004) with group `hpcsa' ...\par
+Creating home directory `/home/hpc2' ...\par
+Copying files from `/etc/skel' ...\par
+New password:\par
+BAD PASSWORD: The password is shorter than 8 characters\par
+Retype new password:\par
+passwd: password updated successfully\par
+Changing the user information for hpc2\par
+Enter the new value, or press ENTER for the default\par
+        Full Name []:\par
+        Room Number []:\par
+        Work Phone []:\par
+        Home Phone []:\par
+        Other []:\par
+Is the information correct? [Y/n] y\par
+hhduser@manager:~/test$ sudo usermod -G hpcsa hpc1\par
+hhduser@manager:~/test$ hdfs dfs -mkdir /hpc-project\par
+hhduser@manager:~/test$ hdfs dfs -ls /\par
+Found 3 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:30 /acts\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 21:35 /hpc-project\par
+drwxr-xr-x   - user2   supergroup          0 2024-10-21 20:56 /user2-data\par
+hhduser@manager:~/test$ hdfs dfs -chgrp hpcsa /hpc-project\par
+hhduser@manager:~/test$ hdfs dfs -ls /\par
+Found 3 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:30 /acts\par
+drwxr-xr-x   - hhduser hpcsa               0 2024-10-21 21:35 /hpc-project\par
+drwxr-xr-x   - user2   supergroup          0 2024-10-21 20:56 /user2-data\par
+hhduser@manager:~/test$ hdfs dfs -chmod 775 /hpc-project\par
+hhduser@manager:~/test$ hdfs dfs -ls /\par
+Found 3 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:30 /acts\par
+drwxrwxr-x   - hhduser hpcsa               0 2024-10-21 21:35 /hpc-project\par
+drwxr-xr-x   - user2   supergroup          0 2024-10-21 20:56 /user2-data\par
+hhduser@manager:~/test$ su - hpc1\par
+Password:\par
+hpc1@manager:~$ pwd\par
+/home/hpc1\par
+hpc1@manager:~$ nano hpc1.txt\par
+hpc1@manager:~$ hdfs dfs -put hpc1.txt /hpc-project\par
+Command 'hdfs' not found, did you mean:\par
+  command 'hdfls' from deb hdf4-tools (4.2.15-4)\par
+  command 'hfs' from deb hfsutils-tcltk (3.2.6-15build2)\par
+Try: apt install <deb name>\par
+hpc1@manager:~$ export PATH=$PATH:/usr/local/hadoop/bin\par
+hpc1@manager:~$ hdfs dfs -put hpc1.txt /hpc-project\par
+hpc1@manager:~$ exit\par
+logout\par
+hhduser@manager:~/test$ su - hpc2\par
+Password:\par
+hpc2@manager:~$ export PATH=$PATH:/usr/local/hadoop/bin/hpc-project\par
+hpc2@manager:~$ nano hpc2.txt\par
+hpc2@manager:~$ export PATH=$PATH:/usr/local/hadoop/bin\par
+hpc2@manager:~$ nano hpc2.txt\par
+hpc2@manager:~$ hdfs dfs -put hpc2.txt /hpc-project\par
+hpc2@manager:~$ ls -all\par
+total 28\par
+drwxr-x--- 3 hpc2 hpcsa 4096 Oct 21 21:45 .\par
+drwxr-xr-x 8 root root  4096 Oct 21 21:31 ..\par
+-rw-r--r-- 1 hpc2 hpcsa  220 Oct 21 21:31 .bash_logout\par
+-rw-r--r-- 1 hpc2 hpcsa 3771 Oct 21 21:31 .bashrc\par
+-rw-r--r-- 1 hpc2 hpcsa   29 Oct 21 21:45 hpc2.txt\par
+drwxr-xr-x 3 hpc2 hpcsa 4096 Oct 21 21:45 .local\par
+-rw-r--r-- 1 hpc2 hpcsa  807 Oct 21 21:31 .profile\par
+hpc2@manager:~$ exit\par
+logout\par
+hhduser@manager:~/test$ su -hpc1\par
+\par
+Usage:\par
+ su [options] [-] [<user> [<argument>...]]\par
+\par
+Change the effective user ID and group ID to that of <user>.\par
+A mere - implies -l.  If <user> is not given, root is assumed.\par
+\par
+Options:\par
+ -m, -p, --preserve-environment      do not reset environment variables\par
+ -w, --whitelist-environment <list>  don't reset specified variables\par
+\par
+ -g, --group <group>             specify the primary group\par
+ -G, --supp-group <group>        specify a supplemental group\par
+\par
+ -, -l, --login                  make the shell a login shell\par
+ -c, --command <command>         pass a single command to the shell with -c\par
+ --session-command <command>     pass a single command to the shell with -c\par
+                                   and do not create a new session\par
+ -f, --fast                      pass -f to the shell (for csh or tcsh)\par
+ -s, --shell <shell>             run <shell> if /etc/shells allows it\par
+ -P, --pty                       create a new pseudo-terminal\par
+\par
+ -h, --help                      display this help\par
+ -V, --version                   display version\par
+\par
+For more details see su(1).\par
+hhduser@manager:~/test$ su - hpc1\par
+Password:\par
+hpc1@manager:~$ la - all\par
+ls: cannot access '-': No such file or directory\par
+ls: cannot access 'all': No such file or directory\par
+hpc1@manager:~$ la -all\par
+total 32\par
+drwxr-x--- 3 hpc1 hpc1 4096 Oct 21 21:44 .\par
+drwxr-xr-x 8 root root 4096 Oct 21 21:31 ..\par
+-rw------- 1 hpc1 hpc1  135 Oct 21 21:44 .bash_history\par
+-rw-r--r-- 1 hpc1 hpc1  220 Oct 21 21:30 .bash_logout\par
+-rw-r--r-- 1 hpc1 hpc1 3771 Oct 21 21:30 .bashrc\par
+-rw-rw-r-- 1 hpc1 hpc1   21 Oct 21 21:41 hpc1.txt\par
+drwxrwxr-x 3 hpc1 hpc1 4096 Oct 21 21:40 .local\par
+-rw-r--r-- 1 hpc1 hpc1  807 Oct 21 21:30 .profile\par
+hpc1@manager:~$ ls -all\par
+total 32\par
+drwxr-x--- 3 hpc1 hpc1 4096 Oct 21 21:44 .\par
+drwxr-xr-x 8 root root 4096 Oct 21 21:31 ..\par
+-rw------- 1 hpc1 hpc1  135 Oct 21 21:44 .bash_history\par
+-rw-r--r-- 1 hpc1 hpc1  220 Oct 21 21:30 .bash_logout\par
+-rw-r--r-- 1 hpc1 hpc1 3771 Oct 21 21:30 .bashrc\par
+-rw-rw-r-- 1 hpc1 hpc1   21 Oct 21 21:41 hpc1.txt\par
+drwxrwxr-x 3 hpc1 hpc1 4096 Oct 21 21:40 .local\par
+-rw-r--r-- 1 hpc1 hpc1  807 Oct 21 21:30 .profile\par
+hpc1@manager:~$ ^C\par
+hpc1@manager:~$\par
+\par
+\par
+-----------------------------------------------------------\par
+\par
+\par
+hpc1@manager:~$ history\par
+    1  pwd\par
+    2  nano hpc1.txt\par
+    3  hdfs dfs -put hpc1.txt /hpc-project\par
+    4  export PATH=$PATH:/usr/local/hadoop/bin\par
+    5  hdfs dfs -put hpc1.txt /hpc-project\par
+    6  exit\par
+    7  la - all\par
+\par
+hpc1@manager:~$ exit\par
+logout\par
+hhduser@manager:~/test$ su - hpc2\par
+Password:\par
+hpc2@manager:~$ history\par
+    1  export PATH=$PATH:/usr/local/hadoop/bin/hpc-project\par
+    2  nano hpc2.txt\par
+    3  export PATH=$PATH:/usr/local/hadoop/bin\par
+    4  nano hpc2.txt\par
+    5  hdfs dfs -put hpc2.txt /hpc-project\par
+    6  ls -all\par
+    7  exit\par
+    8  history\par
+hpc2@manager:~$\par
+\par
+---------------------------\par
+hpc2@manager:~$ exit\par
+logout\par
+hhduser@manager:~/test$ history\par
+    1  pwd\par
+    2  ip address\par
+    3  java version\par
+    4  wget -c -O hadoop.tar.gz {{\field{\*\fldinst{HYPERLINK https://dlcdn.apache.org/hadoop/common/hadoop-3.2.4.tar.gz }}{\fldrslt{https://dlcdn.apache.org/hadoop/common/hadoop-3.2.4.tar.gz\ul0\cf0}}}}\f0\fs22\par
+    5  wget -c -O hadoop.tar.gz {{\field{\*\fldinst{HYPERLINK https://dlcdn.apache.org/hadoop/common/hadoop-3.2.4/hadoop-3.2.4.tar.gz }}{\fldrslt{https://dlcdn.apache.org/hadoop/common/hadoop-3.2.4/hadoop-3.2.4.tar.gz\ul0\cf0}}}}\f0\fs22\par
+    6  ls\par
+    7  ping {{\field{\*\fldinst{HYPERLINK www.google.com }}{\fldrslt{www.google.com\ul0\cf0}}}}\f0\fs22\par
+    8  history\par
+    9  tar xvzf hadoop.tar.gz\par
+   10  history\par
+   11  sudo mkdir /usr/local/hadoop\par
+   12  sudo mv hadoop-3.2.4/* /usr/local/hadoop/\par
+   13  ls /usr/local/hadoop\par
+   14  sudo init 0\par
+   15  pwd\par
+   16  nano .bashrc\par
+   17  sudo chown -R hhduser:hhduser /usr/local/hadoop\par
+   18  sudo chmod -R 755 /usr/local/hadoop\par
+   19  ls -ll\par
+   20  cd /usr/local/hadoop/etc/hadoop\par
+   21  nano hadoop-env.sh\par
+   22  sudo apt install pdsh -y\par
+   23  cd\par
+   24  sudo init 0\par
+   25  ip a\par
+   26  sudo apt intalls ssh -y\par
+   27  sudo apt intall ssh -y\par
+   28  sudo apt install ssh -y\par
+   29  sudo systemctl start ssh\par
+   30  sudo systemctl enable ssh\par
+   31  ip a\par
+   32  history\par
+   33  cd /usr/local/hadoop/etc/hadoop\par
+   34  history\par
+   35  cd\par
+   36  exit\par
+   37  sudo hostnamectl set-hostname master\par
+   38  sudo hostname master\par
+   39  sudo nano /etc/hosts\par
+   40  cd /usr/local/hadoop\par
+   41  ls\par
+   42  cd /etc/hadoop\par
+   43  nano core-site.xml\par
+   44  sudo nano core-site.xml\par
+   45  cd\par
+   46  cd /usr/local/hadoop/etc/hadoop\par
+   47  nano core-site.xml\par
+   48  nano hdfs-site.xml\par
+   49  nano mapred-site.xml\par
+   50  cat mapred-site.xml\par
+   51  nano yarn-site.xml\par
+   52  nano workers\par
+   53  mkdir -p /usr/local/hadoop/hd-data/nn\par
+   54  ls -all /usr/local/hadoop/hd-data/\par
+   55  echo $HADOOP_HOME /usr/local/hadoop\par
+   56  echo $PATH\par
+   57  start-dfs.sh\par
+   58  jps\par
+   59  cd\par
+   60  ssh-keygen -t rsa\par
+   61  ssh-copy-id -i .ssh/id_rsa.pub\par
+   62  ssh-copy-id -i .ssh/id_rsa.pub hhduser@master\par
+   63  ssh hhduser_master\par
+   64  ssh hhduser@master\par
+   65  logout\par
+   66  pwd\par
+   67  ssh-copy-id -i .ssh/id_rsa.pub hhduser@dn1\par
+   68  sudo nano /etc/hosts\par
+   69  ssh-copy-id -i .ssh/id_rsa.pub hhduser@dn1\par
+   70  ssh hhduser@dn1\par
+   71  ssh hhduser@dn2\par
+   72  history\par
+   73  start-dfs.sh\par
+   74  jps\par
+   75  ssh hhduser@dn1\par
+   76  ssh hhduser@dn2\par
+   77  stop-dfs.sh\par
+   78  jps\par
+   79  hadoop NameNode -format\par
+   80  start-dfs.sh\par
+   81  jps\par
+   82  hadoop namenode -format\par
+   83  jps\par
+   84  stop-dfs.sh\par
+   85  jps\par
+   86  hadoop namenode -format\par
+   87  start-dfs.sh\par
+   88  jps\par
+   89  history\par
+   90  jps\par
+   91  ssh hhduser@dn2\par
+   92  jps\par
+   93  start-yarn.sh\par
+   94  ssh hhduser@dn1\par
+   95  ssh hhduser@dn2\par
+   96  cd\par
+   97  ssh-copy-id -i .ssh/id_rsa.pub hhduser@dn2\par
+   98  jps\par
+   99  stop-all.sh\par
+  100  start-all.sh\par
+  101  jps\par
+  102  cd /usr/local/hadoop/logs\par
+  103  tail -30 hadoop-hhduser -namenode\par
+  104  tail -30 hadoop-hhduser-namenode\par
+  105  tail -30 hadoop-hhduser-namenode.log\par
+  106  tail -30 hadoop-hhduser-namenode-maste.log\par
+  107  cd\par
+  108  sudo su- dn1\par
+  109  sudo su - dn1\par
+  110  sudo su dn1\par
+  111  sudo su- dn1\par
+  112  sudo su -dn1\par
+  113  history\par
+  114  nano .bashrc\par
+  115  cd /usr/local/hadoop/logs\par
+  116  jps\par
+  117  cd ..\par
+  118  cd sbin\par
+  119  jps\par
+  120  cd ..\par
+  121  cd logs\par
+  122  start-yarn.sh\par
+  123  jps\par
+  124  cd\par
+  125  sudo nano /etc/hosts\par
+  126  jps\par
+  127  cd /usr/local/hadoop/logs\par
+  128  cd\par
+  129  nano multi-node.txt\par
+  130  hdfs dfs -ls/\par
+  131  hdfs dfs -ls /\par
+  132  hdfs dfs -mkdir /hpcsa\par
+  133  hdfs dfs -put multi-node.txt /hpcsa\par
+  134  hdfs dfs -ls /hpcsa\par
+  135  hdfs dfs -put multi-node.txt /hpcsa\par
+  136  hdfs dfs -h\par
+  137  stop-all\par
+  138  stop-all.sh\par
+  139  history\par
+  140  fs -ls/\par
+  141  stop -all.sh\par
+  142  stop-all.sh\par
+  143  jps\par
+  144  exit\par
+  145  clear\par
+  146  whoami\par
+  147  sudo nano /etc/hosts\par
+  148  nano hadoop-env.sh\par
+  149  cd /usr/local/hadoop\par
+  150  ls\par
+  151  cd etc\par
+  152  ls\par
+  153  cd hadoop\par
+  154  ls\par
+  155  nano hadoop-env.sh\par
+  156  nano hdfs-site.xml\par
+  157  nano core-site.xml\par
+  158  nano yarn-site.xml\par
+  159  nano worker\par
+  160  nano workers\par
+  161  cd\par
+  162  rm -rf /user/local/hadoop\par
+  163  sudo cp /home/osboxes/hadoopturgz\par
+  164  cd home\par
+  165  ls\par
+  166  rm hadoop-3.2.4/\par
+  167  sudo rm hadoop-3.2.4/\par
+  168  sudo rm -r hadoop-3.2.4/\par
+  169  ls\par
+  170  stop-all.sh\par
+  171  exit\par
+  172  ls\par
+  173  ip a\par
+  174  jps\par
+  175  clear\par
+  176  cd usr\par
+  177  clear\par
+  178  ls\par
+  179  ifconfig\par
+  180  sudo apt install net-tools\par
+  181  ifconfig\par
+  182  ssh 192.168.56.104\par
+  183  exit\par
+  184  start-all.sh\par
+  185  ssh node1\par
+  186  ssh node2\par
+  187  jps\par
+  188  hdfs dfs -ls /\par
+  189* hdfs dfs -mkdir /\par
+  190  hdfs dfs -ls /\par
+  191  hdfs dfs -ls /nano hdfs-demo.sh\par
+  192  hdfs dfs -ls /nano hdfs-demo.txt\par
+  193  hdfs dfs -ls /nano hdfs-hpcsa.txt\par
+  194  hdfs dfs -ls / nano hdfs-demo.txt\par
+  195  nano hdfs-demo.txt\par
+  196  ls\par
+  197  hdfs dfs -copyFromLocal hdfs-demo.txt /acts/\par
+  198  mkdir test\par
+  199  cd test\par
+  200  hdfs dfs -copyToLocal /acts/hdfs-demo.txt .\par
+  201  ls\par
+  202  rm -rf hdfs-demo.txt\par
+  203  ls\par
+  204  hdfs dfs -get /acts/hdfs-demo.txt .\par
+  205  ls\par
+  206  hdfs dfs -ls /\par
+  207  hdfs dfs -rm /hpcsa/multi-node.txt\par
+  208  hdfs dfs -rm /hpcsa/demo.txt\par
+  209  hdfs dfs -ls /hpcsa\par
+  210  hdfs dfs -ls /acts\par
+  211  hdfs dfs -ls /hpcsa\par
+  212  hdfs dfs -cp /acts/hdfs-demo.txt /hpcsa/\par
+  213  hdfs dfs -ls /hpcsa\par
+  214  hdfs dfs -rm /hpcsa\par
+  215  hdfs dfs -rm -r -f /hpcsa\par
+  216  sudo adduser user2\par
+  217  su - user2\par
+  218  hdfs dfs -mkdir /user2-data\par
+  219  hdfs dfs -ls\par
+  220  hdfs dfs -ls /\par
+  221  hdfs dfs -chown user2 /user2-data'\par
+  222  hdfs dfs -chown user2 /user2-data\par
+  223  hdfs dfs -ls /\par
+  224  su -user2\par
+  225  user2\par
+  226  su - user2\par
+  227  sudo groupadd hpcsa\par
+  228  sudo adduser hpc1\par
+  229  man adduser\par
+  230  sudo adduser --ingroup hpcsa hpc2\par
+  231  sudo usermod -G hpcsa hpc1\par
+  232  hdfs dfs -mkdir /hpc-project\par
+  233  hdfs dfs -ls /\par
+  234  hdfs dfs -chgrp hpcsa /hpc-project\par
+  235  hdfs dfs -ls /\par
+  236  hdfs dfs -chmod 775 /hpc-project\par
+  237  hdfs dfs -ls /\par
+  238  su - hpc1\par
+  239  su - hpc2\par
+  240  su -hpc1\par
+  241  su - hpc1\par
+  242  hdfs dfs -h\par
+  243  hdfs dfs -ls /\par
+  244  hdfs dfs -ls /hpc-project\par
+  245  su - hpc1\par
+  246  sudo nano /etc/bashrc *\par
+  247  sudo nano /etc/bashrc\par
+  248  su - hpc1\par
+  249  sudo nano /etc/bash.bashrc\par
+  250  su - hpc1\par
+  251  su - hpc2\par
+  252  history\par
+hhduser@manager:~/test$\par
+}
+ 

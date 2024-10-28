@@ -1,0 +1,22 @@
+hdfs dfs -mkdir /vaibhav
+sudo nano histshwari.txt
+hdfs dfs -put histshwari.txt /vaibhav
+hdfs dfs -getfacl /vaibhav
+cd /usr/local/hadoop/etc/hadoop/
+sudo nano hdfs-site.xml
+cd
+sudo adduser cdac
+hdfs dfsadmin -refreshNodes
+sudo nano /usr/local/hadoop/etc/hadoop/hdfs-site.xml
+hdfs dfs -setfacl -m user:cdac:rwx /vaibhav
+stop-all.sh
+start-all.sh
+hdfs dfs -setfacl -m user:cdac:rwx /vaibhav
+hdfs dfs -getfacl /vaibhav
+
+
+--------------hdfs-site.xml--------
+<property>
+    <name>dfs.namenode.acls.enabled</name>
+    <value>true</value>
+</property>

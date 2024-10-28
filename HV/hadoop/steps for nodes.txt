@@ -1,0 +1,29 @@
+Deploy a cluster with 1 namenode and 2 datanodes 
+username-hduser 
+password-hduser 
+
+namenode name->namenode
+datanode1 name->dn1
+datanode2 name->dn2
+
+
+1)create ubuntu vm 
+2)update os
+3)install openjdk-8 jdk 
+install pdsh,ssh 
+systemctl start ssh 
+4)create hduser 
+5)provide sudo permission to hduser
+6)login as hduser 
+7)prepare .bashrc
+8)Download Hadoop
+9)create directory using 
+  sudo mkdir /usr/local/Hadoop
+10)make hduser owner 
+  sudo chown hduser:hduser /usr/local/Hadoop 
+11)chmod 755 /usr/local/Hadoop
+12)untar Hadoop tar file 
+cp -r /hadoop-3.2/* /usr/local/Hadoop 
+13)edit hadoop-env.sh 
+14)shutdown vm 
+15)clone the vm 

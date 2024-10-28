@@ -1,0 +1,57 @@
+hdfs dfsadmin -printTopology
+nano ~/test.txt
+
+hdfs dfs -mkdir /demo
+hdfs dfs -put ~/test.txt /demo
+
+hdfs fsck /demo/test.txt -files -blocks -racks -locations
+
+
+nano rack-info.py
+
+#!/usr/bin/env python
+import sys
+DEFAULT_RACK = "/default/default" 
+HOST_RACK_FILE = "/usr/local/hadoop/etc/hadoop/rack-map.txt" 
+host_rack = {}
+for line in open(HOST_RACK_FILE):
+	(host, rack) = line.split()
+	host_rack[host] = rack
+for host in sys.argv[1:]:
+	if host in host_rack:
+		print (host_rack[host])
+	else:
+		print (DEFAULT_RACK)
+
+
+chmod u+x rack-info.py
+
+
+nano rack-map.txt
+
+192.168.82.129 /default/rack0
+192.168.82.131  /default/rack0
+192.168.208.130  /default/rack1
+datanode1 /default/rack0
+datanode2 /default/rack0
+pune3 /default/rack1 
+
+
+
+
+nano core-site.xml
+<property>
+<name>net.topology.script.file.name</name>
+<value>/usr/local/hadoop/etc/hadoop/rackinfo.py</value>
+</property>
+
+
+stop-dfs.sh
+start-dfs.sh
+hdfs dfsadmin -printTopology
+
+
+nano ~/newtest.txt
+hdfs dfs -mkdir /demo
+hdfs dfs -put ~/newtest.txt /demo
+hdfs fsck /demo/newtest.txt -files -blocks -racks -locations

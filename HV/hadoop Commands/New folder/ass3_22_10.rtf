@@ -1,0 +1,454 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 hhduser@manager:~/test$ sudo adduser ds1\par
+Adding user `ds1' ...\par
+Adding new group `ds1' (1005) ...\par
+Adding new user `ds1' (1005) with group `ds1' ...\par
+Creating home directory `/home/ds1' ...\par
+Copying files from `/etc/skel' ...\par
+New password:\par
+BAD PASSWORD: The password is shorter than 8 characters\par
+Retype new password:\par
+passwd: password updated successfully\par
+Changing the user information for ds1\par
+Enter the new value, or press ENTER for the default\par
+        Full Name []:\par
+        Room Number []:\par
+        Work Phone []:\par
+        Home Phone []:\par
+        Other []:\par
+Is the information correct? [Y/n] y\par
+hhduser@manager:~/test$ su - ds1\par
+Password:\par
+ds1@manager:~$ nano wordlist.txt\par
+ds1@manager:~$ hdfs dfs -ls/\par
+-ls/: Unknown command\par
+Usage: hadoop fs [generic options]\par
+        [-appendToFile <localsrc> ... <dst>]\par
+        [-cat [-ignoreCrc] <src> ...]\par
+        [-checksum <src> ...]\par
+        [-chgrp [-R] GROUP PATH...]\par
+        [-chmod [-R] <MODE[,MODE]... | OCTALMODE> PATH...]\par
+        [-chown [-R] [OWNER][:[GROUP]] PATH...]\par
+        [-copyFromLocal [-f] [-p] [-l] [-d] [-t <thread count>] [-q <thread pool queu\par
+        [-copyToLocal [-f] [-p] [-crc] [-ignoreCrc] [-t <thread count>] [-q <thread p\par
+        [-count [-q] [-h] [-v] [-t [<storage type>]] [-u] [-x] [-e] <path> ...]\par
+        [-cp [-f] [-p | -p[topax]] [-d] [-t <thread count>] [-q <thread pool queue si\par
+        [-createSnapshot <snapshotDir> [<snapshotName>]]\par
+        [-deleteSnapshot <snapshotDir> <snapshotName>]\par
+        [-df [-h] [<path> ...]]\par
+        [-du [-s] [-h] [-v] [-x] <path> ...]\par
+        [-expunge [-immediate]]\par
+        [-find <path> ... <expression> ...]\par
+        [-get [-f] [-p] [-crc] [-ignoreCrc] [-t <thread count>] [-q <thread pool queu\par
+        [-getfacl [-R] <path>]\par
+        [-getfattr [-R] \{-n name | -d\} [-e en] <path>]\par
+        [-getmerge [-nl] [-skip-empty-file] <src> <localdst>]\par
+        [-head <file>]\par
+        [-help [cmd ...]]\par
+        [-ls [-C] [-d] [-h] [-q] [-R] [-t] [-S] [-r] [-u] [-e] [<path> ...]]\par
+        [-mkdir [-p] <path> ...]\par
+        [-moveFromLocal [-f] [-p] [-l] [-d] <localsrc> ... <dst>]\par
+        [-moveToLocal <src> <localdst>]\par
+        [-mv <src> ... <dst>]\par
+        [-put [-f] [-p] [-l] [-d] [-t <thread count>] [-q <thread pool queue size>] <\par
+        [-renameSnapshot <snapshotDir> <oldName> <newName>]\par
+        [-rm [-f] [-r|-R] [-skipTrash] [-safely] <src> ...]\par
+        [-rmdir [--ignore-fail-on-non-empty] <dir> ...]\par
+        [-setfacl [-R] [\{-b|-k\} \{-m|-x <acl_spec>\} <path>]|[--set <acl_spec> <path>]]\par
+        [-setfattr \{-n name [-v value] | -x name\} <path>]\par
+        [-setrep [-R] [-w] <rep> <path> ...]\par
+        [-stat [format] <path> ...]\par
+        [-tail [-f] [-s <sleep interval>] <file>]\par
+        [-test -[defswrz] <path>]\par
+        [-text [-ignoreCrc] <src> ...]\par
+        [-touch [-a] [-m] [-t TIMESTAMP (yyyyMMdd:HHmmss) ] [-c] <path> ...]\par
+        [-touchz <path> ...]\par
+        [-truncate [-w] <length> <path> ...]\par
+        [-usage [cmd ...]]\par
+\par
+Generic options supported are:\par
+-conf <configuration file>        specify an application configuration file\par
+-D <property=value>               define a value for a given property\par
+-fs <{{\field{\*\fldinst{HYPERLINK "file:///|hdfs://namenode:port"}}{\fldrslt{file:///|hdfs://namenode:port\ul0\cf0}}}}\f0\fs22 > specify default filesystem URL to use, overrides\par
+-jt <local|resourcemanager:port>  specify a ResourceManager\par
+-files <file1,...>                specify a comma-separated list of files to be copie\par
+-libjars <jar1,...>               specify a comma-separated list of jar files to be i\par
+-archives <archive1,...>          specify a comma-separated list of archives to be un\par
+\par
+The general command line syntax is:\par
+command [genericOptions] [commandOptions]\par
+\par
+ds1@manager:~$ cd /user/local/hadoop/bin\par
+-bash: cd: /user/local/hadoop/bin: No such file or directory\par
+ds1@manager:~$ hdfs dfs -ls /\par
+Found 3 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:30 /acts\par
+drwxrwxr-x   - hhduser hpcsa               0 2024-10-21 21:46 /hpc-project\par
+drwxr-xr-x   - user2   supergroup          0 2024-10-21 20:56 /user2-data\par
+ds1@manager:~$ hdfs dfs -mkdir /ds1-data hdfs dfs -ls /\par
+mkdir: Permission denied: user=ds1, access=WRITE, inode="/":hhduser:supergroup:drwxr-\par
+mkdir: `hdfs://manager:9000/user/ds1': No such file or directory\par
+mkdir: `hdfs://manager:9000/user/ds1': No such file or directory\par
+mkdir: `hdfs://manager:9000/user/ds1': No such file or directory\par
+mkdir: `/': File exists\par
+ds1@manager:~$ cd /user/local/hadoop/bin\par
+-bash: cd: /user/local/hadoop/bin: No such file or directory\par
+ds1@manager:~$ cd /usr/local/hadoop/bin\par
+ds1@manager:/usr/local/hadoop/bin$ ls\par
+container-executor  hdfs      mapred.cmd               yarn\par
+hadoop              hdfs.cmd  oom-listener             yarn.cmd\par
+hadoop.cmd          mapred    test-container-executor\par
+ds1@manager:/usr/local/hadoop/bin$ ./hdfs dfs -ls /\par
+Found 3 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:30 /acts\par
+drwxrwxr-x   - hhduser hpcsa               0 2024-10-21 21:46 /hpc-proje             ct\par
+drwxr-xr-x   - user2   supergroup          0 2024-10-21 20:56 /user2-dat             a\par
+ds1@manager:/usr/local/hadoop/bin$ sudo ./hdfs dfs -mkdir /ds1\par
+[sudo] password for ds1:\par
+ds1 is not in the sudoers file.  This incident will be reported.\par
+ds1@manager:/usr/local/hadoop/bin$ exit\par
+logout\par
+hhduser@manager:~/test$ hdfs dfs -mkdir /ds1-data\par
+hhduser@manager:~/test$ hdfs dfs -ls /\par
+Found 4 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:30 /acts\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-22 00:05 /ds1-data\par
+drwxrwxr-x   - hhduser hpcsa               0 2024-10-21 21:46 /hpc-proje             ct\par
+drwxr-xr-x   - user2   supergroup          0 2024-10-21 20:56 /user2-dat             a\par
+hhduser@manager:~/test$ hdfs dfs -chown ds1 /ds1-data\par
+hhduser@manager:~/test$ hdfs dfs -ls /\par
+Found 4 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:30 /acts\par
+drwxr-xr-x   - ds1     supergroup          0 2024-10-22 00:05 /ds1-data\par
+drwxrwxr-x   - hhduser hpcsa               0 2024-10-21 21:46 /hpc-proje             ct\par
+drwxr-xr-x   - user2   supergroup          0 2024-10-21 20:56 /user2-dat             a\par
+hhduser@manager:~/test$ su - ds1\par
+Password:\par
+ds1@manager:~$ export PATH=$PATH:/usr/local/hadoop/bin\par
+ds1@manager:~$ hdfs dfs -ls /\par
+Found 4 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:30 /acts\par
+drwxr-xr-x   - ds1     supergroup          0 2024-10-22 00:05 /ds1-data\par
+drwxrwxr-x   - hhduser hpcsa               0 2024-10-21 21:46 /hpc-project\par
+drwxr-xr-x   - user2   supergroup          0 2024-10-21 20:56 /user2-data\par
+ds1@manager:~$ hdfs dfs -chmod 775 /ds1\par
+chmod: `/ds1': No such file or directory\par
+ds1@manager:~$ exit\par
+logout\par
+hhduser@manager:~/test$ hdfs dfs -chmod 775 ds1 /ds1-data\par
+chmod: `ds1': No such file or directory\par
+hhduser@manager:~/test$ ls\par
+hdfs-demo.txt\par
+hhduser@manager:~/test$ su - ds1\par
+Password:\par
+ds1@manager:~$ nano ds1.txt\par
+ds1@manager:~$ hdfs dfs -put ds1.txt /ds1-data\par
+ds1@manager:~$ hdfs dfs -ls /ds1-data\par
+Found 1 items\par
+-rw-r--r--   2 ds1 supergroup         19 2024-10-22 00:25 /ds1-data/ds1.txt\par
+ds1@manager:~$ exit\par
+logout\par
+hhduser@manager:~/test$ sudo groupadd client\par
+hhduser@manager:~/test$ sudo adduser Tom\par
+adduser: Please enter a username matching the regular expression configured\par
+via the NAME_REGEX[_SYSTEM] configuration variable.  Use the `--force-badname'\par
+option to relax this check or reconfigure NAME_REGEX.\par
+hhduser@manager:~/test$ sudo adduser tom\par
+Adding user `tom' ...\par
+Adding new group `tom' (1007) ...\par
+Adding new user `tom' (1006) with group `tom' ...\par
+Creating home directory `/home/tom' ...\par
+Copying files from `/etc/skel' ...\par
+New password:\par
+BAD PASSWORD: The password is shorter than 8 characters\par
+Retype new password:\par
+passwd: password updated successfully\par
+Changing the user information for tom\par
+Enter the new value, or press ENTER for the default\par
+        Full Name []:\par
+        Room Number []:\par
+        Work Phone []:\par
+        Home Phone []:\par
+        Other []:\par
+Is the information correct? [Y/n]\par
+hhduser@manager:~/test$ sudo adduser --ingroup hpcsa jerry\par
+Adding user `jerry' ...\par
+Adding new user `jerry' (1007) with group `hpcsa' ...\par
+Creating home directory `/home/jerry' ...\par
+Copying files from `/etc/skel' ...\par
+New password:\par
+BAD PASSWORD: The password is shorter than 8 characters\par
+Retype new password:\par
+passwd: password updated successfully\par
+Changing the user information for jerry\par
+Enter the new value, or press ENTER for the default\par
+        Full Name []:\par
+        Room Number []:\par
+        Work Phone []:\par
+        Home Phone []:\par
+        Other []:\par
+Is the information correct? [Y/n] y\par
+hhduser@manager:~/test$ sudo usermod -G hpcsa tom\par
+hhduser@manager:~/test$ hdfs dfs -mkdir /ds1-data\par
+mkdir: `/ds1-data': File exists\par
+hhduser@manager:~/test$ hdfs dfs -mkdir /hpc-data\par
+hhduser@manager:~/test$ hdfs dfs -ls /\par
+Found 5 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:30 /acts\par
+drwxrwxr-x   - ds1     supergroup          0 2024-10-22 00:25 /ds1-data\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-22 00:30 /hpc-data\par
+drwxrwxr-x   - hhduser hpcsa               0 2024-10-21 21:46 /hpc-project\par
+drwxr-xr-x   - user2   supergroup          0 2024-10-21 20:56 /user2-data\par
+hhduser@manager:~/test$ hdfs dfs -chmod 775 /hpc-project\par
+hhduser@manager:~/test$ hdfs dfs -ls /\par
+Found 5 items\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-21 20:30 /acts\par
+drwxrwxr-x   - ds1     supergroup          0 2024-10-22 00:25 /ds1-data\par
+drwxr-xr-x   - hhduser supergroup          0 2024-10-22 00:30 /hpc-data\par
+drwxrwxr-x   - hhduser hpcsa               0 2024-10-21 21:46 /hpc-project\par
+drwxr-xr-x   - user2   supergroup          0 2024-10-21 20:56 /user2-data\par
+hhduser@manager:~/test$ su - tom\par
+Password:\par
+tom@manager:~$ pwd\par
+/home/tom\par
+tom@manager:~$ nano tom.txt\par
+tom@manager:~$ hdfs -dfs -put tom.txt /hpc-project\par
+/usr/local/hadoop/bin/../libexec/hadoop-functions.sh: line 2366: HDFS_-DFS_USER: invalid variable name\par
+ERROR: -dfs is not COMMAND nor fully qualified CLASSNAME.\par
+Usage: hdfs [OPTIONS] SUBCOMMAND [SUBCOMMAND OPTIONS]\par
+\par
+  OPTIONS is none or any of:\par
+\par
+--buildpaths                       attempt to add class files from build tree\par
+--config dir                       Hadoop config directory\par
+--daemon (start|status|stop)       operate on a daemon\par
+--debug                            turn on shell script debug mode\par
+--help                             usage information\par
+--hostnames list[,of,host,names]   hosts to use in worker mode\par
+--hosts filename                   list of hosts to use in worker mode\par
+--loglevel level                   set the log4j level for this command\par
+--workers                          turn on worker mode\par
+\par
+  SUBCOMMAND is one of:\par
+\par
+\par
+    Admin Commands:\par
+\par
+cacheadmin           configure the HDFS cache\par
+crypto               configure HDFS encryption zones\par
+debug                run a Debug Admin to execute HDFS debug commands\par
+dfsadmin             run a DFS admin client\par
+dfsrouteradmin       manage Router-based federation\par
+ec                   run a HDFS ErasureCoding CLI\par
+fsck                 run a DFS filesystem checking utility\par
+haadmin              run a DFS HA admin client\par
+jmxget               get JMX exported values from NameNode or DataNode.\par
+oev                  apply the offline edits viewer to an edits file\par
+oiv                  apply the offline fsimage viewer to an fsimage\par
+oiv_legacy           apply the offline fsimage viewer to a legacy fsimage\par
+storagepolicies      list/get/set/satisfyStoragePolicy block storage policies\par
+\par
+    Client Commands:\par
+\par
+classpath            prints the class path needed to get the hadoop jar and the\par
+                     required libraries\par
+dfs                  run a filesystem command on the file system\par
+envvars              display computed Hadoop environment variables\par
+fetchdt              fetch a delegation token from the NameNode\par
+getconf              get config values from configuration\par
+groups               get the groups which users belong to\par
+lsSnapshottableDir   list all snapshottable dirs owned by the current user\par
+snapshotDiff         diff two snapshots of a directory or diff the current\par
+                     directory contents with a snapshot\par
+version              print the version\par
+\par
+    Daemon Commands:\par
+\par
+balancer             run a cluster balancing utility\par
+datanode             run a DFS datanode\par
+dfsrouter            run the DFS router\par
+diskbalancer         Distributes data evenly among disks on a given node\par
+httpfs               run HttpFS server, the HDFS HTTP Gateway\par
+journalnode          run the DFS journalnode\par
+mover                run a utility to move block replicas across storage types\par
+namenode             run the DFS namenode\par
+nfs3                 run an NFS version 3 gateway\par
+portmap              run a portmap service\par
+secondarynamenode    run the DFS secondary namenode\par
+sps                  run external storagepolicysatisfier\par
+zkfc                 run the ZK Failover Controller daemon\par
+\par
+SUBCOMMAND may print help when invoked w/o parameters or with -h.\par
+tom@manager:~$ export PATH=$PATH:/uer/local/hadoop/bin\par
+tom@manager:~$ hdfs dfs -put tom.txt /hpc-project\par
+tom@manager:~$ exit\par
+logout\par
+hhduser@manager:~/test$ su - jerry\par
+Password:\par
+jerry@manager:~$ export PATH=$PATH:/usr/local/hadoop/bin/hpc-project\par
+jerry@manager:~$ nano jerry.txt\par
+jerry@manager:~$ hdfs dfs -put jerry.txt/hpc-project\par
+put: `.': No such file or directory: `hdfs://manager:9000/user/jerry'\par
+jerry@manager:~$ nano jerry.txt\par
+jerry@manager:~$ hdfs dfs -put jerry.txt /hpc-project\par
+jerry@manager:~$ exit\par
+logout\par
+hhduser@manager:~/test$ hdfs dfs -ls /hpc-project\par
+Found 4 items\par
+-rw-r--r--   2 hpc1  hpcsa         58 2024-10-21 22:27 /hpc-project/hpc1.txt\par
+-rw-r--r--   2 hpc2  hpcsa         29 2024-10-21 21:46 /hpc-project/hpc2.txt\par
+-rw-r--r--   2 jerry hpcsa         21 2024-10-22 00:53 /hpc-project/jerry.txt\par
+-rw-r--r--   2 tom   hpcsa         21 2024-10-22 00:36 /hpc-project/tom.txt\par
+hhduser@manager:~/test$ su tom\par
+Password:\par
+tom@manager:/home/hhduser/test$\par
+tom@manager:/home/hhduser/test$ cd\par
+tom@manager:~$ hdfs dfs -put tom.txt /hpc-project\par
+put: `/hpc-project/tom.txt': File exists\par
+tom@manager:~$ hdfs dfs -put tom.txt / hpc-project\par
+put: `hpc-project': No such file or directory\par
+tom@manager:~$ hdfs dfs -put tom.txt /hpc-project\par
+put: `/hpc-project/tom.txt': File exists\par
+tom@manager:~$ hdfs dfs -put tom.txt /hpc-project\par
+put: `/hpc-project/tom.txt': File exists\par
+tom@manager:~$ exit\par
+exit\par
+hhduser@manager:~/test$ hdfs dfs -ls /hpc-project\par
+Found 4 items\par
+-rw-r--r--   2 hpc1  hpcsa         58 2024-10-21 22:27 /hpc-project/hpc1.txt\par
+-rw-r--r--   2 hpc2  hpcsa         29 2024-10-21 21:46 /hpc-project/hpc2.txt\par
+-rw-r--r--   2 jerry hpcsa         21 2024-10-22 00:53 /hpc-project/jerry.txt\par
+-rw-r--r--   2 tom   hpcsa         21 2024-10-22 00:36 /hpc-project/tom.txt\par
+hhduser@manager:~/test$ su tom\par
+Password:\par
+tom@manager:/home/hhduser/test$ cd\par
+tom@manager:~$ hdfs dfs -rm -r -f jerry.txt\par
+tom@manager:~$ ls\par
+tom.txt\par
+tom@manager:~$ hdfs dfs - ls /hpc-project\par
+ls: Unknown command\par
+Did you mean -ls?  This command begins with a dash.\par
+Usage: hadoop fs [generic options]\par
+        [-appendToFile <localsrc> ... <dst>]\par
+        [-cat [-ignoreCrc] <src> ...]\par
+        [-checksum <src> ...]\par
+        [-chgrp [-R] GROUP PATH...]\par
+        [-chmod [-R] <MODE[,MODE]... | OCTALMODE> PATH...]\par
+        [-chown [-R] [OWNER][:[GROUP]] PATH...]\par
+        [-copyFromLocal [-f] [-p] [-l] [-d] [-t <thread count>] [-q <thread pool queue size>] <localsrc> ... <dst>]\par
+        [-copyToLocal [-f] [-p] [-crc] [-ignoreCrc] [-t <thread count>] [-q <thread pool queue size>] <src> ... <localdst>]\par
+        [-count [-q] [-h] [-v] [-t [<storage type>]] [-u] [-x] [-e] <path> ...]\par
+        [-cp [-f] [-p | -p[topax]] [-d] [-t <thread count>] [-q <thread pool queue size>] <src> ... <dst>]\par
+        [-createSnapshot <snapshotDir> [<snapshotName>]]\par
+        [-deleteSnapshot <snapshotDir> <snapshotName>]\par
+        [-df [-h] [<path> ...]]\par
+        [-du [-s] [-h] [-v] [-x] <path> ...]\par
+        [-expunge [-immediate]]\par
+        [-find <path> ... <expression> ...]\par
+        [-get [-f] [-p] [-crc] [-ignoreCrc] [-t <thread count>] [-q <thread pool queue size>] <src> ... <localdst>]\par
+        [-getfacl [-R] <path>]\par
+        [-getfattr [-R] \{-n name | -d\} [-e en] <path>]\par
+        [-getmerge [-nl] [-skip-empty-file] <src> <localdst>]\par
+        [-head <file>]\par
+        [-help [cmd ...]]\par
+        [-ls [-C] [-d] [-h] [-q] [-R] [-t] [-S] [-r] [-u] [-e] [<path> ...]]\par
+        [-mkdir [-p] <path> ...]\par
+        [-moveFromLocal [-f] [-p] [-l] [-d] <localsrc> ... <dst>]\par
+        [-moveToLocal <src> <localdst>]\par
+        [-mv <src> ... <dst>]\par
+        [-put [-f] [-p] [-l] [-d] [-t <thread count>] [-q <thread pool queue size>] <localsrc> ... <dst>]\par
+        [-renameSnapshot <snapshotDir> <oldName> <newName>]\par
+        [-rm [-f] [-r|-R] [-skipTrash] [-safely] <src> ...]\par
+        [-rmdir [--ignore-fail-on-non-empty] <dir> ...]\par
+        [-setfacl [-R] [\{-b|-k\} \{-m|-x <acl_spec>\} <path>]|[--set <acl_spec> <path>]]\par
+        [-setfattr \{-n name [-v value] | -x name\} <path>]\par
+        [-setrep [-R] [-w] <rep> <path> ...]\par
+        [-stat [format] <path> ...]\par
+        [-tail [-f] [-s <sleep interval>] <file>]\par
+        [-test -[defswrz] <path>]\par
+        [-text [-ignoreCrc] <src> ...]\par
+        [-touch [-a] [-m] [-t TIMESTAMP (yyyyMMdd:HHmmss) ] [-c] <path> ...]\par
+        [-touchz <path> ...]\par
+        [-truncate [-w] <length> <path> ...]\par
+        [-usage [cmd ...]]\par
+\par
+Generic options supported are:\par
+-conf <configuration file>        specify an application configuration file\par
+-D <property=value>               define a value for a given property\par
+-fs <{{\field{\*\fldinst{HYPERLINK "file:///|hdfs://namenode:port"}}{\fldrslt{file:///|hdfs://namenode:port\ul0\cf0}}}}\f0\fs22 > specify default filesystem URL to use, overrides 'fs.defaultFS' property from configurations.\par
+-jt <local|resourcemanager:port>  specify a ResourceManager\par
+-files <file1,...>                specify a comma-separated list of files to be copied to the map reduce cluster\par
+-libjars <jar1,...>               specify a comma-separated list of jar files to be included in the classpath\par
+-archives <archive1,...>          specify a comma-separated list of archives to be unarchived on the compute machines\par
+\par
+The general command line syntax is:\par
+command [genericOptions] [commandOptions]\par
+\par
+tom@manager:~$ hdfs dfs -ls /hpc-project\par
+Found 4 items\par
+-rw-r--r--   2 hpc1  hpcsa         58 2024-10-21 22:27 /hpc-project/hpc1.txt\par
+-rw-r--r--   2 hpc2  hpcsa         29 2024-10-21 21:46 /hpc-project/hpc2.txt\par
+-rw-r--r--   2 jerry hpcsa         21 2024-10-22 00:53 /hpc-project/jerry.txt\par
+-rw-r--r--   2 tom   hpcsa         21 2024-10-22 00:36 /hpc-project/tom.txt\par
+tom@manager:~$ exit\par
+exit\par
+hhduser@manager:~/test$ hdfs dfs -chmod +t /hpc-project\par
+hhduser@manager:~/test$ su jerry\par
+Password:\par
+jerry@manager:/home/hhduser/test$ hdfs dfs -ls /hpc-project\par
+Found 4 items\par
+-rw-r--r--   2 hpc1  hpcsa         58 2024-10-21 22:27 /hpc-project/hpc1.txt\par
+-rw-r--r--   2 hpc2  hpcsa         29 2024-10-21 21:46 /hpc-project/hpc2.txt\par
+-rw-r--r--   2 jerry hpcsa         21 2024-10-22 00:53 /hpc-project/jerry.txt\par
+-rw-r--r--   2 tom   hpcsa         21 2024-10-22 00:36 /hpc-project/tom.txt\par
+jerry@manager:/home/hhduser/test$ exit\par
+exit\par
+hhduser@manager:~/test$ hdfs dfs -ls /hpc-project\par
+Found 4 items\par
+-rw-r--r--   2 hpc1  hpcsa         58 2024-10-21 22:27 /hpc-project/hpc1.txt\par
+-rw-r--r--   2 hpc2  hpcsa         29 2024-10-21 21:46 /hpc-project/hpc2.txt\par
+-rw-r--r--   2 jerry hpcsa         21 2024-10-22 00:53 /hpc-project/jerry.txt\par
+-rw-r--r--   2 tom   hpcsa         21 2024-10-22 00:36 /hpc-project/tom.txt\par
+hhduser@manager:~/test$ su - jerry.txt\par
+su: user jerry.txt does not exist or the user entry does not contain all the required fields\par
+hhduser@manager:~/test$ su - jerry\par
+Password:\par
+jerry@manager:~$ hdfs dfs -rm -r -f tom.txt\par
+jerry@manager:~$ hdfs dfs -rm -r -f /hpc-project\par
+rm: Permission denied: user=jerry, access=WRITE, inode="/":hhduser:supergroup:drwxr-xr-x\par
+jerry@manager:~$ hdfs dfs -rm -r -f /hpc-project/tom.txt\par
+rm: Permission denied by sticky bit: user=jerry, path="/hpc-project/tom.txt":tom:hpcsa:-rw-r--r--, parent="/hpc-project":hhduser:hpcsa:drwxrwxr-t\par
+jerry@manager:~$ ls -all\par
+total 32\par
+drwxr-x---  3 jerry hpcsa 4096 Oct 22 00:53 .\par
+drwxr-xr-x 11 root  root  4096 Oct 22 00:28 ..\par
+-rw-------  1 jerry hpcsa  142 Oct 22 01:06 .bash_history\par
+-rw-r--r--  1 jerry hpcsa  220 Oct 22 00:28 .bash_logout\par
+-rw-r--r--  1 jerry hpcsa 3771 Oct 22 00:28 .bashrc\par
+-rw-r--r--  1 jerry hpcsa   21 Oct 22 00:42 jerry.txt\par
+drwxr-xr-x  3 jerry hpcsa 4096 Oct 22 00:38 .local\par
+-rw-r--r--  1 jerry hpcsa  807 Oct 22 00:28 .profile\par
+jerry@manager:~$ exit\par
+logout\par
+hhduser@manager:~/test$ ls -all\par
+total 8\par
+drwxrwxr-x  2 hhduser hhduser 4096 Oct 21 22:09 .\par
+drwxr-x--- 16 hhduser hhduser 4096 Oct 21 21:30 ..\par
+-rw-r--r--  1 hhduser hhduser    0 Oct 21 20:35 hdfs-demo.txt\par
+hhduser@manager:~/test$ su - tom\par
+Password:\par
+tom@manager:~$ ls -all\par
+total 32\par
+drwxr-x---  3 tom  tom  4096 Oct 22 00:36 .\par
+drwxr-xr-x 11 root root 4096 Oct 22 00:28 ..\par
+-rw-------  1 tom  tom   340 Oct 22 01:04 .bash_history\par
+-rw-r--r--  1 tom  tom   220 Oct 22 00:27 .bash_logout\par
+-rw-r--r--  1 tom  tom  3771 Oct 22 00:27 .bashrc\par
+drwxrwxr-x  3 tom  tom  4096 Oct 22 00:33 .local\par
+-rw-r--r--  1 tom  tom   807 Oct 22 00:27 .profile\par
+-rw-rw-r--  1 tom  tom    21 Oct 22 00:34 tom.txt\par
+tom@manager:~$\par
+}
+ 

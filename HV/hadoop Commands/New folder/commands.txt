@@ -1,0 +1,338 @@
+ history
+    1  sudo hostnamectl set-hostname manager
+    2  sudo hostname manager
+    3  sudo nano /etc/hosts
+    4  ifconfig
+    5  sudo nano /etc/hosts
+    6  sudo hostname manager
+    7  exit
+    8  clear
+    9  ssh node1
+   10  ssh node3
+   11  clear
+   12  cd /usr/local/hadoop/
+   13  ls
+   14  cd etc
+   15  cd hadoop/
+   16  ls
+   17  sudo nano hadoop-env.sh
+   18  mv hadoop-env.sh etc/hadoop
+   19  lsit
+   20  list
+   21  ls
+   22  sudo nano core-site.xml
+   23  scp core-site.xml node1:/usr/local/hadoop/etc/hadoop/
+   24  scp core-site.xml node2:/usr/local/hadoop/etc/hadoop/
+   25  scp core-site.xml node3:/usr/local/hadoop/etc/hadoop/
+   26  sudo nano hdfs-site.xml
+   27  ssh node1
+   28  sudo nano hdfs-site.xml
+   29  sudo nano yarn-site.xml
+   30  sudo workers
+   31  sudo nano workers
+   32  sudo nano core-site.xml
+   33  sudo nano yarn-site.xml
+   34  ssh node1
+   35  scp core-site.xml node1:/usr/local/hadoop/etc/hadoop/
+   36  scp core-site.xml node2:/usr/local/hadoop/etc/hadoop/
+   37  scp core-site.xml node3:/usr/local/hadoop/etc/hadoop/
+   38  scp yarn-site.xml node3:/usr/local/hadoop/etc/hadoop/
+   39  scp yarn-site.xml node2:/usr/local/hadoop/etc/hadoop/
+   40  scp yarn-site.xml node1:/usr/local/hadoop/etc/hadoop/
+   41  sudo nano mapred-site.xml
+   42  scp mapred-site.xml node1:/usr/local/hadoop/etc/hadoop/
+   43  scp mapred-site.xml node2:/usr/local/hadoop/etc/hadoop/
+   44  scp mapred-site.xml node3:/usr/local/hadoop/etc/hadoop/
+   45  sudo workers
+   46  sudo nano workers
+   47  sudo nano hdfs-site.xml
+   48  node1
+   49  ssh node1
+   50  ssh node2
+   51  ssh node3
+   52  ssh node1
+   53  ssh node2
+   54  jps
+   55  sudo namenode -format
+   56  start-all.sh
+   57  cd
+   58  sudo namenode -format
+   59  jps
+   60  hdfs namenode -format
+   61  hdfs dfs namenode -format
+   62  sudo chown -R hduser:hduser /usr/local/hadoop
+   63  sudo chmod 755 -R /usr/local/hadoop
+   64  hdfs dfs namenode -format
+   65  hdfs namenode -format
+   66  jps
+   67  sudo nano .bashrc
+   68  source .bashrc
+   69  hdfs namenode -format
+   70  sudo nano .bashrc
+   71  hdfs namenode -format
+   72  cd /usr/
+   73  ls
+   74  cd lib
+   75  cd jvm
+   76  ls
+   77  exit
+   78  sudo nano .bashrc
+   79  hdfs dfs namenode -format
+   80  cd usr
+   81  cd /usr
+   82  cd /lib/jvm
+   83  ls
+   84  pwd
+   85  cd
+   86  sudo find / -name java
+   87  sudo nano .bashrc
+   88  hdfs dfs namenode -format
+   89  sudo nano .bashrc
+   90  source .bashrc
+   91  hdfs dfs namenode -format
+   92  hdfs namenode -format
+   93  jps
+   94  start-all.sh
+   95  cat .bashrc
+   96  ssh node1
+   97  ssh node2
+   98  ssh node3
+   99  stop-all.sh
+  100  jps
+  101  ssh node1
+  102  ssh node2
+  103  ssh node3
+  104  hdfs namenode -format
+  105  start-all.sh
+  106  jps
+  107  cd /usr/local/hadoop/logs/
+  108  ls
+  109  sudo hadoop-hduser-datanode-manager.log
+  110  sudo nano hadoop-hduser-datanode-manager.log
+  111  cd
+  112  ssh node1
+  113  start-all.sh
+  114  jps
+  115  stop-all.sh
+  116  start-all.sh
+  117  jps
+  118  ls -all
+  119  jps
+  120  history
+  121  cd /usr/local/hadoop/logs
+  122  ls
+  123  tail -30 hadoop-hduser-namenode-manager.log
+  124  clear
+  125  cd ..
+  126  cd etc/hadoop
+  127  nano core-site.xml
+  128  start-all.sh
+  129  stop-all.sh
+  130  start-all.sh
+  131  jsp
+  132  jps
+  133  cd
+  134  ssh node1
+  135  ssh node2
+  136  ssh node3
+  137  history
+  138   121  cd /usr/local/hadoop/logs
+  139    122  ls
+  140    123  tail -30 hadoop-hduser-namenode-manager.log
+  141    124  clear
+  142    125  cd ..
+  143    126  cd etc/hadoop
+  144    127  nano core-site.xml
+  145    128  start-all.sh
+  146    129  stop-all.sh
+  147    130  start-all.sh
+  148    131  jsp
+  149    132  jps
+  150    133  cd
+  151    134  ssh node1
+  152    135  ssh node2
+  153    136  ssh node3
+  154    137  history
+  155  jps
+  156  cd
+  157  nano hd-down.sh
+  158  cat hd-down.sh
+  159  nano hd-down.sh
+  160  cat hd-down.sh
+  161  ./hd-down.sh
+  162  sudo ./hd-down.sh
+  163  chmod 777 ./hd-down.sh
+  164  ./hd-down.sh
+  165  ifconfig
+  166  sudo nano /etc/hosts
+  167  ssh node1
+  168  sudo systemctl start ssh
+  169  sudo systemctl start sshd
+  170  sudo systemctl enable sshd
+  171  ssh node1
+  172  cd /etc/hosts
+  173  sudo nano /etc/hosts
+  174  ssh node1
+  175  ssh node2
+  176  ssh node3
+  177  jps
+  178  su - osboxes
+  179  clear
+  180  ls
+  181  cd /usr/local/hadoop/
+  182  ls
+  183  start-all.sh
+  184  jps
+  185  ssh node3
+  186  jps
+  187  ssh node2
+  188  ssh node1
+  189  jps
+  190  sudo nano hosts
+  191  pwd
+  192  cd /etc/hosts
+  193  ls
+  194  cd ets
+  195  cd etc
+  196  ls
+  197  cd hadoop/
+  198  ls
+  199  sudo nano workers
+  200  sudo nano core-site.xml
+  201  stop-all.sh
+  202  jps
+  203  ssh node1
+  204  ssh node 2
+  205  ssh node2
+  206  jps
+  207  sudo systemctl status firewalld
+  208  systemctl stop firewalld
+  209  sudo systemctl stop firewalld
+  210  sudo systemctl disable firewalld
+  211  cat core-site.xml
+  212  cat hdfs-site.xml
+  213  cat yarn-site.xml
+  214  cat hadoop-env.sh
+  215  cat ~/.bashrc
+  216  sudo nano hadoop-env.sh
+  217  cat yarn-site.xml
+  218  cat core-site.xml
+  219  sudo nano hdfs-site.xml
+  220  ssh node1
+  221  ssh node2
+  222  ssh node3
+  223  ssh node2
+  224  exit
+  225  clear
+  226  ssh node1
+  227  stop-all.sh
+  228  start-all.sh
+  229  jps
+  230  sudo systemctl stop firewalld
+  231  sudo systemctl disable firewalld
+  232  stop-all.sh
+  233  start-all.sh
+  234  jps
+  235  ssh node1
+  236  ssh 2
+  237  ssh node2
+  238  ssh node3
+  239  cd /usr/local/hadoop/
+  240  sudo chown hduser:hduser /usr/local/hadoop/
+  241  stop-all.sh
+  242  start-all.sh
+  243  jps
+  244  pwd
+  245  cd etc/hadoop
+  246  cat workers
+  247  cat hdfs-site.xml
+  248  stop-all.sh
+  249  jps
+  250  hdfs --daemon stop datanode
+  251  ssh node1
+  252  jps
+  253  start-all.sh
+  254  jps
+  255  ssh node1
+  256  ssh node2
+  257  ssh node3
+  258  cd
+  259  ./hd-down.sh
+  260  jps
+  261  nano word-check.txt
+  262  sudo nano word-check.txt
+  263  hdfs dfs -mkdir /new-data
+  264  hdfs dfsadmin -safemode leave
+  265  hdfs dfs -mkdir /new-data
+  266  hdfs dfs -put word-check.txt /new-data
+  267  mkdir prog1
+  268  cd prog1
+  269  nano wordCount.java
+  270  export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
+  271  $ bin/hadoop com.sun.tools.javac.Main WordCount.java
+  272   bin/hadoop com.sun.tools.javac.Main WordCount.java
+  273  hadoop com.sun.tools.javac.Main WordCount.java
+  274  jar cf wc.jar WordCount*.class
+  275  jar cf wc.jar wordCount*.class
+  276  sudo -rm -r wordCount.java
+  277  sudo -rm -rf wordCount.java
+  278  sudo rm -rf wordCount.java
+  279  ls
+  280  sudo nano WordCount.java
+  281  export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
+  282  jar cf wc.jar WordCount*.class
+  283  ls
+  284  cd
+  285  cd /usr/local/hadoop/etc/hadoop/
+  286  cat core-site.xml
+  287  cat rackaware.py
+  288  cat rack-map.txt
+  289  ./rackaware.py node1
+  290  ./rackaware.py node2
+  291  ./rackaware.py node3
+  292  stop-all.sh
+  293  nano workers
+  294  start-all.sh
+  295  jps
+  296  hdfs dfsadmin -printTopology
+  297  ./rackaware.py node1
+  298  ./rackaware.py node2
+  299  ./rackaware.py node3
+  300  cd
+  301  hdfs dfs -mkdir /isro
+  302  hdfs dfs -safemode leave
+  303  hdfs dfsadmin -safemode leave
+  304  hdfs dfs -mkdir /isro
+  305  hdfs dfs -setfacl -m user:sc1:rwx /isro
+  306  cd /usr/local/hadoop/etc/hadoop/
+  307  cat hdfs-site.xml
+  308  cat core-site.xml
+  309  sudo nano
+  310  sudo nano core-site.xml
+  311  sudo nano hdfs-site.xml
+  312  hdfs dfs -setfacl -m user:sc1:rwx /isro
+  313  sudo nano hdfs-site.xml
+  314  hdfs dfs -setfacl -m user:sc1:rwx /isro
+  315  start-all.sh
+  316  stop-all.sh
+  317  start-all.sh
+  318  jps
+  319  hdfs dfs -setfacl -m user:sc1:rwx /isro
+  320  hdfs dfsadmin -safemode leave
+  321  hdfs dfs -setfacl -m user:sc1:rwx /isro
+  322  hdfs dfs -setfacl -m user:sc2:rwx /isro
+  323  hdfs dfs -setfacl -m user:sc3:rwx /isro
+  324  hdfs dfs -setfacl -m other::--- /isro
+  325  hdfs dfs -getfacl /isro
+  326  ls
+  327  cat yarn-site.xml
+  328  sudo nano yarn-site.xml
+  329  cat yarn-site.xml
+  330  sudo nano yarn-site.xml
+  331  cd
+  332  cp .bashrc /home/sc1
+  333  sudo cp .bashrc /home/sc1
+  334  sudo cp .bashrc /home/sc2
+  335  sudo cp .bashrc /home/sc3
+  336  ls
+  337  history

@@ -1,0 +1,36 @@
+---------------------TRASH----------------------
+
+
+
+[hduser@manager hadoop]$ sudo nano demo.txt
+[hduser@manager hadoop]$ hdfs dfs -mkdir /test-data
+[hduser@manager hadoop]$ hdfs dfs -put demo.txt /test-data
+[hduser@manager hadoop]$ hdfs dfs -rm -f /test-data/demo.txt
+2024-10-27 04:05:35,774 INFO fs.TrashPolicyDefault: Moved: 'hdfs://manager:9000/test-data/demo.txt' to trash at: hdfs://manager:9000/user/hduser/.Trash/Current/test-data/demo.txt
+[hduser@manager hadoop]$ hdfs dfs -ls /
+Found 4 items
+drwxr-xr-x   - hduser supergroup          0 2024-10-27 01:10 /demo
+drwxr-xr-x   - hduser supergroup          0 2024-10-27 03:56 /test
+drwxr-xr-x   - hduser supergroup          0 2024-10-27 04:05 /test-data
+drwxr-xr-x   - hduser supergroup          0 2024-10-27 04:05 /user
+[hduser@manager hadoop]$ hdfs dfs -ls /user
+Found 2 items
+drwxr-xr-x   - dsa1   supergroup          0 2024-10-27 02:20 /user/dsadata
+drwx------   - hduser supergroup          0 2024-10-27 04:05 /user/hduser
+[hduser@manager hadoop]$ hdfs dfs -ls /user/hduser
+Found 1 items
+drwx------   - hduser supergroup          0 2024-10-27 04:05 /user/hduser/.Trash
+[hduser@manager hadoop]$ hdfs dfs -ls /user/hduser/.Trash
+Found 1 items
+drwx------   - hduser supergroup          0 2024-10-27 04:05 /user/hduser/.Trash/Current
+[hduser@manager hadoop]$ hdfs dfs -ls /user/hduser/.Trash/Current
+Found 1 items
+drwx------   - hduser supergroup          0 2024-10-27 04:05 /user/hduser/.Trash/Current/test-data
+[hduser@manager hadoop]$ hdfs dfs -ls /user/hduser/.Trash/Current/test-data
+Found 1 items
+-rw-r--r--   3 hduser supergroup          5 2024-10-27 04:05 /user/hduser/.Trash/Current/test-data/demo.txt
+[hduser@manager hadoop]$ hdfs dfs -mv /user/hduser/.Trash/Current/test-data/demo.txt /test
+[hduser@manager hadoop]$ hdfs dfs -ls /test
+Found 1 items
+-rw-r--r--   3 hduser supergroup          5 2024-10-27 04:05 /test/demo.txt
+[hduser@manager hadoop]$

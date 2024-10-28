@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Create a new group
+sudo groupadd mygroup
+
+# Add users to the group
+sudo usermod -aG mygroup tom
+sudo usermod -aG mygroup jerry
+
+# Create directories for users in HDFS
+hdfs dfs -mkdir /user/tom
+hdfs dfs -mkdir /user/jerry
+
+# Change the group ownership of the directories
+hdfs dfs -chown tom:mygroup /user/tom
+hdfs dfs -chown jerry:mygroup /user/jerry
+
+# Set permissions for the directories
+hdfs dfs -chmod 770 /user/tom
+hdfs dfs -chmod 770 /user/jerry
+
+# Output success message
+echo "Users tom and jerry have been set up with restricted access."
+
+
+
+----------------
+chmod +x setup_users.sh
+-------------------------------
+./setup_users.sh

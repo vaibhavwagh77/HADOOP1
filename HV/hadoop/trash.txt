@@ -1,0 +1,44 @@
+nano core-site.xml 
+<property>
+<name>fs.trash.interval</name> 
+<value>30</value> 
+</property> 
+
+after add it run Hadoop again and delete the file 
+
+ 133  nano core-site.xml
+  134  cd
+  135  hdfs dfs -ls /
+  136  hdfs dfs -mkdir /new
+  159  nano core-site.xml
+  160  stop-all.sh
+  161  start-all.sh 
+  166  nano new1.txt
+  167  hdfs dfs -put new1.txt /new
+  168  hdfs dfs -ls /new
+  169  hdfs dfs -ls /
+  170* hdfs dfs -rm  /
+  171  hdfs dfs -ls /
+  172  hdfs dfs -ls /user
+  173  hdfs dfs -ls /user/hduser
+  174  hdfs dfs -ls /user/hduser/.Trash
+  175  hdfs dfs -ls /user/hduser/.Trash/Current
+  176  hdfs dfs -ls /user/hduser/.Trash/Current/new
+  177  hdfs dfs -ls /user/hduser/.Trash/Current/new/new1.txt
+  178  hdfs dfs mv /user/hduser/.Trash/Current/new/new1.txt /new
+  179  hdfs dfs -mv /user/hduser/.Trash/Current/new/new1.txt /new
+  180  hdfs dfs -ls /new
+ 
+
+
+hdfs dfsadmin -safemode enter
+hdfs dfsadmin -safemode get
+tar -czvf backup.tar.gz -C /usr/local/hadoop/hd-data .
+hdfs dfsadmin -safemode leave
+rm -rf /usr/local/hadoop/hd-data/*
+tar -xzvf backup.tar.gz -C /usr/local/hadoop/hd-data
+
+
+ tar -xvf backup_namenod.tar
+tar -xvf backup_namenod.tar
+
